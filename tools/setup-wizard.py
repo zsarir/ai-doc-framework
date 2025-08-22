@@ -710,12 +710,16 @@ Examples:
             print(f"✅ Error Categories: {len(self.config['error_categories'])}")
             print(f"✅ Issue Categories: {len(self.config['issue_categories'])}")
             print(f"✅ Configuration: {self.project_root}/ai-doc-config.json (Project Root)")
+            print(f"✅ Conflict Detection: Available via tools/conflict-detector.py")
+            print(f"✅ Rule Management: MANAGE_RULES.md system ready")
             print(f"\n📚 Next Steps:")
             print(f"   1. Review the generated files")
             print(f"   2. Verify ai-doc-config.json is in project root")
             print(f"   3. Customize AI_RULES.md for your specific needs")
             print(f"   4. Start using START_TASK.md for AI tasks")
-            print(f"   5. Check USAGE.md for detailed instructions")
+            print(f"   5. Run conflict detection: python tools/conflict-detector.py")
+            print(f"   6. Use MANAGE_RULES.md for rule management")
+            print(f"   7. Check USAGE.md for detailed instructions")
             
         except KeyboardInterrupt:
             print(f"\n{Fore.YELLOW}⚠️  Setup cancelled by user{Style.RESET_ALL}")
