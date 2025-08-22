@@ -191,19 +191,38 @@ function setupMetrics() {
 
 function animateMetricCard(card) {
     const chart = card.querySelector('.chart-circle');
-    const percentage = chart.style.getPropertyValue('--percentage').replace('%', '');
-    const text = chart.querySelector('.chart-text');
+    const text = card.querySelector('.chart-text, .metric-value');
 
-    let current = 0;
-    const increment = percentage / 60;
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= percentage) {
-            current = percentage;
-            clearInterval(timer);
-        }
-        text.textContent = Math.round(current) + '%';
-    }, 50);
+    // Skip animation if elements don't exist (for story section metric cards)
+    if (!chart || !text) {
+        return;
+    }
+
+    const percentage = chart.style.getPropertyValue('--percentage');
+    if (percentage) {
+        // Original metric cards with chart animation
+        const percentageValue = percentage.replace('%', '');
+        let current = 0;
+        const increment = percentageValue / 60;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= percentageValue) {
+                current = percentageValue;
+                clearInterval(timer);
+            }
+            text.textContent = Math.round(current) + '%';
+        }, 50);
+    } else {
+        // Story section metric cards - simple fade in animation
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, 100);
+    }
 }
 
 // Animations on Scroll
