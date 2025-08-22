@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troubleshooting Guide - AI Documentation Framework</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <style>
+        .troubleshooting-hero {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .troubleshooting-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .troubleshooting-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .troubleshooting-search {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            transition: var(--transition);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background: var(--bg-primary);
+        }
+
+        .search-results {
+            margin-top: 2rem;
+        }
+
+        .issue-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .category-card {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .category-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .category-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .issue-count {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--border-radius);
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        .common-issues {
+            background: var(--bg-tertiary);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin: 3rem 0;
+        }
+
+        .issues-title {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .issues-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .issue-card {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .issue-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .issue-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .issue-icon {
+            font-size: 2rem;
+            color: var(--error-color);
+        }
+
+        .issue-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--error-color);
+            margin: 0;
+        }
+
+        .issue-severity {
+            background: var(--error-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--border-radius);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .issue-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .issue-solution {
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            border-left: 4px solid var(--success-color);
+        }
+
+        .solution-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--success-color);
+        }
+
+        .solution-steps {
+            list-style: none;
+            padding: 0;
+        }
+
+        .solution-steps li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .solution-steps li::before {
+            content: "✓";
+            color: var(--success-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .code-example {
+            background: #1e1e1e;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            position: relative;
+        }
+
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .code-title {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .copy-btn {
+            background: #333;
+            border: none;
+            color: #888;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .copy-btn:hover {
+            background: #555;
+            color: white;
+        }
+
+        .troubleshooting-tools {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .tools-title {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .tool-card {
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .tool-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .tool-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .tool-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .tool-command {
+            background: #1e1e1e;
+            color: #00ff00;
+            padding: 0.75rem;
+            border-radius: var(--border-radius);
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .prevention-guide {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin: 3rem 0;
+        }
+
+        .prevention-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .prevention-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .prevention-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .prevention-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .prevention-card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .prevention-description {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .prevention-tips {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+
+        .prevention-tips li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            opacity: 0.9;
+        }
+
+        .prevention-tips li::before {
+            content: "💡";
+            position: absolute;
+            left: 0;
+        }
+
+        .support-section {
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin: 3rem 0;
+        }
+
+        .support-title {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .support-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .support-option {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .support-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .support-option-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .support-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .support-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .support-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .troubleshooting-hero h1 {
+                font-size: 2rem;
+            }
+
+            .issue-categories,
+            .issues-grid,
+            .tools-grid,
+            .prevention-grid,
+            .support-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-robot"></i>
+                <span>AI Doc Framework</span>
+            </div>
+            <div class="nav-menu">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../guides/installation.html" class="nav-link">Installation</a>
+                <a href="../guides/usage.html" class="nav-link">Usage</a>
+                <a href="#troubleshooting" class="nav-link active">Troubleshooting</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="troubleshooting-hero">
+        <div class="container">
+            <h1><i class="fas fa-tools"></i> Troubleshooting Guide</h1>
+            <p>Comprehensive solutions to common issues and problems you might encounter while using the AI Documentation Framework.</p>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="section">
+        <div class="container">
+            <div class="troubleshooting-search">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search for issues, errors, or solutions..." id="searchInput">
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Issue Categories -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Issue Categories</h2>
+            <p class="section-description">Browse troubleshooting guides by category to quickly find solutions to your specific problem.</p>
+
+            <div class="issue-categories">
+                <div class="category-card" onclick="filterIssues('installation')">
+                    <div class="category-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3 class="category-title">Installation Issues</h3>
+                    <p class="category-description">Problems with installing, setting up, or initializing the framework.</p>
+                    <span class="issue-count">12 issues</span>
+                </div>
+                <div class="category-card" onclick="filterIssues('configuration')">
+                    <div class="category-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="category-title">Configuration Problems</h3>
+                    <p class="category-description">Issues with framework configuration, templates, and settings.</p>
+                    <span class="issue-count">8 issues</span>
+                </div>
+                <div class="category-card" onclick="filterIssues('runtime')">
+                    <div class="category-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3 class="category-title">Runtime Errors</h3>
+                    <p class="category-description">Errors that occur during framework operation and task execution.</p>
+                    <span class="issue-count">15 issues</span>
+                </div>
+                <div class="category-card" onclick="filterIssues('documentation')">
+                    <div class="category-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 class="category-title">Documentation Issues</h3>
+                    <p class="category-description">Problems with documentation generation, updates, and navigation.</p>
+                    <span class="issue-count">10 issues</span>
+                </div>
+                <div class="category-card" onclick="filterIssues('ai-integration')">
+                    <div class="category-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="category-title">AI Integration</h3>
+                    <p class="category-description">Issues with AI assistant integration and communication protocols.</p>
+                    <span class="issue-count">6 issues</span>
+                </div>
+                <div class="category-card" onclick="filterIssues('system')">
+                    <div class="category-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="category-title">System Issues</h3>
+                    <p class="category-description">Infrastructure, permissions, and system-level problems.</p>
+                    <span class="issue-count">9 issues</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Common Issues -->
+    <section class="section">
+        <div class="container">
+            <div class="common-issues">
+                <h2 class="issues-title">Most Common Issues</h2>
+                <div class="issues-grid" id="issuesGrid">
+                    <!-- Installation Issues -->
+                    <div class="issue-card" data-category="installation">
+                        <div class="issue-header">
+                            <div class="issue-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <h3 class="issue-title">Python Version Error</h3>
+                            <span class="issue-severity">HIGH</span>
+                        </div>
+                        <p class="issue-description">Error message: "Python 3.8+ required" when trying to run framework tools or setup wizard.</p>
+                        <div class="issue-solution">
+                            <h4 class="solution-title">Solution Steps</h4>
+                            <ol class="solution-steps">
+                                <li>Check your current Python version: <code>python --version</code></li>
+                                <li>Download Python 3.8+ from python.org</li>
+                                <li>Update your system PATH to include Python</li>
+                                <li>Verify installation: <code>python3 --version</code></li>
+                                <li>Reinstall framework dependencies</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="issue-card" data-category="installation">
+                        <div class="issue-header">
+                            <div class="issue-icon">
+                                <i class="fas fa-folder"></i>
+                            </div>
+                            <h3 class="issue-title">Permission Denied</h3>
+                            <span class="issue-severity">MEDIUM</span>
+                        </div>
+                        <p class="issue-description">Getting permission errors when trying to install packages or create directories during setup.</p>
+                        <div class="issue-solution">
+                            <h4 class="solution-title">Solution Steps</h4>
+                            <ol class="solution-steps">
+                                <li>Try using <code>pip install --user</code> for user-level installation</li>
+                                <li>Or use <code>sudo pip install</code> (not recommended)</li>
+                                <li>Create virtual environment: <code>python -m venv myenv</code></li>
+                                <li>Activate environment and install within it</li>
+                                <li>Check directory permissions for project folder</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="issue-card" data-category="configuration">
+                        <div class="issue-header">
+                            <div class="issue-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h3 class="issue-title">Missing AI_RULES.md</h3>
+                            <span class="issue-severity">HIGH</span>
+                        </div>
+                        <p class="issue-description">AI assistant reports missing AI_RULES.md file or cannot find project-specific rules.</p>
+                        <div class="issue-solution">
+                            <h4 class="solution-title">Solution Steps</h4>
+                            <ol class="solution-steps">
+                                <li>Run validation: <code>python tools/validator.py --check-config</code></li>
+                                <li>Check if AI_RULES.md exists in project root</li>
+                                <li>Copy template: <code>cp templates/core-files/AI_RULES.md .</code></li>
+                                <li>Customize rules for your specific project needs</li>
+                                <li>Validate again to ensure proper configuration</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="issue-card" data-category="runtime">
+                        <div class="issue-header">
+                            <div class="issue-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <h3 class="issue-title">Task Execution Fails</h3>
+                            <span class="issue-severity">HIGH</span>
+                        </div>
+                        <p class="issue-description">AI assistant cannot execute tasks properly, gets stuck, or reports errors during task completion.</p>
+                        <div class="issue-solution">
+                            <h4 class="solution-title">Solution Steps</h4>
+                            <ol class="solution-steps">
+                                <li>Verify START_TASK.md exists and is readable</li>
+                                <li>Check AI_RULES.md for proper task execution rules</li>
+                                <li>Run system validation: <code>python tools/validator.py --check-system</code></li>
+                                <li>Check for open issues in issues/ directory</li>
+                                <li>Ensure AI assistant follows the protocol correctly</li>
+                                <li>Try manual execution if automated fails</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="issue-card" data-category="documentation">
+                        <div class="issue-header">
+                            <div class="issue-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3 class="issue-title">AI Cannot Find Documentation</h3>
+                            <span class="issue-severity">MEDIUM</span>
+                        </div>
+                        <p class="issue-description">AI assistant reports difficulty finding relevant documentation or navigation issues.</p>
+                        <div class="issue-solution">
+                            <h4 class="solution-title">Solution Steps</h4>
+                            <ol class="solution-steps">
+                                <li>Verify AI_APP_GUIDE.md exists and is up to date</li>
+                                <li>Check documentation structure is complete</li>
+                                <li>Run documentation validation: <code>python tools/validator.py --check-docs</code></li>
+                                <li>Ensure docs/ directory structure follows framework standards</li>
+                                <li>Update navigation guides if structure changed</li>
+                                <li>Test documentation access manually</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="issue-card" data-category="ai-integration">
+                        <div class="issue-header">
+                            <div class="issue-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h3 class="issue-title">AI Not Following Rules</h3>
+                            <span class="issue-severity">MEDIUM</span>
+                        </div>
+                        <p class="issue-description">AI assistant is not following the rules specified in AI_RULES.md or ignoring project constraints.</p>
+                        <div class="issue-solution">
+                            <h4 class="solution-title">Solution Steps</h4>
+                            <ol class="solution-steps">
+                                <li>Ensure AI_RULES.md is in the correct location</li>
+                                <li>Check that rules are clearly written and specific</li>
+                                <li>Verify AI assistant reads the rules file first</li>
+                                <li>Add more specific constraints if rules are too vague</li>
+                                <li>Test with simple tasks to verify rule compliance</li>
+                                <li>Consider adding examples to clarify expectations</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="issue-card" data-category="system">
+                        <div class="issue-header">
+                            <div class="issue-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3 class="issue-title">File System Permissions</h3>
+                            <span class="issue-severity">HIGH</span>
+                        </div>
+                        <p class="issue-description">Framework cannot create, modify, or delete files due to insufficient permissions.</p>
+                        <div class="issue-solution">
+                            <h4 class="solution-title">Solution Steps</h4>
+                            <ol class="solution-steps">
+                                <li>Check current directory permissions: <code>ls -la</code></li>
+                                <li>Change ownership: <code>chown -R $USER:$USER .</code></li>
+                                <li>Set proper permissions: <code>chmod -R 755 .</code></li>
+                                <li>Ensure write permissions on project directory</li>
+                                <li>Check if files are locked by another process</li>
+                                <li>Try running with elevated privileges if necessary</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="issue-card" data-category="documentation">
+                        <div class="issue-header">
+                            <div class="issue-icon">
+                                <i class="fas fa-history"></i>
+                            </div>
+                            <h3 class="issue-title">Error History Not Working</h3>
+                            <span class="issue-severity">MEDIUM</span>
+                        </div>
+                        <p class="issue-description">Error management system is not properly tracking or retrieving historical errors.</p>
+                        <div class="issue-solution">
+                            <h4 class="solution-title">Solution Steps</h4>
+                            <ol class="solution-steps">
+                                <li>Verify error-management/ directory exists</li>
+                                <li>Check MASTER_ERROR_INDEX.md is present and valid</li>
+                                <li>Validate error category directories exist</li>
+                                <li>Run error system check: <code>python tools/validator.py --check-errors</code></li>
+                                <li>Ensure error templates are properly formatted</li>
+                                <li>Test error documentation creation manually</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Troubleshooting Tools -->
+    <section class="section">
+        <div class="container">
+            <div class="troubleshooting-tools">
+                <h2 class="tools-title">Diagnostic Tools</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3 class="tool-title">System Validator</h3>
+                        <p class="tool-description">Comprehensive system validation tool that checks all framework components and configurations.</p>
+                        <div class="tool-command">python tools/validator.py --check-system</div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3 class="tool-title">Documentation Checker</h3>
+                        <p class="tool-description">Validates documentation structure, links, and completeness across all generated files.</p>
+                        <div class="tool-command">python tools/validator.py --check-docs</div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3 class="tool-title">Error System Check</h3>
+                        <p class="tool-description">Verifies error management system configuration and validates error tracking functionality.</p>
+                        <div class="tool-command">python tools/validator.py --check-errors</div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3 class="tool-title">Issue Tracker Validator</h3>
+                        <p class="tool-description">Checks issue tracking system setup and validates issue management workflows.</p>
+                        <div class="tool-command">python tools/validator.py --check-issues</div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <h3 class="tool-title">Debug Mode</h3>
+                        <p class="tool-description">Enables detailed logging and debugging information for troubleshooting complex issues.</p>
+                        <div class="tool-command">export AI_DOC_FRAMEWORK_DEBUG=1</div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="tool-title">Performance Monitor</h3>
+                        <p class="tool-description">Monitors framework performance and provides insights into optimization opportunities.</p>
+                        <div class="tool-command">python tools/monitor.py --performance</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prevention Guide -->
+    <section class="section">
+        <div class="container">
+            <div class="prevention-guide">
+                <h2 class="prevention-title">Prevention & Best Practices</h2>
+                <div class="prevention-grid">
+                    <div class="prevention-card">
+                        <div class="prevention-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="prevention-card-title">System Integrity</h3>
+                        <p class="prevention-description">Maintain system integrity by following framework conventions and using validation tools regularly.</p>
+                        <ul class="prevention-tips">
+                            <li>Run validation checks after major changes</li>
+                            <li>Keep AI_RULES.md updated with current requirements</li>
+                            <li>Use version control for all documentation changes</li>
+                            <li>Regularly backup important configurations</li>
+                        </ul>
+                    </div>
+                    <div class="prevention-card">
+                        <div class="prevention-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="prevention-card-title">AI Integration</h3>
+                        <p class="prevention-description">Ensure smooth AI integration by maintaining clear communication protocols and rule definitions.</p>
+                        <ul class="prevention-tips">
+                            <li>Keep AI_RULES.md clear and specific</li>
+                            <li>Test AI commands before complex tasks</li>
+                            <li>Maintain consistent task initiation patterns</li>
+                            <li>Document successful AI interaction patterns</li>
+                        </ul>
+                    </div>
+                    <div class="prevention-card">
+                        <div class="prevention-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3 class="prevention-card-title">Documentation Management</h3>
+                        <p class="prevention-description">Keep documentation current and accessible through regular maintenance and organization.</p>
+                        <ul class="prevention-tips">
+                            <li>Update documentation after code changes</li>
+                            <li>Maintain consistent documentation structure</li>
+                            <li>Keep AI_APP_GUIDE.md current with navigation</li>
+                            <li>Regularly validate documentation links</li>
+                        </ul>
+                    </div>
+                    <div class="prevention-card">
+                        <div class="prevention-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3 class="prevention-card-title">Issue Prevention</h3>
+                        <p class="prevention-description">Prevent issues through proactive monitoring and systematic problem resolution.</p>
+                        <ul class="prevention-tips">
+                            <li>Address incomplete tasks promptly</li>
+                            <li>Monitor error patterns for systemic issues</li>
+                            <li>Keep issue tracking system organized</li>
+                            <li>Learn from past errors to prevent recurrence</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section class="section">
+        <div class="container">
+            <div class="support-section">
+                <h2 class="support-title">Need More Help?</h2>
+                <div class="support-options">
+                    <div class="support-option">
+                        <div class="support-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3 class="support-option-title">GitHub Issues</h3>
+                        <p class="support-description">Report bugs, request features, or ask questions on our GitHub repository.</p>
+                        <a href="https://github.com/zsarir/ai-doc-framework/issues" class="support-link">Open Issue</a>
+                    </div>
+                    <div class="support-option">
+                        <div class="support-icon">
+                            <i class="fab fa-discord"></i>
+                        </div>
+                        <h3 class="support-option-title">Community Discord</h3>
+                        <p class="support-description">Join our community for real-time support and discussions with other users.</p>
+                        <a href="#" class="support-link">Join Discord</a>
+                    </div>
+                    <div class="support-option">
+                        <div class="support-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="support-option-title">Email Support</h3>
+                        <p class="support-description">Contact our support team directly for personalized assistance.</p>
+                        <a href="mailto:support@ai-doc-framework.com" class="support-link">Send Email</a>
+                    </div>
+                    <div class="support-option">
+                        <div class="support-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="support-option-title">Documentation</h3>
+                        <p class="support-description">Browse our comprehensive documentation for detailed guides and tutorials.</p>
+                        <a href="../guides/usage.html" class="support-link">View Docs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script>
+        function filterIssues(category) {
+            const cards = document.querySelectorAll('.issue-card');
+            const categories = document.querySelectorAll('.category-card');
+
+            // Remove active state from all categories
+            categories.forEach(cat => cat.classList.remove('active'));
+
+            // Add active state to clicked category
+            event.currentTarget.classList.add('active');
+
+            // Filter issues
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function copyCode(button) {
+            const codeBlock = button.closest('.code-example');
+            const code = codeBlock.querySelector('code').textContent;
+
+            navigator.clipboard.writeText(code).then(() => {
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.style.background = '#10b981';
+
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '';
+                }, 2000);
+            });
+        }
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const issuesGrid = document.getElementById('issuesGrid');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const cards = issuesGrid.querySelectorAll('.issue-card');
+
+            cards.forEach(card => {
+                const title = card.querySelector('.issue-title').textContent.toLowerCase();
+                const description = card.querySelector('.issue-description').textContent.toLowerCase();
+                const solution = card.querySelector('.issue-solution').textContent.toLowerCase();
+
+                if (title.includes(searchTerm) || description.includes(searchTerm) || solution.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize Prism.js for syntax highlighting
+        document.addEventListener('DOMContentLoaded', function() {
+            Prism.highlightAll();
+        });
+    </script>
+</body>
+</html>

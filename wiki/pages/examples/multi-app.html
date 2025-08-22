@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Application Example - AI Documentation Framework</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <style>
+        .example-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .example-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .example-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .project-overview {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .project-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .project-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            background: var(--bg-secondary);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+        }
+
+        .project-description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .microservices-architecture {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .architecture-title {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .services-diagram {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin: 2rem 0;
+            color: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            opacity: 0.9;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        .service-tech {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .directory-structure {
+            background: var(--bg-tertiary);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin: 3rem 0;
+        }
+
+        .structure-title {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .structure-visualization {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .structure-tree {
+            font-family: 'Courier New', monospace;
+            line-height: 1.4;
+        }
+
+        .tree-item {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+        }
+
+        .tree-item.main {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .tree-item.app {
+            color: var(--info-color);
+            font-weight: 600;
+        }
+
+        .tree-item.docs {
+            color: var(--success-color);
+        }
+
+        .tree-item.shared {
+            color: var(--warning-color);
+        }
+
+        .workflow-coordination {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin: 3rem 0;
+        }
+
+        .workflow-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .workflow-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .workflow-step {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -1rem;
+            left: 1rem;
+            background: #ffd700;
+            color: #333;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .step-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .step-description {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .implementation-guide {
+            margin: 4rem 0;
+        }
+
+        .guide-section {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .guide-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .guide-content {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .code-example {
+            background: #1e1e1e;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .code-title {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .copy-btn {
+            background: #333;
+            border: none;
+            color: #888;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .copy-btn:hover {
+            background: #555;
+            color: white;
+        }
+
+        .cross-app-features {
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin: 3rem 0;
+        }
+
+        .features-title {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .feature-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .feature-benefits {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-benefits li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .feature-benefits li::before {
+            content: "✓";
+            color: var(--success-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .quick-setup {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            color: white;
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .setup-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .setup-commands {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .setup-command {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .setup-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 2rem;
+        }
+
+        .setup-btn:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        @media (max-width: 768px) {
+            .example-hero h1 {
+                font-size: 2rem;
+            }
+
+            .project-title {
+                font-size: 2rem;
+            }
+
+            .project-meta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .services-grid,
+            .workflow-steps,
+            .features-grid,
+            .setup-commands {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-robot"></i>
+                <span>AI Doc Framework</span>
+            </div>
+            <div class="nav-menu">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../guides/installation.html" class="nav-link">Installation</a>
+                <a href="../guides/usage.html" class="nav-link">Usage</a>
+                <a href="#examples" class="nav-link active">Examples</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="example-hero">
+        <div class="container">
+            <h1><i class="fas fa-cubes"></i> Multi-Application Example</h1>
+            <p>A comprehensive example demonstrating how the AI Documentation Framework manages complex multi-application projects with coordinated documentation and cross-app workflows.</p>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="section">
+        <div class="container">
+            <div class="project-overview">
+                <div class="project-header">
+                    <h2 class="project-title">E-Commerce Platform</h2>
+                    <div class="project-meta">
+                        <span class="meta-item">
+                            <i class="fas fa-shopping-cart"></i>
+                            E-Commerce Platform
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-network-wired"></i>
+                            Microservices
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-cloud"></i>
+                            Cloud-Native
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-users"></i>
+                            Multi-Team
+                        </span>
+                    </div>
+                    <p class="project-description">
+                        A modern e-commerce platform built as a microservices architecture. This example showcases how the AI Documentation Framework coordinates documentation across multiple applications, manages cross-service dependencies, and maintains consistency across the entire platform.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Microservices Architecture -->
+    <section class="section">
+        <div class="container">
+            <div class="microservices-architecture">
+                <h2 class="architecture-title">Microservices Architecture</h2>
+
+                <div class="services-diagram">
+                    <h3>Service Components</h3>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <h4 class="service-name">Frontend Store</h4>
+                            <p class="service-description">Customer-facing e-commerce interface built with React and Next.js, providing product browsing, shopping cart, and checkout functionality.</p>
+                            <div class="service-tech">React • Next.js • TypeScript • Stripe</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-shopping-basket"></i>
+                            </div>
+                            <h4 class="service-name">Product Service</h4>
+                            <p class="service-description">Manages product catalog, inventory, pricing, and product search functionality with Elasticsearch integration.</p>
+                            <div class="service-tech">FastAPI • PostgreSQL • Elasticsearch • Redis</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h4 class="service-name">User Service</h4>
+                            <p class="service-description">Handles user authentication, profiles, preferences, and session management with JWT tokens.</p>
+                            <div class="service-tech">Node.js • MongoDB • JWT • OAuth2</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <h4 class="service-name">Payment Service</h4>
+                            <p class="service-description">Processes payments, manages subscriptions, and handles financial transactions with multiple payment providers.</p>
+                            <div class="service-tech">Python • Stripe • PCI Compliance • Webhooks</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <h4 class="service-name">Order Service</h4>
+                            <p class="service-description">Manages order lifecycle, fulfillment, shipping, and returns processing with real-time tracking.</p>
+                            <div class="service-tech">Go • PostgreSQL • RabbitMQ • REST APIs</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h4 class="service-name">Analytics Service</h4>
+                            <p class="service-description">Collects and analyzes user behavior, sales data, and performance metrics for business intelligence.</p>
+                            <div class="service-tech">Python • Apache Spark • Kafka • Data Warehouse</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Directory Structure -->
+    <section class="section">
+        <div class="container">
+            <div class="directory-structure">
+                <h2 class="structure-title">Generated Directory Structure</h2>
+                <div class="structure-visualization">
+                    <div class="structure-tree">
+                        <div class="tree-item main">ecommerce-platform/</div>
+                        <div class="tree-item">├── 📄 AI_RULES.md</div>
+                        <div class="tree-item">├── 📄 START_TASK.md</div>
+                        <div class="tree-item">├── 📄 COMPLETE_TASK.md</div>
+                        <div class="tree-item">├── 📄 CREATE_ISSUE_DIRECTORIES.md</div>
+                        <div class="tree-item docs">├── 📁 docs/</div>
+                        <div class="tree-item docs">│   ├── 📄 AI_APP_GUIDE.md</div>
+                        <div class="tree-item docs">│   ├── 📄 PLATFORM_OVERVIEW.md</div>
+                        <div class="tree-item docs">│   ├── 📄 ARCHITECTURE.md</div>
+                        <div class="tree-item docs">│   ├── 📄 API_GATEWAY.md</div>
+                        <div class="tree-item docs">│   └── 📄 VERSION.md</div>
+                        <div class="tree-item shared">├── 📁 shared/</div>
+                        <div class="tree-item shared">│   ├── 📄 AI_RULES.md</div>
+                        <div class="tree-item shared">│   ├── 📄 START_TASK.md</div>
+                        <div class="tree-item shared">│   ├── 📁 docs/</div>
+                        <div class="tree-item shared">│   ├── 📁 error-management/</div>
+                        <div class="tree-item shared">│   └── 📁 issues/</div>
+                        <div class="tree-item app">├── 📁 frontend/</div>
+                        <div class="tree-item app">│   ├── 📄 AI_RULES.md</div>
+                        <div class="tree-item app">│   ├── 📄 START_TASK.md</div>
+                        <div class="tree-item app">│   ├── 📁 docs/</div>
+                        <div class="tree-item app">│   ├── 📁 error-management/</div>
+                        <div class="tree-item app">│   └── 📁 issues/</div>
+                        <div class="tree-item app">├── 📁 product-service/</div>
+                        <div class="tree-item app">│   ├── 📄 AI_RULES.md</div>
+                        <div class="tree-item app">│   ├── 📄 START_TASK.md</div>
+                        <div class="tree-item app">│   ├── 📁 docs/</div>
+                        <div class="tree-item app">│   ├── 📁 error-management/</div>
+                        <div class="tree-item app">│   └── 📁 issues/</div>
+                        <div class="tree-item app">├── 📁 user-service/</div>
+                        <div class="tree-item app">├── 📁 payment-service/</div>
+                        <div class="tree-item app">├── 📁 order-service/</div>
+                        <div class="tree-item app">└── 📁 analytics-service/</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Coordination -->
+    <section class="section">
+        <div class="container">
+            <div class="workflow-coordination">
+                <h2 class="workflow-title">Cross-Application Workflow Coordination</h2>
+                <div class="workflow-steps">
+                    <div class="workflow-step">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <h4 class="step-title">Platform-Level Navigation</h4>
+                        <p class="step-description">AI starts at root level, validates entire platform integrity, and checks for cross-service issues before coordinating multi-app tasks.</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <h4 class="step-title">Service Discovery</h4>
+                        <p class="step-description">Framework automatically discovers service dependencies and communication patterns to understand impact of changes across services.</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">
+                            <i class="fas fa-sync"></i>
+                        </div>
+                        <h4 class="step-title">Coordinated Updates</h4>
+                        <p class="step-description">AI coordinates updates across multiple services, ensuring API contracts remain consistent and database migrations are synchronized.</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">4</div>
+                        <div class="step-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <h4 class="step-title">Integration Testing</h4>
+                        <p class="step-description">Framework manages integration testing across services, validates service-to-service communication, and ensures end-to-end functionality.</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">5</div>
+                        <div class="step-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h4 class="step-title">Documentation Sync</h4>
+                        <p class="step-description">Automatically synchronizes documentation across all services, updating API specs, architecture diagrams, and deployment guides.</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">6</div>
+                        <div class="step-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4 class="step-title">Coordinated Deployment</h4>
+                        <p class="step-description">Manages deployment orchestration across all services with proper dependency management and rollback strategies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Guide -->
+    <section class="implementation-guide">
+        <div class="container">
+            <h2 class="section-title">Implementation Guide</h2>
+
+            <div class="guide-section">
+                <h3 class="guide-title">
+                    <i class="fas fa-cogs"></i>
+                    Multi-Application Setup
+                </h3>
+                <p class="guide-content">
+                    Setting up the framework for multiple applications requires careful configuration of service relationships and communication patterns.
+                </p>
+
+                <div class="code-example">
+                    <div class="code-header">
+                        <span class="code-title">Multi-App Setup Commands</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code class="language-bash"># Initialize the framework
+python tools/setup-wizard.py
+
+# Generate multi-application structure
+python tools/app-generator.py --type multi --apps frontend,product-service,user-service,payment-service,order-service,analytics-service
+
+# Configure service relationships
+python tools/config-generator.py --type microservices --services-config services.json</code></pre>
+                </div>
+            </div>
+
+            <div class="guide-section">
+                <h3 class="guide-title">
+                    <i class="fas fa-file-alt"></i>
+                    Service-Specific AI_RULES.md
+                </h3>
+                <p class="guide-content">
+                    Each service maintains its own AI_RULES.md while inheriting platform-wide rules. This ensures consistency while allowing service-specific customization.
+                </p>
+
+                <div class="code-example">
+                    <div class="code-header">
+                        <span class="code-title">Frontend Service Rules</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code class="language-markdown"># AI RULES - Frontend Service
+
+## React/Next.js Specific Rules
+- Use App Router for routing
+- Implement server-side rendering for SEO
+- Use React Query for data fetching
+- Implement proper loading states
+- Follow Next.js best practices
+
+## State Management
+- Use Zustand for client-side state
+- Implement proper hydration
+- Use React Context for theme management
+- Implement optimistic updates
+
+## API Integration
+- Use tRPC for type-safe API calls
+- Implement proper error handling
+- Use React Query for caching
+- Implement retry logic for failed requests
+
+## Performance
+- Implement code splitting
+- Use Next.js Image component
+- Implement proper caching headers
+- Monitor Core Web Vitals</code></pre>
+                </div>
+            </div>
+
+            <div class="guide-section">
+                <h3 class="guide-title">
+                    <i class="fas fa-network-wired"></i>
+                    Cross-Service Communication
+                </h3>
+                <p class="guide-content">
+                    The framework manages API contracts, event schemas, and communication patterns between services to ensure reliable cross-service interactions.
+                </p>
+
+                <div class="code-example">
+                    <div class="code-header">
+                        <span class="code-title">Service Communication Patterns</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code class="language-yaml"># Service Communication Configuration
+services:
+  frontend:
+    type: frontend
+    communicates_with:
+      - product-service
+      - user-service
+      - order-service
+    api_pattern: REST
+    auth_pattern: JWT
+
+  product-service:
+    type: backend
+    communicates_with:
+      - user-service
+      - analytics-service
+    api_pattern: REST
+    database: PostgreSQL
+    cache: Redis
+
+  user-service:
+    type: backend
+    communicates_with:
+      - payment-service
+      - analytics-service
+    api_pattern: GraphQL
+    database: MongoDB
+    auth: OAuth2
+
+event_driven:
+  - service: order-service
+    events: ["order.created", "order.updated", "order.cancelled"]
+    consumers: ["analytics-service", "payment-service"]</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cross-App Features -->
+    <section class="section">
+        <div class="container">
+            <div class="cross-app-features">
+                <h2 class="features-title">Cross-Application Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <h3 class="feature-title">Unified Navigation</h3>
+                        <p class="feature-description">AI navigates seamlessly across all applications using a unified documentation structure that maintains context awareness.</p>
+                        <ul class="feature-benefits">
+                            <li>Cross-service documentation linking</li>
+                            <li>Unified search across all services</li>
+                            <li>Context-aware navigation</li>
+                            <li>Service dependency mapping</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <h3 class="feature-title">API Contract Management</h3>
+                        <p class="feature-description">Automatically manages API contracts and ensures consistency across all service interfaces and communication protocols.</p>
+                        <ul class="feature-benefits">
+                            <li>Automatic API documentation generation</li>
+                            <li>Contract validation between services</li>
+                            <li>Version management for APIs</li>
+                            <li>Breaking change detection</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="feature-title">Shared Data Management</h3>
+                        <p class="feature-description">Manages shared data schemas, database migrations, and data consistency across multiple services and databases.</p>
+                        <ul class="feature-benefits">
+                            <li>Coordinated database migrations</li>
+                            <li>Shared schema management</li>
+                            <li>Data consistency validation</li>
+                            <li>Cross-service data relationships</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3 class="feature-title">Unified Error Management</h3>
+                        <p class="feature-description">Centralized error management system that tracks issues across all services and provides unified resolution workflows.</p>
+                        <ul class="feature-benefits">
+                            <li>Cross-service error correlation</li>
+                            <li>Unified error categorization</li>
+                            <li>Coordinated issue resolution</li>
+                            <li>Platform-wide error analytics</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="feature-title">Coordinated Deployment</h3>
+                        <p class="feature-description">Manages deployment orchestration across all services with proper dependency management and rollback capabilities.</p>
+                        <ul class="feature-benefits">
+                            <li>Deployment dependency management</li>
+                            <li>Coordinated rollbacks</li>
+                            <li>Service health monitoring</li>
+                            <li>Automated deployment pipelines</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="feature-title">Platform Analytics</h3>
+                        <p class="feature-description">Collects and analyzes metrics across all services to provide insights into platform performance and user experience.</p>
+                        <ul class="feature-benefits">
+                            <li>Cross-service performance metrics</li>
+                            <li>Unified monitoring dashboard</li>
+                            <li>Platform-wide health checks</li>
+                            <li>Automated performance optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Setup -->
+    <section class="quick-setup">
+        <div class="container">
+            <h2 class="setup-title">Get Started with Multi-App Example</h2>
+            <p>Ready to implement the AI Documentation Framework for your multi-application project? Follow these setup commands.</p>
+
+            <div class="setup-commands">
+                <div class="setup-command">git clone https://github.com/zsarir/ai-doc-framework.git</div>
+                <div class="setup-command">cd ai-doc-framework</div>
+                <div class="setup-command">pip install -r requirements.txt</div>
+                <div class="setup-command">python tools/setup-wizard.py</div>
+                <div class="setup-command">python tools/app-generator.py --type multi --apps web,api,admin</div>
+            </div>
+
+            <a href="../guides/installation.html" class="setup-btn">
+                <i class="fas fa-arrow-right"></i>
+                View Full Installation Guide
+            </a>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js"></script>
+    <script>
+        function copyCode(button) {
+            const codeBlock = button.closest('.code-example');
+            const code = codeBlock.querySelector('code').textContent;
+
+            navigator.clipboard.writeText(code).then(() => {
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.style.background = '#10b981';
+
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '';
+                }, 2000);
+            });
+        }
+
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

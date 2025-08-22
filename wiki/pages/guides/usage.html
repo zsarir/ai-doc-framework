@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usage Guide - AI Documentation Framework</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <style>
+        .usage-hero {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .usage-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .usage-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .workflow-diagram {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+
+        .workflow-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .workflow-step {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border: 2px solid var(--border-color);
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -1rem;
+            left: 1rem;
+            background: var(--primary-color);
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .step-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .step-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .arrow {
+            display: none;
+        }
+
+        .command-examples {
+            background: var(--bg-tertiary);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin: 3rem 0;
+        }
+
+        .command-category {
+            margin-bottom: 3rem;
+        }
+
+        .command-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .command-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .command-card {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .command-prompt {
+            background: #1e1e1e;
+            color: #00ff00;
+            padding: 0.5rem;
+            border-radius: var(--border-radius);
+            font-family: 'Courier New', monospace;
+            margin-bottom: 0.5rem;
+        }
+
+        .command-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .navigation-guide {
+            margin: 4rem 0;
+        }
+
+        .nav-patterns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .nav-pattern {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .nav-pattern-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-steps {
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-steps li {
+            padding: 0.75rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-secondary);
+            border-left: 2px solid var(--border-color);
+        }
+
+        .nav-steps li::before {
+            content: "→";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .nav-steps li.active {
+            border-left-color: var(--primary-color);
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .ai-prompts {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin: 3rem 0;
+        }
+
+        .prompt-category {
+            margin-bottom: 2rem;
+        }
+
+        .prompt-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .prompt-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .prompt-example {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .interactive-demo {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .demo-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .demo-scene {
+            background: #1e1e1e;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin: 2rem 0;
+            font-family: 'Courier New', monospace;
+            position: relative;
+        }
+
+        .demo-label {
+            position: absolute;
+            top: -1rem;
+            left: 1rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--border-radius);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .demo-content {
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .demo-highlight {
+            color: #00ff00;
+            font-weight: bold;
+        }
+
+        .demo-ai {
+            color: #61dafb;
+            font-weight: bold;
+        }
+
+        .demo-system {
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+
+        .best-practices {
+            background: var(--bg-tertiary);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin: 3rem 0;
+        }
+
+        .practice-category {
+            margin-bottom: 2rem;
+        }
+
+        .practice-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .practice-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .practice-list li {
+            padding: 1rem;
+            background: var(--bg-primary);
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .practice-icon {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+        }
+
+        .practice-text {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .practice-detail {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .usage-hero h1 {
+                font-size: 2rem;
+            }
+
+            .workflow-steps,
+            .command-grid,
+            .nav-patterns,
+            .prompt-examples {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-robot"></i>
+                <span>AI Doc Framework</span>
+            </div>
+            <div class="nav-menu">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../guides/installation.html" class="nav-link">Installation</a>
+                <a href="#usage" class="nav-link active">Usage</a>
+                <a href="../guides/configuration.html" class="nav-link">Configuration</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="usage-hero">
+        <div class="container">
+            <h1><i class="fas fa-play"></i> Usage Guide</h1>
+            <p>Learn how to effectively use the AI Documentation Framework to optimize your development workflow and documentation management.</p>
+        </div>
+    </section>
+
+    <!-- Basic Workflow -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-route"></i>
+                Basic Workflow
+            </h2>
+            <p class="section-description">The framework follows a simple but powerful workflow that AI assistants can follow automatically.</p>
+
+            <div class="workflow-diagram">
+                <h3>Framework Workflow Overview</h3>
+                <div class="workflow-steps">
+                    <div class="workflow-step">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">
+                            <i class="fas fa-folder-plus"></i>
+                        </div>
+                        <h4 class="step-title">Setup</h4>
+                        <p class="step-description">Initialize the framework for your project using the setup wizard or manual configuration.</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h4 class="step-title">Task Execution</h4>
+                        <p class="step-description">Use START_TASK.md for AI task initiation and automatic navigation through documentation.</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h4 class="step-title">Documentation</h4>
+                        <p class="step-description">AI automatically navigates and updates documentation based on task requirements.</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">4</div>
+                        <div class="step-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h4 class="step-title">Error Management</h4>
+                        <p class="step-description">Errors are automatically documented and searchable for future reference.</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">5</div>
+                        <div class="step-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h4 class="step-title">Issue Tracking</h4>
+                        <p class="step-description">Incomplete tasks and unresolved errors are tracked for systematic resolution.</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">6</div>
+                        <div class="step-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h4 class="step-title">Completion</h4>
+                        <p class="step-description">Use COMPLETE_TASK.md for task finalization and cleanup.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Command Examples -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-terminal"></i>
+                AI Command Examples
+            </h2>
+            <p class="section-description">Common commands and prompts that AI assistants should use with the framework.</p>
+
+            <div class="command-examples">
+                <div class="command-category">
+                    <h3 class="command-title">
+                        <i class="fas fa-play-circle"></i>
+                        Task Initiation Commands
+                    </h3>
+                    <div class="command-grid">
+                        <div class="command-card">
+                            <div class="command-prompt">"Execute task for web-app: Update user authentication"</div>
+                            <div class="command-description">Start a specific task for a single application</div>
+                        </div>
+                        <div class="command-card">
+                            <div class="command-prompt">"Execute system-wide task: Deploy all applications to production"</div>
+                            <div class="command-description">Initiate a task that affects multiple applications</div>
+                        </div>
+                        <div class="command-card">
+                            <div class="command-prompt">"Work on api-service: Add rate limiting to endpoints"</div>
+                            <div class="command-description">Focus on a specific application with clear scope</div>
+                        </div>
+                        <div class="command-card">
+                            <div class="command-prompt">"Update authentication system across all apps"</div>
+                            <div class="command-description">Cross-application task with specific requirements</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-category">
+                    <h3 class="command-title">
+                        <i class="fas fa-search"></i>
+                        Documentation Navigation Commands
+                    </h3>
+                    <div class="command-grid">
+                        <div class="command-card">
+                            <div class="command-prompt">"Check error history for: database connection issues"</div>
+                            <div class="command-description">Search through documented error solutions</div>
+                        </div>
+                        <div class="command-card">
+                            <div class="command-prompt">"Look for previous solutions to: API timeout errors"</div>
+                            <div class="command-description">Find similar problems and their resolutions</div>
+                        </div>
+                        <div class="command-card">
+                            <div class="command-prompt">"Search error documentation for: memory leaks"</div>
+                            <div class="command-description">Navigate to relevant error documentation</div>
+                        </div>
+                        <div class="command-card">
+                            <div class="command-prompt">"Review authentication patterns in security docs"</div>
+                            <div class="command-description">Access specific documentation sections</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-category">
+                    <h3 class="command-title">
+                        <i class="fas fa-clipboard-check"></i>
+                        Task Completion Commands
+                    </h3>
+                    <div class="command-grid">
+                        <div class="command-card">
+                            <div class="command-prompt">"Task completed successfully - user authentication updated"</div>
+                            <div class="command-description">Report successful task completion</div>
+                        </div>
+                        <div class="command-card">
+                            <div class="command-prompt">"All changes implemented and tested"</div>
+                            <div class="command-description">Confirm all requirements are met</div>
+                        </div>
+                        <div class="command-card">
+                            <div class="command-prompt">"System updated and documentation refreshed"</div>
+                            <div class="command-description">Indicate documentation updates are complete</div>
+                        </div>
+                        <div class="command-card">
+                            <div class="command-prompt">"Log incomplete task: Database migration requires review"</div>
+                            <div class="command-description">Report tasks that need human intervention</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Guide -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-compass"></i>
+                AI Navigation Guide
+            </h2>
+            <p class="section-description">How AI assistants automatically navigate documentation based on task requirements.</p>
+
+            <div class="navigation-guide">
+                <div class="nav-patterns">
+                    <div class="nav-pattern">
+                        <h3 class="nav-pattern-title">
+                            <i class="fas fa-mobile-alt"></i>
+                            Single Application Tasks
+                        </h3>
+                        <ol class="nav-steps">
+                            <li class="active">Read web/START_TASK.md</li>
+                            <li>Validate web application system integrity</li>
+                            <li>Check for open web-specific issues</li>
+                            <li>Read web/AI_RULES.md for web-specific rules</li>
+                            <li>Navigate web documentation using web/docs/AI_APP_GUIDE.md</li>
+                            <li>Search web error history</li>
+                            <li>Execute task</li>
+                            <li>Use web/COMPLETE_TASK.md for completion</li>
+                        </ol>
+                    </div>
+
+                    <div class="nav-pattern">
+                        <h3 class="nav-pattern-title">
+                            <i class="fas fa-network-wired"></i>
+                            Multi-Application Tasks
+                        </h3>
+                        <ol class="nav-steps">
+                            <li class="active">Read root START_TASK.md</li>
+                            <li>Validate entire system integrity</li>
+                            <li>Check for open issues across all applications</li>
+                            <li>Read root AI_RULES.md for project-wide rules</li>
+                            <li>Navigate project documentation using docs/AI_APP_GUIDE.md</li>
+                            <li>Search error history across all applications</li>
+                            <li>Coordinate task execution across applications</li>
+                            <li>Use root COMPLETE_TASK.md for completion</li>
+                        </ol>
+                    </div>
+
+                    <div class="nav-pattern">
+                        <h3 class="nav-pattern-title">
+                            <i class="fas fa-search"></i>
+                            Error Investigation
+                        </h3>
+                        <ol class="nav-steps">
+                            <li class="active">Search existing errors in error-management/MASTER_ERROR_INDEX.md</li>
+                            <li>Check category-specific errors in error-management/[category]/ERROR_INDEX.md</li>
+                            <li>Document new errors using the error template</li>
+                            <li>Update error indices with new solutions</li>
+                            <li>Apply known solutions if available</li>
+                            <li>Document resolution process</li>
+                            <li>Update related documentation</li>
+                        </ol>
+                    </div>
+
+                    <div class="nav-pattern">
+                        <h3 class="nav-pattern-title">
+                            <i class="fas fa-file-alt"></i>
+                            Documentation Updates
+                        </h3>
+                        <ol class="nav-steps">
+                            <li class="active">Identify documentation requiring updates</li>
+                            <li>Read current documentation structure</li>
+                            <li>Update relevant sections based on changes</li>
+                            <li>Validate documentation accuracy</li>
+                            <li>Update AI_APP_GUIDE.md navigation</li>
+                            <li>Update VERSION.md with changes</li>
+                            <li>Refresh error documentation if needed</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Prompts Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-robot"></i>
+                Recommended AI Prompts
+            </h2>
+            <p class="section-description">Suggested prompts for different scenarios and use cases.</p>
+
+            <div class="ai-prompts">
+                <div class="prompt-category">
+                    <h3 class="prompt-title">Task Initiation</h3>
+                    <div class="prompt-examples">
+                        <div class="prompt-example">"Execute task for [app-name]: [task description]"</div>
+                        <div class="prompt-example">"Work on [app-name] application: [task description]"</div>
+                        <div class="prompt-example">"Update [app-name]: [specific change]"</div>
+                        <div class="prompt-example">"Execute system-wide task: [task description]"</div>
+                        <div class="prompt-example">"Update all applications: [task description]"</div>
+                        <div class="prompt-example">"Deploy entire project: [deployment details]"</div>
+                    </div>
+                </div>
+
+                <div class="prompt-category">
+                    <h3 class="prompt-title">Error Resolution</h3>
+                    <div class="prompt-examples">
+                        <div class="prompt-example">"Check error history for: [error description]"</div>
+                        <div class="prompt-example">"Look for previous solutions to: [problem]"</div>
+                        <div class="prompt-example">"Search error documentation for: [symptom]"</div>
+                        <div class="prompt-example">"Document this error: [error details]"</div>
+                        <div class="prompt-example">"Add error to [category]: [error description]"</div>
+                    </div>
+                </div>
+
+                <div class="prompt-category">
+                    <h3 class="prompt-title">Issue Management</h3>
+                    <div class="prompt-examples">
+                        <div class="prompt-example">"Log incomplete task: [task description] - [reason]"</div>
+                        <div class="prompt-example">"Create issue for: [problem description]"</div>
+                        <div class="prompt-example">"Check for open issues before starting"</div>
+                        <div class="prompt-example">"Mark issue as resolved: [issue-id]"</div>
+                        <div class="prompt-example">"Close issue: [issue-id] - [resolution]"</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-play"></i>
+                Interactive Demo
+            </h2>
+            <p class="section-description">See how the framework works in practice with this interactive demonstration.</p>
+
+            <div class="interactive-demo">
+                <h3 class="demo-title">AI-Assisted Task Execution Demo</h3>
+
+                <div class="demo-scene">
+                    <div class="demo-label">Human Request</div>
+                    <div class="demo-content">
+<span class="demo-ai">Human:</span> "Update the user authentication system to include two-factor authentication"
+                    </div>
+                </div>
+
+                <div class="demo-scene">
+                    <div class="demo-label">AI Navigation</div>
+                    <div class="demo-content">
+<span class="demo-ai">AI:</span> Reading START_TASK.md to understand task initiation protocol...<br>
+<span class="demo-system">System:</span> Task recognized as multi-application update<br>
+<span class="demo-ai">AI:</span> Checking AI_RULES.md for authentication-specific guidelines...<br>
+<span class="demo-ai">AI:</span> Searching error-management for previous authentication issues...<br>
+<span class="demo-ai">AI:</span> Navigating to security documentation in docs/ folder...
+                    </div>
+                </div>
+
+                <div class="demo-scene">
+                    <div class="demo-label">Task Execution</div>
+                    <div class="demo-content">
+<span class="demo-ai">AI:</span> Found existing authentication patterns - updating with 2FA requirements<br>
+<span class="demo-ai">AI:</span> Updating web application authentication module...<br>
+<span class="demo-ai">AI:</span> Updating API authentication endpoints...<br>
+<span class="demo-ai">AI:</span> Updating mobile app authentication flow...<br>
+<span class="demo-ai">AI:</span> Testing authentication across all applications...
+                    </div>
+                </div>
+
+                <div class="demo-scene">
+                    <div class="demo-label">Documentation Update</div>
+                    <div class="demo-content">
+<span class="demo-ai">AI:</span> Updating SECURITY.md with 2FA implementation details...<br>
+<span class="demo-ai">AI:</span> Adding new error handling for 2FA failures...<br>
+<span class="demo-ai">AI:</span> Updating API documentation with new endpoints...<br>
+<span class="demo-ai">AI:</span> Refreshing VERSION.md with authentication changes...
+                    </div>
+                </div>
+
+                <div class="demo-scene">
+                    <div class="demo-label">Task Completion</div>
+                    <div class="demo-content">
+<span class="demo-ai">AI:</span> Reading COMPLETE_TASK.md for finalization protocol...<br>
+<span class="demo-system">System:</span> Running cleanup automation - removing debug code...<br>
+<span class="demo-ai">AI:</span> Validating system integrity across all applications...<br>
+<span class="demo-ai">AI:</span> Updating issue tracking - marking task as complete...<br>
+<span class="demo-highlight">✅ Task completed successfully - 2FA authentication system implemented</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Practices -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-star"></i>
+                Best Practices
+            </h2>
+            <p class="section-description">Guidelines for getting the most out of the AI Documentation Framework.</p>
+
+            <div class="best-practices">
+                <div class="practice-category">
+                    <h3 class="practice-title">For AI Assistants</h3>
+                    <ul class="practice-list">
+                        <li>
+                            <div class="practice-text">
+                                <i class="fas fa-check-circle practice-icon"></i>
+                                Always start with START_TASK.md
+                            </div>
+                            <div class="practice-detail">Never skip the initialization protocol - it ensures proper system setup and integrity validation.</div>
+                        </li>
+                        <li>
+                            <div class="practice-text">
+                                <i class="fas fa-search practice-icon"></i>
+                                Search error history first
+                            </div>
+                            <div class="practice-detail">Don't repeat known solutions - always check existing error documentation before implementing fixes.</div>
+                        </li>
+                        <li>
+                            <div class="practice-text">
+                                <i class="fas fa-file-alt practice-icon"></i>
+                                Document everything
+                            </div>
+                            <div class="practice-detail">Keep the knowledge base updated with new solutions, errors, and patterns discovered during tasks.</div>
+                        </li>
+                        <li>
+                            <div class="practice-text">
+                                <i class="fas fa-broom practice-icon"></i>
+                                Use the cleanup system
+                            </div>
+                            <div class="practice-detail">Always run cleanup automation to remove temporary files and debug code after task completion.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="practice-category">
+                    <h3 class="practice-title">For Developers</h3>
+                    <ul class="practice-list">
+                        <li>
+                            <div class="practice-text">
+                                <i class="fas fa-cogs practice-icon"></i>
+                                Customize AI_RULES.md
+                            </div>
+                            <div class="practice-detail">Add project-specific rules, constraints, and requirements to guide AI behavior.</div>
+                        </li>
+                        <li>
+                            <div class="practice-text">
+                                <i class="fas fa-sync practice-icon"></i>
+                                Keep documentation updated
+                            </div>
+                            <div class="practice-detail">Regularly review and update documentation to maintain accuracy and relevance.</div>
+                        </li>
+                        <li>
+                            <div class="practice-text">
+                                <i class="fas fa-clipboard-list practice-icon"></i>
+                                Review issue tracking
+                            </div>
+                            <div class="practice-detail">Regularly check and resolve issues logged by the AI assistant to maintain system health.</div>
+                        </li>
+                        <li>
+                            <div class="practice-text">
+                                <i class="fas fa-chart-line practice-icon"></i>
+                                Monitor effectiveness
+                            </div>
+                            <div class="practice-detail">Track framework performance metrics and adjust configuration as needed.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script>
+        // Add smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Interactive demo animation
+        function animateDemo() {
+            const demoScenes = document.querySelectorAll('.demo-scene');
+            let currentScene = 0;
+
+            function showNextScene() {
+                demoScenes.forEach((scene, index) => {
+                    if (index === currentScene) {
+                        scene.style.opacity = '1';
+                        scene.style.transform = 'translateY(0)';
+                    } else {
+                        scene.style.opacity = '0.3';
+                        scene.style.transform = 'translateY(20px)';
+                    }
+                });
+
+                currentScene = (currentScene + 1) % demoScenes.length;
+            }
+
+            // Initialize demo scenes
+            demoScenes.forEach((scene, index) => {
+                scene.style.opacity = index === 0 ? '1' : '0.3';
+                scene.style.transform = index === 0 ? 'translateY(0)' : 'translateY(20px)';
+                scene.style.transition = 'all 0.5s ease';
+            });
+
+            // Auto-play demo
+            setInterval(showNextScene, 3000);
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            animateDemo();
+        });
+    </script>
+</body>
+</html>

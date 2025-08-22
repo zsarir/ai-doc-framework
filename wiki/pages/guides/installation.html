@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation Guide - AI Documentation Framework</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <style>
+        .installation-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .installation-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .installation-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .requirement-card {
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .requirement-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .requirement-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .requirement-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .requirement-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .requirement-list li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .requirement-list li::before {
+            content: "✓";
+            color: var(--success-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .installation-methods {
+            margin: 4rem 0;
+        }
+
+        .method-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .method-tab {
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .method-tab.active,
+        .method-tab:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .method-content {
+            display: none;
+            background: var(--bg-primary);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .method-content.active {
+            display: block;
+        }
+
+        .step-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .step-card {
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            border-left: 4px solid var(--primary-color);
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -1rem;
+            left: 1rem;
+            background: var(--primary-color);
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .code-block {
+            background: #1e1e1e;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            position: relative;
+        }
+
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .code-title {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .copy-btn {
+            background: #333;
+            border: none;
+            color: #888;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .copy-btn:hover {
+            background: #555;
+            color: white;
+        }
+
+        .troubleshooting-section {
+            background: var(--bg-tertiary);
+            padding: 3rem;
+            border-radius: var(--border-radius-lg);
+            margin: 3rem 0;
+        }
+
+        .troubleshooting-title {
+            font-size: 2rem;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .issue-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .issue-card {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .issue-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--error-color);
+            margin-bottom: 1rem;
+        }
+
+        .issue-solution {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .quick-start-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 2rem;
+        }
+
+        .quick-start-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        @media (max-width: 768px) {
+            .installation-hero h1 {
+                font-size: 2rem;
+            }
+
+            .requirements-grid,
+            .step-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .method-tabs {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-robot"></i>
+                <span>AI Doc Framework</span>
+            </div>
+            <div class="nav-menu">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="#installation" class="nav-link active">Installation</a>
+                <a href="../guides/usage.html" class="nav-link">Usage</a>
+                <a href="../guides/configuration.html" class="nav-link">Configuration</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="installation-hero">
+        <div class="container">
+            <h1><i class="fas fa-download"></i> Installation Guide</h1>
+            <p>Get started with the AI Documentation Framework in minutes. Choose your preferred installation method and follow our step-by-step guide.</p>
+        </div>
+    </section>
+
+    <!-- Prerequisites -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-list-check"></i>
+                Prerequisites
+            </h2>
+            <p class="section-description">Ensure your system meets these requirements before installing the framework.</p>
+
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3 class="requirement-title">Python Environment</h3>
+                    <ul class="requirement-list">
+                        <li>Python 3.8 or higher</li>
+                        <li>pip package manager</li>
+                        <li>Virtual environment support</li>
+                        <li>Git for version control</li>
+                    </ul>
+                </div>
+
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="requirement-title">System Requirements</h3>
+                    <ul class="requirement-list">
+                        <li>Linux, macOS, or Windows</li>
+                        <li>50MB free disk space</li>
+                        <li>Internet connection for installation</li>
+                        <li>Terminal/Command prompt access</li>
+                    </ul>
+                </div>
+
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="requirement-title">Development Tools</h3>
+                    <ul class="requirement-list">
+                        <li>Git installed and configured</li>
+                        <li>Text editor or IDE</li>
+                        <li>Command line interface</li>
+                        <li>Web browser for documentation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Methods -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-cogs"></i>
+                Installation Methods
+            </h2>
+
+            <div class="method-tabs">
+                <button class="method-tab active" onclick="showMethod('git')">Git Clone</button>
+                <button class="method-tab" onclick="showMethod('download')">Direct Download</button>
+                <button class="method-tab" onclick="showMethod('pip')">Pip Install</button>
+                <button class="method-tab" onclick="showMethod('docker')">Docker</button>
+            </div>
+
+            <!-- Git Clone Method -->
+            <div id="git-method" class="method-content active">
+                <h3><i class="fab fa-git-alt"></i> Git Clone Method (Recommended)</h3>
+                <p>This method provides the latest development version and allows easy updates.</p>
+
+                <div class="step-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h4 class="step-title">Clone Repository</h4>
+                        <p>Download the framework from GitHub using Git clone.</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Terminal</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-bash">git clone https://github.com/zsarir/ai-doc-framework.git
+cd ai-doc-framework</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h4 class="step-title">Install Dependencies</h4>
+                        <p>Install the required Python packages using pip.</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Terminal</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-bash">pip install -r requirements.txt</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h4 class="step-title">Run Setup Wizard</h4>
+                        <p>Execute the interactive setup wizard to configure your project.</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Terminal</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-bash">python tools/setup-wizard.py</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h4 class="step-title">Verify Installation</h4>
+                        <p>Test that everything is working correctly.</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Terminal</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-bash">python tools/validator.py --check-system</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Direct Download Method -->
+            <div id="download-method" class="method-content">
+                <h3><i class="fas fa-download"></i> Direct Download Method</h3>
+                <p>Download and extract the framework as a ZIP archive.</p>
+
+                <div class="step-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h4 class="step-title">Download Archive</h4>
+                        <p>Download the latest release from GitHub releases.</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Terminal</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-bash">wget https://github.com/zsarir/ai-doc-framework/archive/refs/tags/v1.0.0.zip
+unzip v1.0.0.zip
+cd ai-doc-framework-1.0.0</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h4 class="step-title">Install Requirements</h4>
+                        <p>Install the Python dependencies.</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Terminal</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-bash">pip install -r requirements.txt</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pip Install Method -->
+            <div id="pip-method" class="method-content">
+                <h3><i class="fas fa-box"></i> Pip Install Method</h3>
+                <p>Install directly from PyPI (when available).</p>
+
+                <div class="step-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h4 class="step-title">Install Package</h4>
+                        <p>Install the framework using pip.</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Terminal</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-bash">pip install ai-doc-framework</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h4 class="step-title">Initialize Project</h4>
+                        <p>Initialize the framework in your project.</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Terminal</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-bash">ai-doc-framework init</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Docker Method -->
+            <div id="docker-method" class="method-content">
+                <h3><i class="fab fa-docker"></i> Docker Method</h3>
+                <p>Run the framework in a Docker container.</p>
+
+                <div class="step-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h4 class="step-title">Pull Docker Image</h4>
+                        <p>Pull the official Docker image.</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Terminal</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-bash">docker pull ai-doc-framework:latest</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h4 class="step-title">Run Container</h4>
+                        <p>Run the framework in a container.</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">Terminal</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code class="language-bash">docker run -it --rm -v $(pwd):/workspace ai-doc-framework</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Setup Wizard -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-magic"></i>
+                Setup Wizard
+            </h2>
+            <p class="section-description">The interactive setup wizard guides you through project configuration.</p>
+
+            <div class="setup-demo">
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-title">Setup Wizard Demo</span>
+                    </div>
+                    <pre><code class="language-bash">$ python tools/setup-wizard.py
+
+🤖 AI Documentation Framework Setup Wizard
+==========================================
+
+Welcome! This wizard will help you configure the AI Documentation Framework.
+
+📋 Step 1: Project Type Selection
+   ├─ 1. Single Application
+   ├─ 2. Multi-Application
+   └─ 3. Custom Configuration
+
+Choose project type (1-3): 2
+
+🏗️  Step 2: Application Configuration
+Enter application names (comma-separated): web,api,admin
+
+🔧 Step 3: Framework Configuration
+   ├─ Web Framework: React
+   ├─ API Framework: FastAPI
+   └─ Admin Framework: Django
+
+✅ Configuration Complete!
+   ├─ Project structure created
+   ├─ Templates initialized
+   └─ Documentation ready
+
+🎉 Setup completed successfully!
+   └─ Run 'python tools/app-generator.py' to generate your applications</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Troubleshooting -->
+    <section class="troubleshooting-section">
+        <div class="container">
+            <h2 class="troubleshooting-title">
+                <i class="fas fa-wrench"></i>
+                Troubleshooting
+            </h2>
+
+            <div class="issue-grid">
+                <div class="issue-card">
+                    <h4 class="issue-title">Python Version Error</h4>
+                    <p class="issue-solution">
+                        <strong>Problem:</strong> "Python 3.8+ required" error<br>
+                        <strong>Solution:</strong> Upgrade Python using your package manager or download from python.org
+                    </p>
+                </div>
+
+                <div class="issue-card">
+                    <h4 class="issue-title">Permission Denied</h4>
+                    <p class="issue-solution">
+                        <strong>Problem:</strong> Cannot install packages<br>
+                        <strong>Solution:</strong> Use <code>pip install --user</code> or run with sudo (not recommended)
+                    </p>
+                </div>
+
+                <div class="issue-card">
+                    <h4 class="issue-title">Git Not Found</h4>
+                    <p class="issue-solution">
+                        <strong>Problem:</strong> Git command not found<br>
+                        <strong>Solution:</strong> Install Git or use direct download method
+                    </p>
+                </div>
+
+                <div class="issue-card">
+                    <h4 class="issue-title">Setup Wizard Fails</h4>
+                    <p class="issue-solution">
+                        <strong>Problem:</strong> Wizard exits with error<br>
+                        <strong>Solution:</strong> Check Python path and permissions, try manual setup
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start CTA -->
+    <section class="section">
+        <div class="container" style="text-align: center;">
+            <h2>Ready to Get Started?</h2>
+            <p>Once installation is complete, proceed to the usage guide to learn how to use the framework.</p>
+            <a href="../guides/usage.html" class="quick-start-btn">
+                <i class="fas fa-arrow-right"></i>
+                Continue to Usage Guide
+            </a>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    <script>
+        function showMethod(methodId) {
+            // Hide all method contents
+            const contents = document.querySelectorAll('.method-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.method-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Show selected method
+            document.getElementById(methodId + '-method').classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function copyCode(button) {
+            const codeBlock = button.closest('.code-block');
+            const code = codeBlock.querySelector('code').textContent;
+
+            navigator.clipboard.writeText(code).then(() => {
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.style.background = '#10b981';
+
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '';
+                }, 2000);
+            });
+        }
+
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

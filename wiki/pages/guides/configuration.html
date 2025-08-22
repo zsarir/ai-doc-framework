@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuration Guide - AI Documentation Framework</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <style>
+        .config-hero {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .config-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .config-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .config-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .config-type-card {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .config-type-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .config-type-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .config-type-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .config-type-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .config-type-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .config-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .config-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .config-features li::before {
+            content: "✓";
+            color: var(--success-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .config-files {
+            background: var(--bg-tertiary);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin: 3rem 0;
+        }
+
+        .config-file {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .config-file-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .config-file-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-family: 'Courier New', monospace;
+        }
+
+        .config-file-location {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .config-file-description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .config-json {
+            background: #1e1e1e;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            overflow-x: auto;
+        }
+
+        .json-key {
+            color: #9cdcfe;
+        }
+
+        .json-string {
+            color: #ce9178;
+        }
+
+        .json-number {
+            color: #b5cea8;
+        }
+
+        .json-boolean {
+            color: #569cd6;
+        }
+
+        .config-commands {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .command-section {
+            margin-bottom: 3rem;
+        }
+
+        .command-section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .command-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .command-example {
+            background: #1e1e1e;
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            position: relative;
+        }
+
+        .command-copy {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: #333;
+            border: none;
+            color: #888;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .command-copy:hover {
+            background: #555;
+            color: white;
+        }
+
+        .command-example pre {
+            margin: 0;
+            color: #e0e0e0;
+            font-size: 0.9rem;
+        }
+
+        .environment-variables {
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin: 3rem 0;
+        }
+
+        .env-category {
+            margin-bottom: 2rem;
+        }
+
+        .env-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .env-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .env-table th,
+        .env-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .env-table th {
+            background: var(--bg-tertiary);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .env-table tr:hover {
+            background: var(--bg-secondary);
+        }
+
+        .env-required {
+            color: var(--error-color);
+            font-weight: bold;
+        }
+
+        .env-optional {
+            color: var(--warning-color);
+        }
+
+        .framework-configs {
+            margin: 4rem 0;
+        }
+
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .framework-card {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .framework-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .framework-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .framework-card.react {
+            border-left: 4px solid #61dafb;
+        }
+
+        .framework-card.vue {
+            border-left: 4px solid #4fc08d;
+        }
+
+        .framework-card.angular {
+            border-left: 4px solid #dd0031;
+        }
+
+        .framework-card.django {
+            border-left: 4px solid #092e20;
+        }
+
+        .framework-card.fastapi {
+            border-left: 4px solid #009688;
+        }
+
+        .framework-card.flask {
+            border-left: 4px solid #000000;
+        }
+
+        .validation-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            margin: 3rem 0;
+        }
+
+        .validation-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .validation-tools {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .validation-tool {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .validation-tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .validation-tool-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .validation-tool-description {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .config-hero h1 {
+                font-size: 2rem;
+            }
+
+            .config-types,
+            .command-examples,
+            .framework-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .env-table {
+                font-size: 0.9rem;
+            }
+
+            .env-table th,
+            .env-table td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-robot"></i>
+                <span>AI Doc Framework</span>
+            </div>
+            <div class="nav-menu">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../guides/installation.html" class="nav-link">Installation</a>
+                <a href="../guides/usage.html" class="nav-link">Usage</a>
+                <a href="#configuration" class="nav-link active">Configuration</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="config-hero">
+        <div class="container">
+            <h1><i class="fas fa-cogs"></i> Configuration Guide</h1>
+            <p>Learn how to configure the AI Documentation Framework for your specific project needs, frameworks, and workflows.</p>
+        </div>
+    </section>
+
+    <!-- Configuration Types -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-layer-group"></i>
+                Configuration Types
+            </h2>
+            <p class="section-description">Choose the configuration type that best fits your project structure and requirements.</p>
+
+            <div class="config-types">
+                <div class="config-type-card">
+                    <div class="config-type-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3 class="config-type-title">Single Application</h3>
+                    <p class="config-type-description">Perfect for standalone applications with comprehensive documentation needs and focused development.</p>
+                    <ul class="config-features">
+                        <li>Streamlined documentation structure</li>
+                        <li>Focused error management</li>
+                        <li>Single application optimization</li>
+                        <li>Simplified navigation</li>
+                        <li>Fast setup and configuration</li>
+                    </ul>
+                </div>
+
+                <div class="config-type-card">
+                    <div class="config-type-icon">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+                    <h3 class="config-type-title">Multi-Application</h3>
+                    <p class="config-type-description">Ideal for microservices, full-stack applications, or complex systems with multiple interconnected services.</p>
+                    <ul class="config-features">
+                        <li>Shared and individual documentation</li>
+                        <li>Cross-application dependencies</li>
+                        <li>Coordinated error management</li>
+                        <li>Service discovery and communication</li>
+                        <li>Scalable architecture support</li>
+                    </ul>
+                </div>
+
+                <div class="config-type-card">
+                    <div class="config-type-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3 class="config-type-title">Custom Configuration</h3>
+                    <p class="config-type-description">Tailored for specific frameworks, languages, or architectures with custom requirements.</p>
+                    <ul class="config-features">
+                        <li>Framework-specific templates</li>
+                        <li>Custom rule definitions</li>
+                        <li>Flexible documentation structure</li>
+                        <li>Plugin architecture support</li>
+                        <li>Advanced customization options</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Configuration Files -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-file-alt"></i>
+                Configuration Files
+            </h2>
+            <p class="section-description">Essential configuration files and their structure for different project types.</p>
+
+            <div class="config-files">
+                <div class="config-file">
+                    <div class="config-file-header">
+                        <span class="config-file-name">ai-doc-config.json</span>
+                        <span class="config-file-location">Root directory</span>
+                    </div>
+                    <div class="config-file-description">Main configuration file containing project settings, application definitions, and framework preferences.</div>
+                    <div class="config-json">
+<pre><code>{
+  <span class="json-key">"project"</span>: {
+    <span class="json-key">"name"</span>: <span class="json-string">"My Awesome Project"</span>,
+    <span class="json-key">"type"</span>: <span class="json-string">"multi"</span>,
+    <span class="json-key">"root_path"</span>: <span class="json-string">"/path/to/project"</span>,
+    <span class="json-key">"description"</span>: <span class="json-string">"Full-stack web application"</span>
+  },
+  <span class="json-key">"applications"</span>: [
+    {
+      <span class="json-key">"name"</span>: <span class="json-string">"frontend"</span>,
+      <span class="json-key">"type"</span>: <span class="json-string">"spa"</span>,
+      <span class="json-key">"framework"</span>: <span class="json-string">"react"</span>,
+      <span class="json-key">"description"</span>: <span class="json-string">"React frontend application"</span>
+    },
+    {
+      <span class="json-key">"name"</span>: <span class="json-string">"backend"</span>,
+      <span class="json-key">"type"</span>: <span class="json-string">"api"</span>,
+      <span class="json-key">"framework"</span>: <span class="json-string">"fastapi"</span>,
+      <span class="json-key">"description"</span>: <span class="json-string">"FastAPI backend service"</span>
+    }
+  ]
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="config-file">
+                    <div class="config-file-header">
+                        <span class="config-file-name">AI_RULES.md</span>
+                        <span class="config-file-location">Root and application directories</span>
+                    </div>
+                    <div class="config-file-description">Application-specific rules and constraints that guide AI behavior and development practices.</div>
+                    <div class="config-json">
+<pre><code># AI RULES - Frontend Application
+## DEVELOPMENT GUIDELINES
+
+### Code Style
+- Use functional components with React hooks
+- Follow Airbnb JavaScript style guide
+- Implement TypeScript for type safety
+- Use ESLint and Prettier for code formatting
+
+### Architecture
+- Implement atomic design principles
+- Use custom hooks for business logic
+- Follow container/presentational pattern
+- Implement proper error boundaries
+
+### Security
+- Validate all user inputs
+- Use HTTPS for all API calls
+- Implement proper authentication checks
+- Sanitize data before rendering
+
+### Performance
+- Implement code splitting
+- Use lazy loading for components
+- Optimize bundle size
+- Implement proper caching strategies</code></pre>
+                    </div>
+                </div>
+
+                <div class="config-file">
+                    <div class="config-file-header">
+                        <span class="config-file-name">START_TASK.md</span>
+                        <span class="config-file-location">Root and application directories</span>
+                    </div>
+                    <div class="config-file-description">Task initialization protocol that AI assistants follow before starting any development work.</div>
+                    <div class="config-json">
+<pre><code># START TASK PROTOCOL
+
+## System Validation
+- [ ] Validate system integrity
+- [ ] Check for open issues
+- [ ] Review recent changes
+- [ ] Verify dependencies
+
+## Documentation Review
+- [ ] Read AI_RULES.md for project constraints
+- [ ] Review relevant documentation
+- [ ] Check error history
+- [ ] Understand current architecture
+
+## Task Preparation
+- [ ] Identify required changes
+- [ ] Plan implementation approach
+- [ ] Consider impact on other systems
+- [ ] Prepare rollback strategy
+
+## Ready for Task Execution
+All validations passed. Ready to proceed with task implementation.</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Configuration Commands -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-terminal"></i>
+                Configuration Commands
+            </h2>
+            <p class="section-description">Essential commands for setting up and managing framework configuration.</p>
+
+            <div class="config-commands">
+                <div class="command-section">
+                    <h3 class="command-section-title">
+                        <i class="fas fa-play"></i>
+                        Setup Commands
+                    </h3>
+                    <div class="command-examples">
+                        <div class="command-example">
+                            <button class="command-copy" onclick="copyCommand(this)">Copy</button>
+                            <pre>python tools/setup-wizard.py</pre>
+                        </div>
+                        <div class="command-example">
+                            <button class="command-copy" onclick="copyCommand(this)">Copy</button>
+                            <pre>python tools/app-generator.py --type single --name myapp</pre>
+                        </div>
+                        <div class="command-example">
+                            <button class="command-copy" onclick="copyCommand(this)">Copy</button>
+                            <pre>python tools/app-generator.py --type multi --apps web,api,admin</pre>
+                        </div>
+                        <div class="command-example">
+                            <button class="command-copy" onclick="copyCommand(this)">Copy</button>
+                            <pre>python tools/app-generator.py --type custom --config config.json</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-section">
+                    <h3 class="command-section-title">
+                        <i class="fas fa-check"></i>
+                        Validation Commands
+                    </h3>
+                    <div class="command-examples">
+                        <div class="command-example">
+                            <button class="command-copy" onclick="copyCommand(this)">Copy</button>
+                            <pre>python tools/validator.py --check-system</pre>
+                        </div>
+                        <div class="command-example">
+                            <button class="command-copy" onclick="copyCommand(this)">Copy</button>
+                            <pre>python tools/validator.py --check-config</pre>
+                        </div>
+                        <div class="command-example">
+                            <button class="command-copy" onclick="copyCommand(this)">Copy</button>
+                            <pre>python tools/validator.py --test-templates</pre>
+                        </div>
+                        <div class="command-example">
+                            <button class="command-copy" onclick="copyCommand(this)">Copy</button>
+                            <pre>python tools/validator.py --validate-docs</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-section">
+                    <h3 class="command-section-title">
+                        <i class="fas fa-cog"></i>
+                        Management Commands
+                    </h3>
+                    <div class="command-examples">
+                        <div class="command-example">
+                            <button class="command-copy" onclick="copyCommand(this)">Copy</button>
+                            <pre>python tools/maintenance.py --weekly</pre>
+                        </div>
+                        <div class="command-example">
+                            <button class="command-copy" onclick="copyCommand(this)">Copy</button>
+                            <pre>python tools/update-docs.py</pre>
+                        </div>
+                        <div class="command-example">
+                            <button class="command-copy" onclick="copyCommand(this)">Copy</button>
+                            <pre>python tools/backup.py --create</pre>
+                        </div>
+                        <div class="command-example">
+                            <button class="command-copy" onclick="copyCommand(this)">Copy</button>
+                            <pre>python tools/monitor.py --health-check</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Environment Variables -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-server"></i>
+                Environment Variables
+            </h2>
+            <p class="section-description">Configure the framework behavior using environment variables for different deployment scenarios.</p>
+
+            <div class="environment-variables">
+                <div class="env-category">
+                    <h3 class="env-title">Core Framework Settings</h3>
+                    <table class="env-table">
+                        <thead>
+                            <tr>
+                                <th>Variable</th>
+                                <th>Description</th>
+                                <th>Default</th>
+                                <th>Required</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>AI_DOC_FRAMEWORK_ROOT</code></td>
+                                <td>Root path of the project</td>
+                                <td>Current directory</td>
+                                <td class="env-optional">Optional</td>
+                            </tr>
+                            <tr>
+                                <td><code>AI_DOC_FRAMEWORK_TYPE</code></td>
+                                <td>Project type (single/multi/custom)</td>
+                                <td>auto-detect</td>
+                                <td class="env-optional">Optional</td>
+                            </tr>
+                            <tr>
+                                <td><code>AI_DOC_FRAMEWORK_APPS</code></td>
+                                <td>Comma-separated list of applications</td>
+                                <td>auto-detect</td>
+                                <td class="env-optional">Optional</td>
+                            </tr>
+                            <tr>
+                                <td><code>AI_DOC_FRAMEWORK_DEBUG</code></td>
+                                <td>Enable debug mode</td>
+                                <td>false</td>
+                                <td class="env-optional">Optional</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="env-category">
+                    <h3 class="env-title">Documentation Settings</h3>
+                    <table class="env-table">
+                        <thead>
+                            <tr>
+                                <th>Variable</th>
+                                <th>Description</th>
+                                <th>Default</th>
+                                <th>Required</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>AI_DOC_THEME</code></td>
+                                <td>Documentation theme</td>
+                                <td>default</td>
+                                <td class="env-optional">Optional</td>
+                            </tr>
+                            <tr>
+                                <td><code>AI_DOC_LANGUAGE</code></td>
+                                <td>Documentation language</td>
+                                <td>en</td>
+                                <td class="env-optional">Optional</td>
+                            </tr>
+                            <tr>
+                                <td><code>AI_DOC_AUTO_UPDATE</code></td>
+                                <td>Enable automatic documentation updates</td>
+                                <td>true</td>
+                                <td class="env-optional">Optional</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="env-category">
+                    <h3 class="env-title">Error Management</h3>
+                    <table class="env-table">
+                        <thead>
+                            <tr>
+                                <th>Variable</th>
+                                <th>Description</th>
+                                <th>Default</th>
+                                <th>Required</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>AI_ERROR_AUTO_LOG</code></td>
+                                <td>Automatically log errors</td>
+                                <td>true</td>
+                                <td class="env-optional">Optional</td>
+                            </tr>
+                            <tr>
+                                <td><code>AI_ERROR_CATEGORIES</code></td>
+                                <td>Comma-separated error categories</td>
+                                <td>backend,frontend,security</td>
+                                <td class="env-optional">Optional</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Framework Configurations -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-code"></i>
+                Framework-Specific Configurations
+            </h2>
+            <p class="section-description">Pre-configured settings for popular frameworks and technologies.</p>
+
+            <div class="framework-configs">
+                <div class="framework-grid">
+                    <div class="framework-card react">
+                        <div class="framework-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <h3>React Configuration</h3>
+                        <p>Optimized for React applications with TypeScript, Next.js, and modern tooling.</p>
+                        <ul class="config-features">
+                            <li>Component-based architecture</li>
+                            <li>Hooks and context patterns</li>
+                            <li>TypeScript integration</li>
+                            <li>Testing with Jest and React Testing Library</li>
+                            <li>Build optimization with Webpack</li>
+                        </ul>
+                    </div>
+
+                    <div class="framework-card vue">
+                        <div class="framework-icon">
+                            <i class="fab fa-vuejs"></i>
+                        </div>
+                        <h3>Vue.js Configuration</h3>
+                        <p>Tailored for Vue 3 applications with Composition API and modern development practices.</p>
+                        <ul class="config-features">
+                            <li>Composition API patterns</li>
+                            <li>Vue Router integration</li>
+                            <li>Pinia for state management</li>
+                            <li>Component testing with Vue Test Utils</li>
+                            <li>Vite build tooling</li>
+                        </ul>
+                    </div>
+
+                    <div class="framework-card angular">
+                        <div class="framework-icon">
+                            <i class="fab fa-angular"></i>
+                        </div>
+                        <h3>Angular Configuration</h3>
+                        <p>Structured for Angular applications with standalone components and modern architecture.</p>
+                        <ul class="config-features">
+                            <li>Standalone components</li>
+                            <li>Angular Material integration</li>
+                            <li>RxJS patterns</li>
+                            <li>Unit testing with Jasmine</li>
+                            <li>Angular CLI optimization</li>
+                        </ul>
+                    </div>
+
+                    <div class="framework-card django">
+                        <div class="framework-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h3>Django Configuration</h3>
+                        <p>Backend configuration for Django applications with REST framework and modern practices.</p>
+                        <ul class="config-features">
+                            <li>Django REST framework</li>
+                            <li>PostgreSQL/MongoDB integration</li>
+                            <li>Authentication and permissions</li>
+                            <li>Testing with pytest</li>
+                            <li>Docker containerization</li>
+                        </ul>
+                    </div>
+
+                    <div class="framework-card fastapi">
+                        <div class="framework-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>FastAPI Configuration</h3>
+                        <p>Modern Python API configuration with async support and automatic documentation.</p>
+                        <ul class="config-features">
+                            <li>Async/await patterns</li>
+                            <li>Automatic OpenAPI docs</li>
+                            <li>Pydantic validation</li>
+                            <li>WebSocket support</li>
+                            <li>Background tasks</li>
+                        </ul>
+                    </div>
+
+                    <div class="framework-card flask">
+                        <div class="framework-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3>Flask Configuration</h3>
+                        <p>Lightweight configuration for Flask applications with extensions and best practices.</p>
+                        <ul class="config-features">
+                            <li>Flask-SQLAlchemy integration</li>
+                            <li>JWT authentication</li>
+                            <li>Flask-RESTful API patterns</li>
+                            <li>Testing with pytest</li>
+                            <li>Gunicorn deployment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Validation and Testing -->
+    <section class="validation-section">
+        <div class="container">
+            <h2 class="validation-title">
+                <i class="fas fa-check-circle"></i>
+                Validation & Testing
+            </h2>
+
+            <div class="validation-tools">
+                <div class="validation-tool">
+                    <div class="validation-tool-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3 class="validation-tool-title">System Validation</h3>
+                    <p class="validation-tool-description">Comprehensive validation of framework installation and configuration to ensure everything is working correctly.</p>
+                </div>
+
+                <div class="validation-tool">
+                    <div class="validation-tool-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 class="validation-tool-title">Documentation Check</h3>
+                    <p class="validation-tool-description">Validate documentation structure, links, and completeness across all generated files and directories.</p>
+                </div>
+
+                <div class="validation-tool">
+                    <div class="validation-tool-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3 class="validation-tool-title">Error Management</h3>
+                    <p class="validation-tool-description">Verify error management system is properly configured with all necessary categories and templates.</p>
+                </div>
+
+                <div class="validation-tool">
+                    <div class="validation-tool-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3 class="validation-tool-title">Issue Tracking</h3>
+                    <p class="validation-tool-description">Ensure issue tracking system is properly set up with correct directory structure and templates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script>
+        function copyCommand(button) {
+            const commandText = button.nextElementSibling.textContent.trim();
+
+            navigator.clipboard.writeText(commandText).then(() => {
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.style.background = '#10b981';
+                button.style.color = 'white';
+
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '';
+                    button.style.color = '';
+                }, 2000);
+            });
+        }
+
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Syntax highlighting for JSON
+        document.addEventListener('DOMContentLoaded', function() {
+            Prism.highlightAll();
+        });
+    </script>
+</body>
+</html>
