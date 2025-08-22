@@ -2,11 +2,40 @@
 
 ## 🎯 Getting Started
 
+### 🚨 Critical: Understanding the Architecture
+
+Before using the framework, you **MUST** understand the file placement:
+
+#### ✅ CORRECT Project Structure
+```
+your-project/                     # 📍 PROJECT ROOT
+├── 🎯 ai-doc-config.json         # 🏛️ CENTRAL CONTROL FILE - Must be here!
+├── 📄 AI_RULES.md               # AI behavior rules
+├── 📄 START_TASK.md             # Task initialization
+├── 📄 COMPLETE_TASK.md          # Task completion
+├── 📁 docs/                     # Project documentation
+├── 📁 error-management/         # Error system
+├── 📁 issues/                   # Issue tracking
+└── 📁 [applications]/          # Your apps
+    ├── website/
+    ├── api/
+    └── database/
+```
+
+#### ❌ WRONG Placement (Will Cause Errors)
+```
+❌ your-project/
+   ├── 📁 docs/
+   │   └── ai-doc-config.json    # WRONG - Inside docs folder
+   └── 📁 src/
+       └── ai-doc-config.json    # WRONG - Inside src folder
+```
+
 ### Basic Workflow
 
 The AI Documentation Framework follows a simple but powerful workflow:
 
-1. **Setup** - Initialize the framework for your project
+1. **Setup** - Initialize the framework for your project (ensure `ai-doc-config.json` is in project root)
 2. **Task Execution** - Use START_TASK.md for AI task initiation
 3. **Documentation** - AI automatically navigates and updates documentation
 4. **Error Management** - Errors are documented and searchable

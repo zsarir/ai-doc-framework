@@ -1,177 +1,123 @@
-# AI Documentation Framework Website
+# 📖 AI Documentation Framework - Website Documentation
 
-This is the official website for the AI Documentation Framework project. The website is designed to be deployed on GitHub Pages and provides comprehensive information about the framework, its features, and usage.
+## 🌐 Website Structure
 
-## 🚀 Live Website
+This directory contains the complete website for the AI Documentation Framework, built with modern HTML, CSS, and JavaScript.
 
-The website is available at: [https://zsarir.github.io/ai-doc-framework/](https://zsarir.github.io/ai-doc-framework/)
-
-## 📁 Structure
+## 📁 Directory Structure
 
 ```
 docs/
-├── index.html                 # Homepage
-├── pages/
-│   ├── getting-started.html   # Getting Started Guide
-│   ├── documentation.html     # Complete Documentation
-│   └── examples.html          # Examples and Use Cases
-├── assets/
-│   ├── css/
-│   │   └── style.css         # Main stylesheet
-│   └── js/
-│       └── main.js           # Main JavaScript
-└── README.md                 # This file
+├── 📄 README.md              # This file
+├── 📄 index.html             # Homepage
+├── 📁 pages/                 # Individual pages
+│   ├── 📄 architecture.html  # 🏗️ ARCHITECTURE GUIDE
+│   ├── 📄 getting-started.html
+│   ├── 📄 documentation.html
+│   └── 📄 examples.html
+├── 📁 assets/                # Static assets
+│   ├── 📁 css/
+│   │   └── 📄 style.css      # Main stylesheet
+│   ├── 📁 js/                # JavaScript files
+│   └── 📁 images/           # Images and icons
+└── 📁 [other assets]
 ```
 
-## 🎨 Features
+## 🎯 Key Pages
 
-### Design
-- **Modern & Responsive**: Built with modern CSS and responsive design principles
-- **Interactive Elements**: Smooth animations, hover effects, and interactive components
-- **Professional Layout**: Clean, professional design optimized for readability
-- **Accessibility**: Built with accessibility best practices
+### 🏗️ Architecture Guide (`pages/architecture.html`)
+**📍 URL**: `/ai-doc-framework/docs/pages/architecture.html`
 
-### Pages
-1. **Homepage** (`index.html`)
-   - Hero section with key benefits
-   - Problem statement and solutions
-   - Feature overview
-   - Architecture diagram
-   - Call-to-action sections
+The most important page for understanding the framework:
 
-2. **Getting Started** (`pages/getting-started.html`)
-   - Quick start guide
-   - Installation options
-   - Interactive setup wizard
-   - System requirements
-   - Next steps
+- **📍 Critical File Placement**: Where `ai-doc-config.json` must be placed
+- **🎯 Deep Configuration**: Complete guide to configuration options
+- **🔄 System Flow**: How the framework processes tasks
+- **📊 File Relationships**: Dependencies and interactions
+- **🔧 Troubleshooting**: Solutions to common issues
+- **📈 Scaling**: Multi-application support
 
-3. **Documentation** (`pages/documentation.html`)
-   - Comprehensive documentation
-   - Searchable content
-   - Code examples
-   - API reference
-   - Best practices
+### 🚀 Getting Started (`pages/getting-started.html`)
+Quick setup guide with step-by-step installation instructions.
 
-4. **Examples** (`pages/examples.html`)
-   - Real-world implementations
-   - Case studies
-   - Community examples
-   - Implementation guide
+### 📚 Documentation (`pages/documentation.html`)
+Complete documentation and usage examples.
 
-### Interactive Features
-- **Mobile Navigation**: Responsive hamburger menu
-- **Smooth Scrolling**: Animated scroll to sections
-- **Search Functionality**: Real-time search in documentation
-- **Filter System**: Filter examples by category
-- **Tab System**: Interactive tabs for code examples
-- **Setup Wizard**: Interactive configuration wizard
-- **Scroll Animations**: Elements animate on scroll
+### 💡 Examples (`pages/examples.html`)
+Practical examples and use cases.
 
-## 🛠️ Technologies Used
-
-- **HTML5**: Semantic markup
-- **CSS3**: Modern styling with CSS Grid, Flexbox, and custom properties
-- **JavaScript**: Interactive functionality and animations
-- **Font Awesome**: Icons
-- **Google Fonts**: Inter font family
-- **GitHub Pages**: Hosting platform
-
-## 🚀 Deployment
-
-### GitHub Pages
-1. Push the `docs/` folder to your repository
-2. Go to repository Settings > Pages
-3. Set source to "Deploy from a branch"
-4. Select the branch and set folder to `/docs`
-5. Save and wait for deployment
+## 🖥️ Running the Website
 
 ### Local Development
-1. Clone the repository
-2. Navigate to the `docs/` folder
-3. Open `index.html` in your browser
-4. Or use a local server:
-   ```bash
-   cd docs
-   python -m http.server 8000
-   # Then visit http://localhost:8000
-   ```
+```bash
+# Navigate to docs directory
+cd ai-doc-framework/docs
 
-## 📱 Responsive Design
+# Start a local server (Python 3)
+python -m http.server 8000
 
-The website is fully responsive and optimized for:
-- **Desktop**: 1200px+ (full layout)
-- **Tablet**: 768px - 1199px (adjusted layout)
-- **Mobile**: < 768px (mobile-first design)
+# Or using Node.js
+npx serve .
 
-## 🎯 Key Features
-
-### Performance
-- **Fast Loading**: Optimized CSS and JavaScript
-- **Lazy Loading**: Images and content load as needed
-- **Minimal Dependencies**: Only essential external resources
-
-### SEO
-- **Meta Tags**: Proper meta descriptions and keywords
-- **Semantic HTML**: Proper heading structure and semantic elements
-- **Open Graph**: Social media sharing optimization
-
-### User Experience
-- **Intuitive Navigation**: Clear navigation structure
-- **Visual Hierarchy**: Proper content organization
-- **Call-to-Actions**: Clear next steps for users
-- **Loading States**: Smooth transitions and loading indicators
-
-## 🔧 Customization
-
-### Colors
-The website uses CSS custom properties for easy color customization:
-```css
-:root {
-    --primary-color: #6366f1;
-    --secondary-color: #10b981;
-    --accent-color: #f59e0b;
-    /* ... more colors */
-}
+# Access the website at:
+# http://localhost:8000
 ```
 
-### Content
-- Update content in the HTML files
-- Modify styles in `assets/css/style.css`
-- Add functionality in `assets/js/main.js`
+### GitHub Pages
+The website is automatically deployed to GitHub Pages when pushed to the main branch.
 
-### Adding Pages
+**📍 Live URL**: `https://zsarir.github.io/ai-doc-framework/`
+
+## 🎨 Design Features
+
+- **📱 Responsive Design**: Works on all devices
+- **🎯 Modern UI**: Clean, professional interface
+- **⚡ Fast Loading**: Optimized for performance
+- **♿ Accessible**: WCAG compliant
+- **🌙 Dark Mode Ready**: CSS variables for theming
+
+## 🔧 Development
+
+### Adding New Pages
 1. Create new HTML file in `pages/` directory
-2. Follow the existing page structure
-3. Update navigation links
-4. Add page-specific styles if needed
+2. Follow the template structure from existing pages
+3. Add navigation link in `index.html`
+4. Update footer links if needed
 
-## 📊 Analytics
+### Styling Guidelines
+- Use CSS custom properties (variables)
+- Follow BEM methodology for class names
+- Maintain consistent spacing and typography
+- Test responsiveness on multiple devices
 
-To add analytics (Google Analytics, etc.):
-1. Add tracking code to the `<head>` section of all HTML files
-2. Or create a separate analytics include file
+### JavaScript Features
+- **Code Copy**: Copy code blocks to clipboard
+- **Smooth Scrolling**: Anchor link navigation
+- **Mobile Menu**: Responsive navigation toggle
+- **Interactive Elements**: Hover and focus states
 
-## 🤝 Contributing
+## 📊 SEO Optimization
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test on different devices and browsers
-5. Submit a pull request
+- **Meta Tags**: Complete meta information
+- **Structured Data**: JSON-LD schema markup
+- **Performance**: Optimized images and assets
+- **Accessibility**: ARIA labels and semantic HTML
 
-## 📄 License
+## 🔗 Important Links
 
-This website is part of the AI Documentation Framework project and is licensed under the MIT License.
+- **🏗️ Architecture Guide**: [`pages/architecture.html`](pages/architecture.html)
+- **🚀 Getting Started**: [`pages/getting-started.html`](pages/getting-started.html)
+- **📚 Documentation**: [`pages/documentation.html`](pages/documentation.html)
+- **💡 Examples**: [`pages/examples.html`](pages/examples.html)
+- **🏠 Homepage**: [`index.html`](index.html)
 
 ## 📞 Support
 
-For website-related issues or questions:
-- Create an issue on GitHub
-- Contact: z.sarir@gmail.com
-- Visit: https://plusonefx.net
+For issues with the website:
+- **GitHub Issues**: [Report Website Issues](https://github.com/zsarir/ai-doc-framework/issues)
+- **Architecture Questions**: Check [`pages/architecture.html`](pages/architecture.html)
+- **Setup Help**: Check [`pages/getting-started.html`](pages/getting-started.html)
 
 ---
 
-**Made with ❤️ for the AI-powered development community**
-
+**🎯 The Architecture Guide is the most critical page for understanding the framework's file placement and system design.**

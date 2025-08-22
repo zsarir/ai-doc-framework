@@ -650,11 +650,20 @@ Examples:
     def save_configuration(self):
         """Save configuration to file"""
         config_file = self.project_root / 'ai-doc-config.json'
-        
+
+        # Validate file location (must be in project root)
+        if str(config_file.parent) != str(self.project_root):
+            print(f"\n{Fore.RED}❌ ERROR: ai-doc-config.json must be saved in project root!{Style.RESET_ALL}")
+            print(f"   Expected: {self.project_root}/ai-doc-config.json")
+            print(f"   Attempted: {config_file}")
+            return False
+
         with open(config_file, 'w') as f:
             json.dump(self.config, f, indent=2)
-        
+
         print(f"\n{Fore.GREEN}✅ Configuration saved to: {config_file}{Style.RESET_ALL}")
+        print(f"   {Fore.BLUE}📍 File Location: Project Root (CORRECT){Style.RESET_ALL}")
+        return True
     
     def run(self):
         """Run the complete setup wizard"""
@@ -686,8 +695,11 @@ Examples:
             self.generate_app_specific_files()
             
             # Save configuration
-            self.save_configuration()
-            
+            config_saved = self.save_configuration()
+            if not config_saved:
+                print(f"\n{Fore.RED}❌ Setup failed: Configuration could not be saved{Style.RESET_ALL}")
+                return
+
             # Success message
             print(f"\n{Fore.GREEN}🎉 Setup Complete!{Style.RESET_ALL}")
             print("=" * 50)
@@ -697,11 +709,13 @@ Examples:
             print(f"✅ Applications: {len(self.config['applications'])}")
             print(f"✅ Error Categories: {len(self.config['error_categories'])}")
             print(f"✅ Issue Categories: {len(self.config['issue_categories'])}")
+            print(f"✅ Configuration: {self.project_root}/ai-doc-config.json (Project Root)")
             print(f"\n📚 Next Steps:")
             print(f"   1. Review the generated files")
-            print(f"   2. Customize AI_RULES.md for your specific needs")
-            print(f"   3. Start using START_TASK.md for AI tasks")
-            print(f"   4. Check USAGE.md for detailed instructions")
+            print(f"   2. Verify ai-doc-config.json is in project root")
+            print(f"   3. Customize AI_RULES.md for your specific needs")
+            print(f"   4. Start using START_TASK.md for AI tasks")
+            print(f"   5. Check USAGE.md for detailed instructions")
             
         except KeyboardInterrupt:
             print(f"\n{Fore.YELLOW}⚠️  Setup cancelled by user{Style.RESET_ALL}")

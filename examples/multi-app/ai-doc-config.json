@@ -1,0 +1,58 @@
+{
+  "project": {
+    "name": "Sample Multi-Application Project",
+    "type": "multi",
+    "root_path": "/path/to/your/project",
+    "description": "A sample multi-application project using AI Documentation Framework"
+  },
+  "applications": [
+    {
+      "name": "website",
+      "type": "frontend",
+      "framework": "django",
+      "description": "Main website application with user interface"
+    },
+    {
+      "name": "website-api",
+      "type": "backend",
+      "framework": "fastapi",
+      "description": "Backend API for website functionality"
+    },
+    {
+      "name": "email-server",
+      "type": "backend",
+      "framework": "postfix-dovecot",
+      "description": "Email server for communication"
+    },
+    {
+      "name": "robot-control-api",
+      "type": "backend",
+      "framework": "fastapi",
+      "description": "API for robot control and automation"
+    }
+  ],
+  "error_categories": [
+    "backend",
+    "frontend",
+    "infrastructure",
+    "security",
+    "testing",
+    "deployment",
+    "cross-cutting"
+  ],
+  "issue_categories": [
+    "incomplete-tasks",
+    "unresolved-errors",
+    "system-issues"
+  ],
+  "advanced_options": {
+    "ai_model_preferences": ["gpt-4", "claude-3"],
+    "documentation_language": "en",
+    "auto_backup": true,
+    "debug_mode": false,
+    "custom_templates": false
+  },
+  "framework_version": "1.0.0",
+  "created_date": "2024-08-22",
+  "last_updated": "2024-08-22"
+}

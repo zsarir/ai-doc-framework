@@ -147,8 +147,23 @@ export AI_DOC_FRAMEWORK_LANGUAGE="en"
 ```
 
 ### Configuration File
-Create `ai-doc-config.json`:
+Create `ai-doc-config.json` **in your project root**:
 
+#### 📍 CRITICAL: File Location
+```bash
+# ✅ CORRECT - Create in your project root
+your-project/
+└── ai-doc-config.json    # ← RIGHT HERE
+
+# ❌ WRONG - Don't create in these locations
+your-project/
+├── docs/
+│   └── ai-doc-config.json    # WRONG!
+└── src/
+    └── ai-doc-config.json    # WRONG!
+```
+
+#### 📝 Configuration File Content
 ```json
 {
   "project": {
@@ -184,6 +199,15 @@ Create `ai-doc-config.json`:
     "system-issues"
   ]
 }
+```
+
+#### 🧪 Verify File Placement
+```bash
+# After creating the file, verify it's in the right place
+find . -name "ai-doc-config.json" -type f
+
+# Should return: ./ai-doc-config.json
+# NOT: ./docs/ai-doc-config.json or ./src/ai-doc-config.json
 ```
 
 ## 🔍 Verification

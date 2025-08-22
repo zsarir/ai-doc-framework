@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture Guide - AI Documentation Framework</title>
+    <meta name="description" content="Complete guide to understanding the AI Documentation Framework architecture, file placement, and system design. Learn where ai-doc-config.json belongs and how the system works.">
+    <meta name="keywords" content="AI documentation framework architecture, ai-doc-config.json placement, system design, file structure">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-robot"></i>
+                <span>AI Doc Framework</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../index.html#features" class="nav-link">Features</a></li>
+                <li><a href="../index.html#solutions" class="nav-link">Solutions</a></li>
+                <li><a href="#overview" class="nav-link active">Architecture</a></li>
+                <li><a href="getting-started.html" class="nav-link">Get Started</a></li>
+                <li><a href="documentation.html" class="nav-link">Docs</a></li>
+                <li><a href="examples.html" class="nav-link">Examples</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Architecture Guide</span>
+                </div>
+                <h1>🏗️ Architecture Guide</h1>
+                <p>Complete guide to understanding the AI Documentation Framework architecture, file placement, and system design</p>
+                <div class="header-stats">
+                    <div class="stat">
+                        <span class="stat-number">🎯</span>
+                        <span class="stat-label">Single Source of Truth</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">🛡️</span>
+                        <span class="stat-label">System Integrity</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">📈</span>
+                        <span class="stat-label">Scalable Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section class="toc-section">
+        <div class="container">
+            <div class="toc-wrapper">
+                <h3>📋 Table of Contents</h3>
+                <ul class="toc-list">
+                    <li><a href="#overview">🎯 Overview</a></li>
+                    <li><a href="#critical-file-placement">📍 Critical File Placement</a></li>
+                    <li><a href="#ai-doc-config-deep-dive">🎯 ai-doc-config.json Deep Dive</a></li>
+                    <li><a href="#system-flow">🔄 System Flow</a></li>
+                    <li><a href="#file-relationships">📊 File Relationships</a></li>
+                    <li><a href="#design-philosophy">🎨 Design Philosophy</a></li>
+                    <li><a href="#system-integrity">🛡️ System Integrity</a></li>
+                    <li><a href="#scaling">📈 Scaling & Multi-Application</a></li>
+                    <li><a href="#troubleshooting">🔧 Troubleshooting</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>🎯 Overview</h2>
+                <p>Understanding the core principles and design of the framework</p>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>🤖 AI-First Design</h3>
+                    <p>Optimized for AI consumption and navigation, designed to minimize token usage while maximizing productivity</p>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>🛡️ System Integrity</h3>
+                    <p>Built-in validation and error prevention mechanisms ensure system reliability and prevent corruption</p>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>📈 Scalable Architecture</h3>
+                    <p>Supports projects from 1 to 100+ applications with efficient resource management and performance</p>
+                </div>
+            </div>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span>Core Principles</span>
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                <pre><code>🎯 Single Source of Truth → ai-doc-config.json controls everything
+🤖 AI-First Design → Optimized for AI consumption
+🛡️ System Integrity → Built-in validation and recovery
+📈 Scalable → 1 to 100+ applications
+🔄 Token Efficient → Minimal redundant information</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Critical File Placement -->
+    <section id="critical-file-placement" class="content-section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>📍 Critical File Placement</h2>
+                <p>The most important aspect of the framework - where files belong</p>
+            </div>
+
+            <div class="alert alert-critical">
+                <div class="alert-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="alert-content">
+                    <h4>🚨 CRITICAL: ai-doc-config.json Placement</h4>
+                    <p>This file is the <strong>heart</strong> of the entire framework and <strong>MUST</strong> be placed in your project root directory.</p>
+                </div>
+            </div>
+
+            <div class="structure-comparison">
+                <div class="structure-item correct">
+                    <h3>✅ CORRECT Structure</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Project Root Structure</span>
+                        </div>
+                        <pre><code>your-project/                     # 📍 PROJECT ROOT
+├── 🎯 ai-doc-config.json         # 🏛️ CENTRAL CONTROL FILE
+├── 📄 AI_RULES.md               # AI behavior rules
+├── 📄 START_TASK.md             # Task initialization
+├── 📄 COMPLETE_TASK.md          # Task completion
+├── 📁 docs/                     # Project documentation
+├── 📁 error-management/         # Error system
+├── 📁 issues/                   # Issue tracking
+└── 📁 [applications]/          # Your applications</code></pre>
+                    </div>
+                </div>
+
+                <div class="structure-item incorrect">
+                    <h3>❌ INCORRECT Placement</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Wrong Locations</span>
+                        </div>
+                        <pre><code>your-project/
+├── 📁 docs/
+│   └── ai-doc-config.json       # ❌ WRONG - Inside docs
+└── 📁 src/
+    └── ai-doc-config.json       # ❌ WRONG - Inside src</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="verification-steps">
+                <h3>🔍 How to Verify Correct Placement</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>Verification Commands</span>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <pre><code># Check if file exists in project root
+ls -la ai-doc-config.json
+
+# Verify location (should be in current directory)
+find . -name "ai-doc-config.json" -type f
+
+# Should return: ./ai-doc-config.json
+# NOT: ./docs/ai-doc-config.json</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ai-doc-config.json Deep Dive -->
+    <section id="ai-doc-config-deep-dive" class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>🎯 ai-doc-config.json Deep Dive</h2>
+                <p>Understanding the central control file that powers the entire framework</p>
+            </div>
+
+            <div class="config-structure">
+                <div class="config-section">
+                    <h3>📋 Project Section</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Project Configuration</span>
+                        </div>
+                        <pre><code>"project": {
+  "name": "My Multi-App Project",
+  "type": "multi",                    // single, multi, custom
+  "root_path": "/path/to/project",   // Absolute path to project root
+  "description": "Project description"
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="config-section">
+                    <h3>🏗️ Applications Section</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Applications Configuration</span>
+                        </div>
+                        <pre><code>"applications": [
+  {
+    "name": "website",
+    "type": "frontend",
+    "framework": "django",
+    "description": "Main website application"
+  },
+  {
+    "name": "website-api",
+    "type": "backend",
+    "framework": "fastapi",
+    "description": "Backend API service"
+  }
+]</code></pre>
+                    </div>
+                </div>
+
+                <div class="config-section">
+                    <h3>🚨 Error Categories</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Error Management Structure</span>
+                        </div>
+                        <pre><code>"error_categories": [
+  "backend", "frontend", "infrastructure",
+  "security", "testing", "deployment"
+]</code></pre>
+                    </div>
+                </div>
+
+                <div class="config-section">
+                    <h3>📋 Issue Categories</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Issue Tracking Structure</span>
+                        </div>
+                        <pre><code>"issue_categories": [
+  "incomplete-tasks", "unresolved-errors", "system-issues"
+]</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Flow -->
+    <section id="system-flow" class="content-section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>🔄 System Flow and Data Flow</h2>
+                <p>Understanding how the framework processes tasks and manages information</p>
+            </div>
+
+            <div class="flow-diagram">
+                <h3>📊 Task Execution Flow</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>AI Task Processing Flow</span>
+                    </div>
+                    <pre><code>1. 🎯 User Request → AI receives task
+2. 📋 AI_RULES.md → AI reads behavior rules
+3. 🎯 ai-doc-config.json → AI gets project structure
+4. 📄 START_TASK.md → AI follows initialization protocol
+5. 📚 docs/AI_APP_GUIDE.md → AI navigates documentation
+6. 🚨 error-management/ → AI checks for similar errors
+7. 📋 issues/ → AI checks for open issues
+8. 🔧 Execute Task → AI performs the work
+9. ✅ COMPLETE_TASK.md → AI follows completion protocol</code></pre>
+                </div>
+            </div>
+
+            <div class="flow-diagram">
+                <h3>📈 File Generation Flow</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>Setup Process Flow</span>
+                    </div>
+                    <pre><code>Setup Wizard
+    ↓
+ai-doc-config.json (created in project root)
+    ↓
+Templates Applied
+    ↓
+├── AI_RULES.md (generated)
+├── START_TASK.md (generated)
+├── COMPLETE_TASK.md (generated)
+├── docs/AI_APP_GUIDE.md (generated)
+├── error-management/ (created)
+├── issues/ (created)
+└── Application Structure (created)</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- File Relationships -->
+    <section id="file-relationships" class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>📊 File Relationships and Dependencies</h2>
+                <p>Understanding how framework components interact and depend on each other</p>
+            </div>
+
+            <div class="relationships-table">
+                <h3>🔗 Core Dependencies</h3>
+                <table class="dependencies-table">
+                    <thead>
+                        <tr>
+                            <th>File</th>
+                            <th>Purpose</th>
+                            <th>Dependencies</th>
+                            <th>Generated By</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>ai-doc-config.json</code></td>
+                            <td>🎯 Central Configuration</td>
+                            <td>None</td>
+                            <td>Setup Wizard</td>
+                        </tr>
+                        <tr>
+                            <td><code>AI_RULES.md</code></td>
+                            <td>🤖 AI Behavior Rules</td>
+                            <td>ai-doc-config.json</td>
+                            <td>Templates</td>
+                        </tr>
+                        <tr>
+                            <td><code>START_TASK.md</code></td>
+                            <td>🚀 Task Initialization</td>
+                            <td>AI_RULES.md</td>
+                            <td>Templates</td>
+                        </tr>
+                        <tr>
+                            <td><code>COMPLETE_TASK.md</code></td>
+                            <td>✅ Task Completion</td>
+                            <td>All files</td>
+                            <td>Templates</td>
+                        </tr>
+                        <tr>
+                            <td><code>docs/AI_APP_GUIDE.md</code></td>
+                            <td>🧭 Navigation Guide</td>
+                            <td>ai-doc-config.json</td>
+                            <td>Templates</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="read-order">
+                <h3>📖 Optimal Reading Sequence for AI</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>AI Reading Order</span>
+                    </div>
+                    <pre><code>reading_sequence = [
+    "ai-doc-config.json",           # 1. Get project structure
+    "AI_RULES.md",                  # 2. Understand rules
+    "START_TASK.md",                # 3. Follow initialization
+    "docs/AI_APP_GUIDE.md",         # 4. Navigate documentation
+    "error-management/",            # 5. Check errors if needed
+    "issues/",                      # 6. Check issues if needed
+    "COMPLETE_TASK.md"              # 7. Follow completion
+]</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Philosophy -->
+    <section id="design-philosophy" class="content-section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>🎨 Design Philosophy</h2>
+                <p>The core principles that guide the framework's design and development</p>
+            </div>
+
+            <div class="philosophy-grid">
+                <div class="philosophy-item">
+                    <div class="philosophy-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>🤖 AI-First Design</h3>
+                    <ul>
+                        <li>Token efficiency as primary goal</li>
+                        <li>Predictable file locations</li>
+                        <li>Clear navigation paths</li>
+                        <li>Error prevention built-in</li>
+                    </ul>
+                </div>
+
+                <div class="philosophy-item">
+                    <div class="philosophy-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>🛡️ Fail-Safe Architecture</h3>
+                    <ul>
+                        <li>Validation at every step</li>
+                        <li>Error recovery mechanisms</li>
+                        <li>User alerting system</li>
+                        <li>Automatic backup creation</li>
+                    </ul>
+                </div>
+
+                <div class="philosophy-item">
+                    <div class="philosophy-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>📈 Scalability</h3>
+                    <ul>
+                        <li>Supports 1 to 100+ applications</li>
+                        <li>Modular component design</li>
+                        <li>Efficient resource usage</li>
+                        <li>Performance optimized</li>
+                    </ul>
+                </div>
+
+                <div class="philosophy-item">
+                    <div class="philosophy-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>👥 Developer Experience</h3>
+                    <ul>
+                        <li>Intuitive setup process</li>
+                        <li>Clear documentation</li>
+                        <li>Easy customization</li>
+                        <li>Comprehensive support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Integrity -->
+    <section id="system-integrity" class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>🛡️ System Integrity and Validation</h2>
+                <p>How the framework ensures system reliability and prevents corruption</p>
+            </div>
+
+            <div class="integrity-checks">
+                <h3>🔍 Integrity Checks</h3>
+
+                <div class="check-item">
+                    <h4>📁 File Existence Validation</h4>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>File Validation Logic</span>
+                        </div>
+                        <pre><code>def validate_critical_files():
+    critical_files = [
+        "./ai-doc-config.json",
+        "./AI_RULES.md",
+        "./START_TASK.md",
+        "./COMPLETE_TASK.md"
+    ]
+
+    for file_path in critical_files:
+        if not exists(file_path):
+            alert_user(f"Missing critical file: {file_path}")
+            return False
+    return True</code></pre>
+                    </div>
+                </div>
+
+                <div class="check-item">
+                    <h4>⚙️ Configuration Validation</h4>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Config Validation Logic</span>
+                        </div>
+                        <pre><code>def validate_ai_doc_config():
+    required_sections = [
+        "project", "applications", "error_categories", "issue_categories"
+    ]
+
+    config = load_json("./ai-doc-config.json")
+
+    for section in required_sections:
+        if section not in config:
+            alert_user(f"Missing section in config: {section}")
+            return False
+    return True</code></pre>
+                    </div>
+                </div>
+
+                <div class="check-item">
+                    <h4>🏗️ Structure Validation</h4>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Structure Validation Logic</span>
+                        </div>
+                        <pre><code>def validate_project_structure():
+    required_dirs = [
+        "./docs", "./error-management", "./issues"
+    ]
+
+    for dir_path in required_dirs:
+        if not exists(dir_path):
+            alert_user(f"Missing directory: {dir_path}")
+            return False
+    return True</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scaling and Multi-Application -->
+    <section id="scaling" class="content-section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>📈 Scaling and Multi-Application Support</h2>
+                <p>How the framework scales from single applications to complex multi-service architectures</p>
+            </div>
+
+            <div class="scaling-examples">
+                <div class="scaling-item">
+                    <h3>🏢 Single Application Structure</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Single App Project</span>
+                        </div>
+                        <pre><code>single-app-project/
+├── ai-doc-config.json
+├── AI_RULES.md
+├── START_TASK.md
+├── COMPLETE_TASK.md
+├── docs/
+├── error-management/
+└── issues/</code></pre>
+                    </div>
+                </div>
+
+                <div class="scaling-item">
+                    <h3>🏗️ Multi-Application Structure</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Multi-App Project</span>
+                        </div>
+                        <pre><code>multi-app-project/
+├── ai-doc-config.json          # Central configuration
+├── AI_RULES.md                # Project-level rules
+├── START_TASK.md              # Project-level tasks
+├── COMPLETE_TASK.md           # Project-level completion
+├── docs/                      # Shared documentation
+├── error-management/          # Shared error system
+├── issues/                    # Shared issue tracking
+└── applications/              # Individual applications
+    ├── website/
+    │   ├── AI_RULES.md        # App-specific rules
+    │   ├── START_TASK.md      # App-specific tasks
+    │   ├── COMPLETE_TASK.md   # App-specific completion
+    │   └── docs/              # App-specific docs
+    └── website-api/
+        ├── AI_RULES.md        # App-specific rules
+        ├── START_TASK.md      # App-specific tasks
+        ├── COMPLETE_TASK.md   # App-specific completion
+        └── docs/              # App-specific docs</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Troubleshooting -->
+    <section id="troubleshooting" class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>🔧 Troubleshooting Common Issues</h2>
+                <p>Solutions to the most common problems users encounter</p>
+            </div>
+
+            <div class="troubleshooting-grid">
+                <div class="trouble-item">
+                    <h3>❓ "ai-doc-config.json not found"</h3>
+                    <div class="solution">
+                        <h4>🔍 Symptoms:</h4>
+                        <ul>
+                            <li>Setup wizard fails</li>
+                            <li>Validation errors occur</li>
+                            <li>System cannot initialize</li>
+                        </ul>
+                        <h4>✅ Solutions:</h4>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Fix Commands</span>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <pre><code># Check if file exists in project root
+ls -la ai-doc-config.json
+
+# Verify location
+find . -name "ai-doc-config.json" -type f
+
+# Re-run setup wizard
+python tools/setup-wizard.py</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trouble-item">
+                    <h3>❓ "File already exists" errors</h3>
+                    <div class="solution">
+                        <h4>🔍 Symptoms:</h4>
+                        <ul>
+                            <li>Cannot create new files</li>
+                            <li>Duplicate file warnings</li>
+                            <li>System integrity errors</li>
+                        </ul>
+                        <h4>✅ Solutions:</h4>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Resolution Steps</span>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <pre><code># Check existing files
+find . -name "*.md" -type f
+
+# Use existing files instead
+# Check AI_RULES.md for rules
+cat AI_RULES.md | grep -A 10 "File Creation"</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trouble-item">
+                    <h3>❓ Configuration validation fails</h3>
+                    <div class="solution">
+                        <h4>🔍 Symptoms:</h4>
+                        <ul>
+                            <li>Config file format errors</li>
+                            <li>Missing required sections</li>
+                            <li>Invalid JSON structure</li>
+                        </ul>
+                        <h4>✅ Solutions:</h4>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Validation Commands</span>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <pre><code># Validate JSON syntax
+python -c "import json; json.load(open('ai-doc-config.json'))"
+
+# Check required sections
+python tools/validator.py --check-config</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trouble-item">
+                    <h3>❓ Performance issues</h3>
+                    <div class="solution">
+                        <h4>🔍 Symptoms:</h4>
+                        <ul>
+                            <li>Slow file loading</li>
+                            <li>High memory usage</li>
+                            <li>Long validation times</li>
+                        </ul>
+                        <h4>✅ Solutions:</h4>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Performance Fixes</span>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <pre><code># Enable caching
+export AI_DOC_FRAMEWORK_CACHE=1
+
+# Optimize configuration
+python tools/optimizer.py
+
+# Monitor performance
+python tools/performance-monitor.py</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>📚 Documentation</h4>
+                    <ul>
+                        <li><a href="getting-started.html">Getting Started</a></li>
+                        <li><a href="documentation.html">Full Documentation</a></li>
+                        <li><a href="examples.html">Examples</a></li>
+                        <li><a href="#overview">Architecture Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>🛠️ Tools</h4>
+                    <ul>
+                        <li><a href="https://github.com/zsarir/ai-doc-framework">GitHub Repository</a></li>
+                        <li><a href="https://github.com/zsarir/ai-doc-framework/issues">Report Issues</a></li>
+                        <li><a href="https://github.com/zsarir/ai-doc-framework/discussions">Community Discussions</a></li>
+                        <li><a href="https://github.com/zsarir/ai-doc-framework/wiki">Documentation Wiki</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>📞 Support</h4>
+                    <ul>
+                        <li><a href="mailto:support@ai-doc-framework.com">Email Support</a></li>
+                        <li><a href="https://github.com/zsarir/ai-doc-framework/wiki/Troubleshooting">Troubleshooting Guide</a></li>
+                        <li><a href="https://github.com/zsarir/ai-doc-framework/wiki/FAQ">Frequently Asked Questions</a></li>
+                        <li><a href="https://github.com/zsarir/ai-doc-framework/wiki/Best-Practices">Best Practices</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AI Documentation Framework. Made with ❤️ for the AI-powered development community.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Copy code functionality
+        function copyCode(button) {
+            const codeBlock = button.closest('.code-block');
+            const code = codeBlock.querySelector('pre code').textContent;
+
+            navigator.clipboard.writeText(code).then(() => {
+                const originalIcon = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i>';
+                button.style.color = '#10b981';
+
+                setTimeout(() => {
+                    button.innerHTML = originalIcon;
+                    button.style.color = '';
+                }, 2000);
+            });
+        }
+
+        // Mobile navigation toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    navToggle.classList.toggle('active');
+                });
+            }
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
