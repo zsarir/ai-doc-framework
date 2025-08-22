@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/style.scss' | relative_url }}">
+    {% if page.styles %}
+    {% for style in page.styles %}
+    <link rel="stylesheet" href="{{ style | relative_url }}">
+    {% endfor %}
+    {% endif %}
+    {% seo %}
+</head>
+<body>
+    {{ content }}
+
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    {% if page.scripts %}
+    {% for script in page.scripts %}
+    <script src="{{ script | relative_url }}"></script>
+    {% endfor %}
+    {% endif %}
+    {% if page.highlight %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    {% endif %}
+</body>
+</html>

@@ -1,3 +1,10 @@
+---
+layout: default
+title: "🤖 AI Documentation Framework - Interactive Wiki"
+description: "Comprehensive AI-Optimized Documentation System for Multi-Application Projects"
+highlight: true
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +13,7 @@
     <title>🤖 AI Documentation Framework - Interactive Wiki</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{ '/assets/css/style.scss' | relative_url }}">
 </head>
 <body>
     <!-- Navigation Header -->
@@ -455,7 +462,7 @@ Framework: Auto-navigates documentation and executes task</code></pre>
     </footer>
 
     <!-- Scripts -->
-    <script src="assets/js/main.js"></script>
+    <script src="{{ '/{{ "/assets/js/main.js" | relative_url }}' | relative_url }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>

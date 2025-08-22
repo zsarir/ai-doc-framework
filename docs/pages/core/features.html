@@ -6,7 +6,7 @@
     <title>Core Features - AI Documentation Framework</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../{{ "/assets/css/style.scss" | relative_url }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     <style>
         .features-hero {
@@ -929,7 +929,7 @@
     </section>
 
     <!-- Scripts -->
-    <script src="../../assets/js/main.js"></script>
+    <script src="../../{{ "/assets/js/main.js" | relative_url }}"></script>
     <script>
         // Add smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
