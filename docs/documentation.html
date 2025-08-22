@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - AI Documentation Framework</title>
+    <meta name="description" content="Complete documentation for AI Documentation Framework. Installation guides, usage instructions, and API reference.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-robot"></i>
+                <span>AI Doc Framework</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="features.html" class="nav-link">Features</a>
+                <a href="benefits.html" class="nav-link">Benefits</a>
+                <a href="documentation.html" class="nav-link active">Docs</a>
+                <a href="examples.html" class="nav-link">Examples</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="https://github.com/zsarir/ai-doc-framework" class="nav-link github" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Complete <span class="highlight">Documentation</span>
+                    <br>Get Started Today
+                </h1>
+                <p class="hero-subtitle">
+                    Step-by-step guides, API reference, and best practices to help you
+                    implement AI Documentation Framework successfully.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start -->
+    <section class="quick-start-section">
+        <div class="container">
+            <h2 class="section-title">🚀 Quick Start Guide</h2>
+
+            <div class="quick-start-steps">
+                <div class="quick-step">
+                    <div class="step-number">1</div>
+                    <h3>Prerequisites</h3>
+                    <div class="prerequisites">
+                        <div class="prereq-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python 3.8+</span>
+                        </div>
+                        <div class="prereq-item">
+                            <i class="fab fa-git"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="prereq-item">
+                            <i class="fas fa-terminal"></i>
+                            <span>Command Line</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-step">
+                    <div class="step-number">2</div>
+                    <h3>Installation</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <code># Clone the repository
+git clone https://github.com/zsarir/ai-doc-framework.git
+cd ai-doc-framework
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run setup wizard
+python tools/setup-wizard.py</code>
+                    </div>
+                </div>
+
+                <div class="quick-step">
+                    <div class="step-number">3</div>
+                    <h3>Basic Usage</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Terminal</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <code># For single application
+python tools/app-generator.py --type single --name my-app
+
+# For multi-application project
+python tools/app-generator.py --type multi --apps web,api,admin
+
+# Start AI task
+"Read START_TASK.md and execute: [your task]"</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Guide -->
+    <section class="installation-section">
+        <div class="container">
+            <h2 class="section-title">📦 Detailed Installation</h2>
+
+            <div class="installation-methods">
+                <div class="installation-method">
+                    <h3>Git Clone (Recommended)</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Bash</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <code class="language-bash"># Step 1: Clone repository
+git clone https://github.com/zsarir/ai-doc-framework.git
+cd ai-doc-framework
+
+# Step 2: Create virtual environment (recommended)
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Step 3: Install dependencies
+pip install -r requirements.txt
+
+# Step 4: Verify installation
+python tools/validator.py --check-system</code>
+                    </div>
+                </div>
+
+                <div class="installation-method">
+                    <h3>Direct Download</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Bash</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <code class="language-bash"># Download latest release
+wget https://github.com/zsarir/ai-doc-framework/archive/v1.0.0.zip
+unzip v1.0.0.zip
+cd ai-doc-framework-1.0.0
+
+# Install and verify
+pip install -r requirements.txt
+python tools/validator.py --check-system</code>
+                    </div>
+                </div>
+
+                <div class="installation-method">
+                    <h3>Docker Installation</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Docker</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <code class="language-dockerfile"># Pull and run the Docker image
+docker pull ai-doc-framework:latest
+docker run -it -v $(pwd):/workspace ai-doc-framework
+
+# Or build from source
+git clone https://github.com/zsarir/ai-doc-framework.git
+cd ai-doc-framework
+docker build -t ai-doc-framework .
+docker run -it -v $(pwd):/workspace ai-doc-framework</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Configuration Guide -->
+    <section class="configuration-section">
+        <div class="container">
+            <h2 class="section-title">⚙️ Configuration Guide</h2>
+
+            <div class="config-sections">
+                <div class="config-section">
+                    <h3>Environment Variables</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Bash</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <code class="language-bash"># Framework configuration
+export AI_DOC_FRAMEWORK_ROOT="/path/to/your/project"
+export AI_DOC_FRAMEWORK_TYPE="multi"  # single, multi, custom
+export AI_DOC_FRAMEWORK_APPS="web,api,admin"
+export AI_DOC_FRAMEWORK_THEME="default"
+export AI_DOC_FRAMEWORK_LANGUAGE="en"
+export AI_DOC_FRAMEWORK_DEBUG=0</code>
+                    </div>
+                </div>
+
+                <div class="config-section">
+                    <h3>Configuration File (ai-doc-config.json)</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>JSON</span>
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <code class="language-json">{
+  "project": {
+    "name": "My Project",
+    "type": "multi",
+    "root_path": "/path/to/project",
+    "description": "Project description"
+  },
+  "applications": [
+    {
+      "name": "web",
+      "type": "frontend",
+      "framework": "react",
+      "description": "Frontend application"
+    },
+    {
+      "name": "api",
+      "type": "backend",
+      "framework": "fastapi",
+      "description": "Backend API"
+    }
+  ],
+  "error_categories": [
+    "backend",
+    "frontend",
+    "infrastructure",
+    "security",
+    "performance"
+  ],
+  "issue_categories": [
+    "incomplete-tasks",
+    "unresolved-errors",
+    "system-issues"
+  ]
+}</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usage Guide -->
+    <section class="usage-section">
+        <div class="container">
+            <h2 class="section-title">📖 Usage Guide</h2>
+
+            <div class="usage-workflow">
+                <div class="workflow-step">
+                    <div class="workflow-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <h3>Task Initiation</h3>
+                    <p>Start every task by reading the appropriate START_TASK.md file</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>AI Command</span>
+                        </div>
+                        <code># Single application task
+"Read web/START_TASK.md and execute: Update user authentication"
+
+# Multi-application task
+"Read START_TASK.md and execute: Deploy all applications to production"</code>
+                    </div>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="workflow-icon">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <h3>AI Navigation</h3>
+                    <p>AI automatically navigates documentation using hierarchical structure</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Navigation Path</span>
+                        </div>
+                        <code>START_TASK.md
+├── Validate system integrity
+├── Check AI_RULES.md
+├── Navigate docs/AI_APP_GUIDE.md
+├── Search error history
+└── Execute task</code>
+                    </div>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="workflow-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3>Task Completion</h3>
+                    <p>Complete tasks using COMPLETE_TASK.md for cleanup and documentation</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>AI Command</span>
+                        </div>
+                        <code># After task completion
+"Task completed successfully"
+"All changes implemented and tested"
+"System updated and ready for production"</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Reference -->
+    <section class="api-section">
+        <div class="container">
+            <h2 class="section-title">🔧 API Reference</h2>
+
+            <div class="api-endpoints">
+                <div class="api-endpoint">
+                    <h3>Setup and Configuration</h3>
+                    <div class="endpoint">
+                        <code class="method">python tools/setup-wizard.py</code>
+                        <p>Interactive setup wizard for initial configuration</p>
+                        <div class="parameters">
+                            <strong>Options:</strong>
+                            <code>--debug</code> Enable debug mode
+                        </div>
+                    </div>
+                    <div class="endpoint">
+                        <code class="method">python tools/app-generator.py</code>
+                        <p>Generate application documentation structure</p>
+                        <div class="parameters">
+                            <strong>Options:</strong>
+                            <code>--type [single|multi|custom]</code> Project type<br>
+                            <code>--name [app-name]</code> Application name<br>
+                            <code>--apps [app1,app2]</code> Application list
+                        </div>
+                    </div>
+                </div>
+
+                <div class="api-endpoint">
+                    <h3>Validation and Testing</h3>
+                    <div class="endpoint">
+                        <code class="method">python tools/validator.py</code>
+                        <p>Validate framework installation and configuration</p>
+                        <div class="parameters">
+                            <strong>Options:</strong>
+                            <code>--check-system</code> System validation<br>
+                            <code>--check-config</code> Configuration check<br>
+                            <code>--test-templates</code> Template testing
+                        </div>
+                    </div>
+                    <div class="endpoint">
+                        <code class="method">python tools/test-ai-integration.py</code>
+                        <p>Test AI integration and navigation capabilities</p>
+                        <div class="parameters">
+                            <strong>Options:</strong>
+                            <code>--verbose</code> Detailed output<br>
+                            <code>--simulate</code> Simulation mode
+                        </div>
+                    </div>
+                </div>
+
+                <div class="api-endpoint">
+                    <h3>Management Tools</h3>
+                    <div class="endpoint">
+                        <code class="method">python tools/maintenance.py</code>
+                        <p>Perform routine maintenance tasks</p>
+                        <div class="parameters">
+                            <strong>Options:</strong>
+                            <code>--weekly</code> Weekly maintenance<br>
+                            <code>--monthly</code> Monthly maintenance<br>
+                            <code>--quarterly</code> Quarterly review
+                        </div>
+                    </div>
+                    <div class="endpoint">
+                        <code class="method">python tools/generate-reports.py</code>
+                        <p>Generate performance and usage reports</p>
+                        <div class="parameters">
+                            <strong>Options:</strong>
+                            <code>--format [json|html|pdf]</code> Report format<br>
+                            <code>--period [week|month|quarter]</code> Time period
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Error Management -->
+    <section class="error-management-section">
+        <div class="container">
+            <h2 class="section-title">🚨 Error Management Guide</h2>
+
+            <div class="error-workflow">
+                <div class="error-step">
+                    <h3>1. Error Search</h3>
+                    <p>When encountering errors, first search the existing error database</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>AI Commands</span>
+                        </div>
+                        <code># Search commands
+"Check error history for: [error description]"
+"Look for previous solutions to: [problem]"
+"Search error documentation for: [symptom]"</code>
+                    </div>
+                </div>
+
+                <div class="error-step">
+                    <h3>2. Error Documentation</h3>
+                    <p>Document new errors using the standard template format</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Error Template</span>
+                        </div>
+                        <code># Error documentation format
+---
+error_id: "[CATEGORY]-[SEVERITY]-[DATE]-[SEQ]"
+category: "[backend|frontend|infrastructure|security]"
+severity: "[critical|high|medium|low]"
+status: "[active|resolved|recurring]"
+---
+
+## Error Description
+[Describe the error in detail]
+
+## Root Cause
+[What caused this error]
+
+## Solution
+[Step-by-step resolution]
+
+## Prevention
+[How to prevent this error in the future]</code>
+                    </div>
+                </div>
+
+                <div class="error-step">
+                    <h3>3. Error Categories</h3>
+                    <p>Organize errors by category for better management</p>
+                    <div class="error-categories">
+                        <div class="error-category">
+                            <h4>Backend Errors</h4>
+                            <ul>
+                                <li>Database connection issues</li>
+                                <li>API endpoint failures</li>
+                                <li>Server configuration problems</li>
+                                <li>Memory/performance issues</li>
+                            </ul>
+                        </div>
+                        <div class="error-category">
+                            <h4>Frontend Errors</h4>
+                            <ul>
+                                <li>JavaScript runtime errors</li>
+                                <li>UI rendering issues</li>
+                                <li>Browser compatibility problems</li>
+                                <li>Responsive design failures</li>
+                            </ul>
+                        </div>
+                        <div class="error-category">
+                            <h4>Infrastructure Errors</h4>
+                            <ul>
+                                <li>Deployment failures</li>
+                                <li>Network connectivity issues</li>
+                                <li>Resource allocation problems</li>
+                                <li>Security configuration errors</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Troubleshooting -->
+    <section class="troubleshooting-section">
+        <div class="container">
+            <h2 class="section-title">🔧 Troubleshooting Guide</h2>
+
+            <div class="troubleshooting-issues">
+                <div class="troubleshoot-item">
+                    <h3>Python Version Error</h3>
+                    <div class="issue-solution">
+                        <div class="problem">
+                            <strong>Problem:</strong> "Python version too old" error
+                        </div>
+                        <div class="solution">
+                            <strong>Solution:</strong>
+                            <div class="code-block">
+                                <code># Check Python version
+python --version  # Should be 3.8+
+
+# Upgrade Python if needed
+# On Ubuntu/Debian:
+sudo apt update
+sudo apt install python3.9
+
+# On macOS:
+brew install python@3.9</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="troubleshoot-item">
+                    <h3>Permission Denied</h3>
+                    <div class="issue-solution">
+                        <div class="problem">
+                            <strong>Problem:</strong> Permission denied when creating directories
+                        </div>
+                        <div class="solution">
+                            <strong>Solution:</strong>
+                            <div class="code-block">
+                                <code># Fix permissions
+chmod +x tools/*.py
+chmod 755 .
+
+# Or run with sudo (not recommended)
+sudo python tools/setup-wizard.py</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="troubleshoot-item">
+                    <h3>Missing Dependencies</h3>
+                    <div class="issue-solution">
+                        <div class="problem">
+                            <strong>Problem:</strong> "Module not found" error
+                        </div>
+                        <div class="solution">
+                            <strong>Solution:</strong>
+                            <div class="code-block">
+                                <code># Install missing dependencies
+pip install -r requirements.txt
+
+# For specific modules:
+pip install jinja2 pyyaml click colorama
+
+# Upgrade pip if needed:
+pip install --upgrade pip</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="troubleshoot-item">
+                    <h3>AI Not Following Rules</h3>
+                    <div class="issue-solution">
+                        <div class="problem">
+                            <strong>Problem:</strong> AI not following AI_RULES.md guidelines
+                        </div>
+                        <div class="solution">
+                            <strong>Solution:</strong>
+                            <div class="code-block">
+                                <code># Check if AI_RULES.md exists
+ls -la AI_RULES.md
+
+# Validate rules file format
+python tools/validator.py --check-config
+
+# Ensure AI reads the rules first
+"Read AI_RULES.md carefully before starting any task"</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="troubleshoot-item">
+                    <h3>Documentation Not Found</h3>
+                    <div class="issue-solution">
+                        <div class="problem">
+                            <strong>Problem:</strong> AI cannot find required documentation
+                        </div>
+                        <div class="solution">
+                            <strong>Solution:</strong>
+                            <div class="code-block">
+                                <code># Validate documentation structure
+python tools/validator.py --check-docs
+
+# Check documentation paths
+find docs/ -name "*.md" | head -10
+
+# Regenerate missing documentation
+python tools/generate-docs.py</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="troubleshoot-item">
+                    <h3>Performance Issues</h3>
+                    <div class="issue-solution">
+                        <div class="problem">
+                            <strong>Problem:</strong> Framework running slowly or consuming excessive resources
+                        </div>
+                        <div class="solution">
+                            <strong>Solution:</strong>
+                            <div class="code-block">
+                                <code># Enable performance monitoring
+export AI_DOC_FRAMEWORK_DEBUG=1
+
+# Generate performance report
+python tools/generate-reports.py --format html
+
+# Run maintenance to optimize
+python tools/maintenance.py --weekly
+
+# Check system resources
+python tools/validator.py --check-system</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Practices -->
+    <section class="best-practices-section">
+        <div class="container">
+            <h2 class="section-title">🎯 Best Practices</h2>
+
+            <div class="practices-grid">
+                <div class="practice-category">
+                    <h3>For AI Assistants</h3>
+                    <div class="practice-list">
+                        <div class="practice-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Always start with START_TASK.md</span>
+                        </div>
+                        <div class="practice-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Read AI_RULES.md before any task</span>
+                        </div>
+                        <div class="practice-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Search error history first</span>
+                        </div>
+                        <div class="practice-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Document everything systematically</span>
+                        </div>
+                        <div class="practice-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Use the cleanup system after tasks</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-category">
+                    <h3>For Developers</h3>
+                    <div class="practice-list">
+                        <div class="practice-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Customize AI_RULES.md for your project</span>
+                        </div>
+                        <div class="practice-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Keep documentation current</span>
+                        </div>
+                        <div class="practice-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Document errors promptly</span>
+                        </div>
+                        <div class="practice-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Review issue tracking regularly</span>
+                        </div>
+                        <div class="practice-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Validate system health weekly</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-category">
+                    <h3>For Teams</h3>
+                    <div class="practice-list">
+                        <div class="practice-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Standardize usage patterns</span>
+                        </div>
+                        <div class="practice-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Share knowledge through documentation</span>
+                        </div>
+                        <div class="practice-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Review framework effectiveness monthly</span>
+                        </div>
+                        <div class="practice-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Update templates based on usage</span>
+                        </div>
+                        <div class="practice-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Train team members regularly</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need More Help?</h2>
+                <p>Our comprehensive documentation covers everything you need to know. Can't find what you're looking for?</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Get Support</a>
+                    <a href="examples.html" class="btn btn-secondary">View Examples</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Documentation</h3>
+                    <p>Complete guides for installation, configuration, and usage.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/zsarir/ai-doc-framework" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com/ai-doc-framework" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://discord.gg/ai-doc-framework" target="_blank">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#quick-start">Quick Start</a></li>
+                        <li><a href="#installation">Installation</a></li>
+                        <li><a href="#configuration">Configuration</a></li>
+                        <li><a href="#usage">Usage Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#api-reference">API Reference</a></li>
+                        <li><a href="#troubleshooting">Troubleshooting</a></li>
+                        <li><a href="#best-practices">Best Practices</a></li>
+                        <li><a href="examples.html">Examples</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Support</a></li>
+                        <li><a href="https://github.com/zsarir/ai-doc-framework/issues" target="_blank">GitHub Issues</a></li>
+                        <li><a href="https://github.com/zsarir/ai-doc-framework/discussions" target="_blank">Discussions</a></li>
+                        <li><a href="https://github.com/zsarir/ai-doc-framework/wiki" target="_blank">Wiki</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AI Documentation Framework. Documentation is regularly updated to reflect the latest features and improvements.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function copyCode(button) {
+            const codeBlock = button.closest('.code-block').querySelector('code');
+            const code = codeBlock.textContent;
+
+            navigator.clipboard.writeText(code).then(() => {
+                const icon = button.querySelector('i');
+                icon.className = 'fas fa-check';
+                setTimeout(() => {
+                    icon.className = 'fas fa-copy';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy code:', err);
+            });
+        }
+
+        // Add syntax highlighting for code blocks
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simple syntax highlighting for common languages
+            const codeBlocks = document.querySelectorAll('code');
+
+            codeBlocks.forEach(block => {
+                if (block.classList.contains('language-bash') ||
+                    block.classList.contains('language-json') ||
+                    block.classList.contains('language-dockerfile')) {
+
+                    // Add basic syntax highlighting classes
+                    let content = block.textContent;
+
+                    // JSON highlighting
+                    if (block.classList.contains('language-json')) {
+                        content = content
+                            .replace(/"([^"]+)":/g, '<span class="json-key">"$1"</span>:')
+                            .replace(/:\s*"([^"]+)"/g, ': <span class="json-string">"$1"</span>')
+                            .replace(/:\s*(\d+|true|false|null)/g, ': <span class="json-value">$1</span>')
+                            .replace(/([{\[\]}])/g, '<span class="json-bracket">$1</span>');
+                    }
+
+                    // Bash highlighting
+                    if (block.classList.contains('language-bash')) {
+                        content = content
+                            .replace(/^#.*$/gm, '<span class="bash-comment">$&</span>')
+                            .replace(/\b(pip|python|git|cd|mkdir|chmod|export|sudo|apt|brew)\b/g, '<span class="bash-command">$&</span>')
+                            .replace(/(['"`][^'"`]*['"`])/g, '<span class="bash-string">$&</span>');
+                    }
+
+                    block.innerHTML = content;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
