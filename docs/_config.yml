@@ -1,83 +1,20 @@
 # Jekyll Configuration for AI Documentation Framework Wiki
-
-# Site settings
 title: "AI Documentation Framework"
 description: "Comprehensive AI-Optimized Documentation System for Multi-Application Projects"
-baseurl: ""
-url: ""
+baseurl: "/ai-doc-framework"
+url: "https://zsarir.github.io"
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-primer
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
-
-# Exclude files from build
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
-  - .git
-  - .github
-  - README.md
-  - LICENSE
+theme: jekyll-theme-minimal
 
 # Sass/SCSS settings
 sass:
   sass_dir: assets/css
   style: compressed
 
-# Collections for organizing content
-collections:
-  guides:
-    output: true
-    permalink: /guides/:path/
-  examples:
-    output: true
-    permalink: /examples/:path/
-  core:
-    output: true
-    permalink: /core/:path/
-  advanced:
-    output: true
-    permalink: /advanced/:path/
-  troubleshooting:
-    output: true
-    permalink: /troubleshooting/:path/
-  visual-components:
-    output: true
-    permalink: /visual-components/:path/
-
-# Default front matter
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: default
-      author: "AI Documentation Framework"
-      show_sidebar: true
-
-# SEO settings
-twitter:
-  username: ai_doc_framework
-  card: summary_large_image
-
-social:
-  name: AI Documentation Framework
-  links:
-    - https://github.com/zsarir/ai-doc-framework
-
 # Build settings for GitHub Pages
 github: [metadata]
 
-# Custom variables
-repository: "zsarir/ai-doc-framework"
-repository_url: "https://github.com/zsarir/ai-doc-framework"
-
-# Theme settings
-primer:
-  color_scheme: auto
-  color_scheme_night: dark_dimmed
+# Permalinks
+permalink: pretty

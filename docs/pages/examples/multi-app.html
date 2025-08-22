@@ -6,7 +6,7 @@
     <title>Multi-Application Example - AI Documentation Framework</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../{{ "/assets/css/style.scss" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     <style>
         .example-hero {
@@ -476,9 +476,9 @@
                 <span>AI Doc Framework</span>
             </div>
             <div class="nav-menu">
-                <a href="../../index.html" class="nav-link">Home</a>
-                <a href="../guides/installation.html" class="nav-link">Installation</a>
-                <a href="../guides/usage.html" class="nav-link">Usage</a>
+                <a href="{{ "/" | relative_url }}" class="nav-link">Home</a>
+                <a href="{{ "/pages/guides/installation.html" | relative_url }}" class="nav-link">Installation</a>
+                <a href="{{ "/pages/guides/usage.html" | relative_url }}" class="nav-link">Usage</a>
                 <a href="#examples" class="nav-link active">Examples</a>
             </div>
         </div>
@@ -920,7 +920,7 @@ event_driven:
                 <div class="setup-command">python tools/app-generator.py --type multi --apps web,api,admin</div>
             </div>
 
-            <a href="../guides/installation.html" class="setup-btn">
+            <a href="{{ "/pages/guides/installation.html" | relative_url }}" class="setup-btn">
                 <i class="fas fa-arrow-right"></i>
                 View Full Installation Guide
             </a>
@@ -928,7 +928,7 @@ event_driven:
     </section>
 
     <!-- Scripts -->
-    <script src="../../{{ "/assets/js/main.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js"></script>

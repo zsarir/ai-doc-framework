@@ -13,7 +13,7 @@ highlight: true
     <title>Usage Guide - AI Documentation Framework</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../{{ "/assets/css/style.scss" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     <style>
         .usage-hero {
@@ -361,10 +361,10 @@ highlight: true
                 <span>AI Doc Framework</span>
             </div>
             <div class="nav-menu">
-                <a href="../../index.html" class="nav-link">Home</a>
-                <a href="../guides/installation.html" class="nav-link">Installation</a>
+                <a href="{{ "/" | relative_url }}" class="nav-link">Home</a>
+                <a href="{{ "/pages/guides/installation.html" | relative_url }}" class="nav-link">Installation</a>
                 <a href="#usage" class="nav-link active">Usage</a>
-                <a href="../guides/configuration.html" class="nav-link">Configuration</a>
+                <a href="{{ "/pages/guides/configuration.html" | relative_url }}" class="nav-link">Configuration</a>
             </div>
         </div>
     </nav>
@@ -805,7 +805,7 @@ highlight: true
     </section>
 
     <!-- Scripts -->
-    <script src="../../{{ "/assets/js/main.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script>
         // Add smooth scrolling for navigation links

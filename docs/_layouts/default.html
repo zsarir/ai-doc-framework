@@ -7,7 +7,7 @@
     <meta name="description" content="{{ page.description | default: site.description }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ '/assets/css/style.scss' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | absolute_url }}">
     {% if page.styles %}
     {% for style in page.styles %}
     <link rel="stylesheet" href="{{ style | relative_url }}">
@@ -18,7 +18,7 @@
 <body>
     {{ content }}
 
-    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/main.js' | absolute_url }}"></script>
     {% if page.scripts %}
     {% for script in page.scripts %}
     <script src="{{ script | relative_url }}"></script>

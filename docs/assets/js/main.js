@@ -91,6 +91,11 @@ function setupSearch() {
     const searchInput = document.getElementById('searchInput');
     const searchableContent = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, .feature-card h3, .quickstart-card h3');
 
+    // Only setup search if search input exists on the page
+    if (!searchInput) {
+        return;
+    }
+
     searchInput.addEventListener('input', (e) => {
         const query = e.target.value.toLowerCase().trim();
 
@@ -380,30 +385,37 @@ window.addEventListener('error', (e) => {
 });
 
 // Service Worker for offline functionality (future enhancement)
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/wiki/sw.js')
-            .then(registration => {
-                console.log('Service Worker registered:', registration);
-            })
-            .catch(error => {
-                console.log('Service Worker registration failed:', error);
-            });
-    });
-}
+// Disabled for now to prevent 404 errors on GitHub Pages
+// if ('serviceWorker' in navigator) {
+//     window.addEventListener('load', () => {
+//         navigator.serviceWorker.register('/ai-doc-framework/sw.js')
+//             .then(registration => {
+//                 console.log('Service Worker registered:', registration);
+//             })
+//             .catch(error => {
+//                 console.log('Service Worker registration failed:', error);
+//             });
+//     });
+// }
 
 // Keyboard shortcuts
 document.addEventListener('keydown', (e) => {
+    const searchInput = document.getElementById('searchInput');
+
     // Ctrl/Cmd + K for search focus
     if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault();
-        document.getElementById('searchInput').focus();
+        if (searchInput) {
+            searchInput.focus();
+        }
     }
 
     // Escape to clear search
     if (e.key === 'Escape') {
-        document.getElementById('searchInput').value = '';
-        clearSearchHighlights();
+        if (searchInput) {
+            searchInput.value = '';
+            clearSearchHighlights();
+        }
     }
 });
 

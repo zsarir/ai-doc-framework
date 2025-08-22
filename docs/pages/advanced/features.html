@@ -1,3 +1,12 @@
+---
+layout: default
+title: "Advanced Features - AI Documentation Framework"
+description: "Unlock the full potential of the AI Documentation Framework with advanced features, APIs, and customization options"
+keywords: "advanced features, API, customization, plugins, performance, security"
+author: "Mobin Zarekar"
+highlight: true
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +15,7 @@
     <title>Advanced Features - AI Documentation Framework</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../{{ "/assets/css/style.scss" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     <style>
         .advanced-hero {
@@ -491,9 +500,9 @@
                 <span>AI Doc Framework</span>
             </div>
             <div class="nav-menu">
-                <a href="../../index.html" class="nav-link">Home</a>
-                <a href="../guides/installation.html" class="nav-link">Installation</a>
-                <a href="../guides/usage.html" class="nav-link">Usage</a>
+                <a href="{{ "/" | relative_url }}" class="nav-link">Home</a>
+                <a href="{{ "/pages/guides/installation.html" | relative_url }}" class="nav-link">Installation</a>
+                <a href="{{ "/pages/guides/usage.html" | relative_url }}" class="nav-link">Usage</a>
                 <a href="#advanced" class="nav-link active">Advanced</a>
             </div>
         </div>
@@ -1268,7 +1277,7 @@ export const ${name}: React.FC<${name}Props> = (props) => {
     </section>
 
     <!-- Scripts -->
-    <script src="../../{{ "/assets/js/main.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>

@@ -1,3 +1,12 @@
+---
+layout: default
+title: "Troubleshooting Guide - AI Documentation Framework"
+description: "Comprehensive troubleshooting guide with solutions to common issues and diagnostic tools"
+keywords: "troubleshooting, issues, solutions, errors, debugging, support"
+author: "Mobin Zarekar"
+highlight: true
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +15,7 @@
     <title>Troubleshooting Guide - AI Documentation Framework</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../{{ "/assets/css/style.scss" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     <style>
         .troubleshooting-hero {
@@ -467,9 +476,9 @@
                 <span>AI Doc Framework</span>
             </div>
             <div class="nav-menu">
-                <a href="../../index.html" class="nav-link">Home</a>
-                <a href="../guides/installation.html" class="nav-link">Installation</a>
-                <a href="../guides/usage.html" class="nav-link">Usage</a>
+                <a href="{{ "/" | relative_url }}" class="nav-link">Home</a>
+                <a href="{{ "/pages/guides/installation.html" | relative_url }}" class="nav-link">Installation</a>
+                <a href="{{ "/pages/guides/usage.html" | relative_url }}" class="nav-link">Usage</a>
                 <a href="#troubleshooting" class="nav-link active">Troubleshooting</a>
             </div>
         </div>
@@ -896,7 +905,7 @@
                         </div>
                         <h3 class="support-option-title">Documentation</h3>
                         <p class="support-description">Browse our comprehensive documentation for detailed guides and tutorials.</p>
-                        <a href="../guides/usage.html" class="support-link">View Docs</a>
+                        <a href="{{ "/pages/guides/usage.html" | relative_url }}" class="support-link">View Docs</a>
                     </div>
                 </div>
             </div>
@@ -904,7 +913,7 @@
     </section>
 
     <!-- Scripts -->
-    <script src="../../{{ "/assets/js/main.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script>
         function filterIssues(category) {
