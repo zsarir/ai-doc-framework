@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Documentation Framework - Revolutionize AI-Powered Development</title>
-    <meta name="description" content="AI Documentation Framework - Reduce AI token costs by 60-80%, eliminate repetitive errors, and streamline multi-application project management.">
-    <link rel="stylesheet" href="styles.css">
+    <title>AI Documentation Framework - Revolutionize Your AI Development</title>
+    <meta name="description" content="Comprehensive AI-Optimized Documentation System for Multi-Application Projects. Reduce token costs by 60-80% and boost productivity.">
+    <meta name="keywords" content="AI documentation, token optimization, development framework, error management, issue tracking">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 </head>
 <body>
     <!-- Navigation -->
@@ -17,74 +19,103 @@
                 <i class="fas fa-robot"></i>
                 <span>AI Doc Framework</span>
             </div>
-            <div class="nav-menu">
-                <a href="index.html" class="nav-link active">Home</a>
-                <a href="features.html" class="nav-link">Features</a>
-                <a href="benefits.html" class="nav-link">Benefits</a>
-                <a href="documentation.html" class="nav-link">Docs</a>
-                <a href="examples.html" class="nav-link">Examples</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-                <a href="https://github.com/zsarir/ai-doc-framework" class="nav-link github" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-            </div>
-            <div class="mobile-menu-toggle">
-                <i class="fas fa-bars"></i>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#solutions" class="nav-link">Solutions</a></li>
+                <li><a href="#architecture" class="nav-link">Architecture</a></li>
+                <li><a href="pages/getting-started.html" class="nav-link">Get Started</a></li>
+                <li><a href="pages/documentation.html" class="nav-link">Docs</a></li>
+                <li><a href="pages/examples.html" class="nav-link">Examples</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-rocket"></i>
+                    <span>Revolutionary AI Documentation System</span>
+                </div>
                 <h1 class="hero-title">
-                    <span class="highlight">AI Documentation Framework</span>
-                    <br>Revolutionize Your Development
+                    Stop Wasting <span class="gradient-text">$200 Daily</span> on AI Tokens
                 </h1>
-                <p class="hero-subtitle">
-                    Reduce AI token costs by <span class="bold">60-80%</span>, eliminate repetitive errors,
-                    and manage complex multi-application projects with unprecedented efficiency.
+                <p class="hero-description">
+                    The AI Documentation Framework reduces token consumption by 60-80% while boosting productivity and eliminating repetitive errors. 
+                    Designed for modern development teams working with AI assistants.
                 </p>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <span class="stat-number">60-80%</span>
-                        <span class="stat-label">Token Reduction</span>
+                        <div class="stat-number">60-80%</div>
+                        <div class="stat-label">Token Reduction</div>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">90%</span>
-                        <span class="stat-label">Faster Navigation</span>
+                        <div class="stat-number">90%</div>
+                        <div class="stat-label">Faster Navigation</div>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Task Completion</span>
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Task Completion</div>
                     </div>
                 </div>
                 <div class="hero-buttons">
-                    <a href="#get-started" class="btn btn-primary">Get Started</a>
-                    <a href="https://github.com/zsarir/ai-doc-framework" class="btn btn-secondary" target="_blank">
-                        <i class="fab fa-github"></i> View on GitHub
+                    <a href="pages/getting-started.html" class="btn btn-primary">
+                        <i class="fas fa-play"></i>
+                        Get Started
+                    </a>
+                    <a href="pages/documentation.html" class="btn btn-secondary">
+                        <i class="fas fa-book"></i>
+                        View Documentation
+                    </a>
+                    <a href="https://github.com/zsarir/ai-doc-framework" class="btn btn-outline" target="_blank">
+                        <i class="fab fa-github"></i>
+                        GitHub
                     </a>
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="floating-cards">
-                    <div class="card card-1">
-                        <i class="fas fa-search"></i>
-                        <span>Smart Navigation</span>
-                    </div>
-                    <div class="card card-2">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Error Prevention</span>
-                    </div>
-                    <div class="card card-3">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Performance Monitoring</span>
-                    </div>
-                    <div class="card card-4">
-                        <i class="fas fa-tasks"></i>
-                        <span>Issue Tracking</span>
+                <div class="floating-card card-1">
+                    <i class="fas fa-brain"></i>
+                    <span>Smart Navigation</span>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Error Prevention</span>
+                </div>
+                <div class="floating-card card-3">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Auto Updates</span>
+                </div>
+                <div class="hero-image">
+                    <div class="code-window">
+                        <div class="window-header">
+                            <div class="window-buttons">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="window-title">AI Documentation Framework</div>
+                        </div>
+                        <div class="window-content">
+                            <div class="code-line"><span class="keyword">import</span> ai_doc_framework</div>
+                            <div class="code-line"><span class="keyword">from</span> framework <span class="keyword">import</span> Navigator</div>
+                            <div class="code-line"></div>
+                            <div class="code-line"><span class="comment"># Reduce token usage by 60-80%</span></div>
+                            <div class="code-line">navigator = Navigator()</div>
+                            <div class="code-line">navigator.optimize_docs()</div>
+                            <div class="code-line"></div>
+                            <div class="code-line"><span class="comment"># Automatic error management</span></div>
+                            <div class="code-line">error_manager = ErrorManager()</div>
+                            <div class="code-line">error_manager.prevent_recurrence()</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -94,99 +125,287 @@
     <!-- Problem Section -->
     <section class="problem-section">
         <div class="container">
-            <h2 class="section-title">The Problem: Skyrocketing AI Costs & Endless Loops</h2>
+            <h2 class="section-title">The Problems We Solve</h2>
             <div class="problem-grid">
                 <div class="problem-card">
                     <div class="problem-icon">
                         <i class="fas fa-dollar-sign"></i>
                     </div>
-                    <h3>$200 Daily Token Costs</h3>
-                    <p>Spending hundreds of dollars daily just on AI model tokens for your projects.</p>
+                    <h3>Exorbitant Token Costs</h3>
+                    <p>Spending $200 daily just on AI model tokens for basic development tasks</p>
+                    <div class="problem-metric">
+                        <span class="metric-value">$200</span>
+                        <span class="metric-label">Daily Cost</span>
+                    </div>
                 </div>
                 <div class="problem-card">
                     <div class="problem-icon">
-                        <i class="fas fa-redo-alt"></i>
+                        <i class="fas fa-infinity"></i>
                     </div>
                     <h3>Endless Loops</h3>
-                    <p>Large projects forcing AI into endless loops, wasting tokens and time.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">
-                        <i class="fas fa-exclamation-triangle"></i>
+                    <p>AI models getting stuck in repetitive cycles due to token limits</p>
+                    <div class="problem-metric">
+                        <span class="metric-value">∞</span>
+                        <span class="metric-label">Wasted Time</span>
                     </div>
-                    <h3>Repetitive Errors</h3>
-                    <p>AI fixes errors with effort, then repeats the same errors in next tasks.</p>
                 </div>
                 <div class="problem-card">
                     <div class="problem-icon">
-                        <i class="fas fa-book"></i>
+                        <i class="fas fa-redo"></i>
+                    </div>
+                    <h3>Error Repetition</h3>
+                    <p>Same errors being fixed thousands of times with tremendous effort</p>
+                    <div class="problem-metric">
+                        <span class="metric-value">1000+</span>
+                        <span class="metric-label">Repeated Fixes</span>
+                    </div>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="fas fa-file-alt"></i>
                     </div>
                     <h3>Documentation Hell</h3>
-                    <p>AI reads unnecessary documentation, causing token waste and incomplete tasks.</p>
+                    <p>AI forced to read irrelevant documentation, causing token waste</p>
+                    <div class="problem-metric">
+                        <span class="metric-value">80%</span>
+                        <span class="metric-label">Wasted Tokens</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Solution Section -->
-    <section class="solution-section">
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3>AI-Optimized Navigation</h3>
+                    <p>Hierarchical documentation structure that reduces token usage by 60-80% through smart routing and relevance detection.</p>
+                    <ul class="feature-list">
+                        <li>Smart routing system</li>
+                        <li>Automatic relevance detection</li>
+                        <li>Text-based navigation</li>
+                        <li>GPS-like guidance for AI</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Intelligent Error Management</h3>
+                    <p>Automatic error categorization with proven solutions database and pattern recognition to prevent recurrence.</p>
+                    <ul class="feature-list">
+                        <li>Automatic categorization</li>
+                        <li>Proven solutions database</li>
+                        <li>Pattern recognition</li>
+                        <li>Learning system</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Issue Tracking</h3>
+                    <p>Automatic registration of unfinished work with priority-based tracking and smart reminder system.</p>
+                    <ul class="feature-list">
+                        <li>Automatic registration</li>
+                        <li>Priority-based tracking</li>
+                        <li>Smart reminders</li>
+                        <li>Progress reporting</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <h3>Auto Documentation Updates</h3>
+                    <p>Automatic documentation updates after each task with smart version management and synchronization.</p>
+                    <ul class="feature-list">
+                        <li>Automatic updates</li>
+                        <li>Smart versioning</li>
+                        <li>Cross-project sync</li>
+                        <li>Integrity checks</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>System Protection</h3>
+                    <p>Prevents duplicate file creation with continuous integrity monitoring and automatic backup systems.</p>
+                    <ul class="feature-list">
+                        <li>Duplicate prevention</li>
+                        <li>Integrity monitoring</li>
+                        <li>Automatic backups</li>
+                        <li>Error recovery</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Advanced Search</h3>
+                    <p>Powerful search engine with intelligent scoring, filtering, and auto-suggestions for quick information access.</p>
+                    <ul class="feature-list">
+                        <li>Intelligent scoring</li>
+                        <li>Category filtering</li>
+                        <li>Auto-suggestions</li>
+                        <li>Keyboard shortcuts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="solutions-section">
         <div class="container">
             <h2 class="section-title">Our Revolutionary Solutions</h2>
-            <div class="solution-grid">
-                <div class="solution-card">
-                    <div class="solution-number">1</div>
+            <div class="solutions-timeline">
+                <div class="solution-item">
+                    <div class="solution-number">01</div>
                     <div class="solution-content">
                         <h3>AI-Optimized Navigation System</h3>
-                        <p>Hierarchical documentation structure reduces token usage by 60-80% with smart routing and automatic relevance detection.</p>
+                        <p>Hierarchical documentation structure that reduces token usage by 60-80% through smart routing and relevance detection.</p>
+                        <div class="solution-benefits">
+                            <span class="benefit">60-80% Token Reduction</span>
+                            <span class="benefit">Smart Routing</span>
+                            <span class="benefit">GPS-like Navigation</span>
+                        </div>
                     </div>
                 </div>
-                <div class="solution-card">
-                    <div class="solution-number">2</div>
+                <div class="solution-item">
+                    <div class="solution-number">02</div>
                     <div class="solution-content">
                         <h3>Intelligent Error Management</h3>
-                        <p>Automatic error categorization, searchable solutions database, and pattern recognition to prevent error recurrence.</p>
+                        <p>Automatic error categorization with proven solutions database and pattern recognition to prevent recurrence.</p>
+                        <div class="solution-benefits">
+                            <span class="benefit">Auto Categorization</span>
+                            <span class="benefit">Proven Solutions</span>
+                            <span class="benefit">Pattern Recognition</span>
+                        </div>
                     </div>
                 </div>
-                <div class="solution-card">
-                    <div class="solution-number">3</div>
+                <div class="solution-item">
+                    <div class="solution-number">03</div>
                     <div class="solution-content">
                         <h3>Issue Tracking for Incomplete Tasks</h3>
-                        <p>Automatic registration of unfinished work with priority-based tracking and smart reminder systems.</p>
+                        <p>Automatic registration of unfinished work with priority-based tracking and smart reminder system.</p>
+                        <div class="solution-benefits">
+                            <span class="benefit">Auto Registration</span>
+                            <span class="benefit">Priority Tracking</span>
+                            <span class="benefit">Smart Reminders</span>
+                        </div>
                     </div>
                 </div>
-                <div class="solution-card">
-                    <div class="solution-number">4</div>
+                <div class="solution-item">
+                    <div class="solution-number">04</div>
                     <div class="solution-content">
                         <h3>Automatic Documentation Updates</h3>
-                        <p>AI automatically updates documentation, versions, and error logs with system integrity checks.</p>
+                        <p>Automatic documentation updates after each task with smart version management and synchronization.</p>
+                        <div class="solution-benefits">
+                            <span class="benefit">Auto Updates</span>
+                            <span class="benefit">Smart Versioning</span>
+                            <span class="benefit">Cross-Project Sync</span>
+                        </div>
                     </div>
                 </div>
-                <div class="solution-card">
-                    <div class="solution-number">5</div>
+                <div class="solution-item">
+                    <div class="solution-number">05</div>
                     <div class="solution-content">
-                        <h3>System Protection & Integrity</h3>
-                        <p>Prevention of duplicate files, continuous integrity monitoring, and automatic backup systems.</p>
+                        <h3>Protection and Integrity System</h3>
+                        <p>Prevents duplicate file creation with continuous integrity monitoring and automatic backup systems.</p>
+                        <div class="solution-benefits">
+                            <span class="benefit">Duplicate Prevention</span>
+                            <span class="benefit">Integrity Monitoring</span>
+                            <span class="benefit">Auto Backups</span>
+                        </div>
                     </div>
                 </div>
-                <div class="solution-card">
-                    <div class="solution-number">6</div>
-                    <div class="solution-content">
-                        <h3>Flexible Multi-Application Architecture</h3>
-                        <p>Full support for single and multi-application projects with microservices and dependency management.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="architecture-section">
+        <div class="container">
+            <h2 class="section-title">System Architecture</h2>
+            <div class="architecture-diagram">
+                <div class="arch-layer">
+                    <h3>Application Layer</h3>
+                    <div class="arch-components">
+                        <div class="arch-component">
+                            <i class="fas fa-cog"></i>
+                            <span>Setup Wizard</span>
+                        </div>
+                        <div class="arch-component">
+                            <i class="fas fa-magic"></i>
+                            <span>App Generator</span>
+                        </div>
+                        <div class="arch-component">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Validator</span>
+                        </div>
                     </div>
                 </div>
-                <div class="solution-card">
-                    <div class="solution-number">7</div>
-                    <div class="solution-content">
-                        <h3>Advanced Search System</h3>
-                        <p>Powerful search engine with intelligent scoring, category filtering, and auto-suggestions.</p>
+                <div class="arch-layer">
+                    <h3>Core System</h3>
+                    <div class="arch-components">
+                        <div class="arch-component">
+                            <i class="fas fa-sitemap"></i>
+                            <span>Navigation Engine</span>
+                        </div>
+                        <div class="arch-component">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Error Manager</span>
+                        </div>
+                        <div class="arch-component">
+                            <i class="fas fa-tasks"></i>
+                            <span>Issue Tracker</span>
+                        </div>
+                        <div class="arch-component">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Protection System</span>
+                        </div>
                     </div>
                 </div>
-                <div class="solution-card">
-                    <div class="solution-number">8</div>
-                    <div class="solution-content">
-                        <h3>Performance Optimization & Monitoring</h3>
-                        <p>Real-time token monitoring, performance analysis, and auto-optimization based on usage patterns.</p>
+                <div class="arch-layer">
+                    <h3>Documentation Layer</h3>
+                    <div class="arch-components">
+                        <div class="arch-component">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Templates</span>
+                        </div>
+                        <div class="arch-component">
+                            <i class="fas fa-book"></i>
+                            <span>Documentation</span>
+                        </div>
+                        <div class="arch-component">
+                            <i class="fas fa-search"></i>
+                            <span>Search Engine</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="arch-layer">
+                    <h3>Storage Layer</h3>
+                    <div class="arch-components">
+                        <div class="arch-component">
+                            <i class="fas fa-database"></i>
+                            <span>Error Database</span>
+                        </div>
+                        <div class="arch-component">
+                            <i class="fas fa-folder"></i>
+                            <span>File System</span>
+                        </div>
+                        <div class="arch-component">
+                            <i class="fas fa-history"></i>
+                            <span>Version Control</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -196,126 +415,69 @@
     <!-- Benefits Section -->
     <section class="benefits-section">
         <div class="container">
-            <h2 class="section-title">Measurable Benefits & Results</h2>
+            <h2 class="section-title">Transform Your Development Workflow</h2>
             <div class="benefits-grid">
-                <div class="benefit-category">
-                    <h3 class="benefit-title financial">
-                        <i class="fas fa-piggy-bank"></i> Financial Savings
-                    </h3>
-                    <ul class="benefit-list">
-                        <li><strong>60-80% reduction</strong> in token consumption</li>
-                        <li>Costs reduced from $200 daily to less than $50</li>
-                        <li>Quick return on initial investment</li>
-                        <li>Scalable cost management for growing projects</li>
-                    </ul>
-                </div>
-                <div class="benefit-category">
-                    <h3 class="benefit-title time">
-                        <i class="fas fa-clock"></i> Time Savings
-                    </h3>
-                    <ul class="benefit-list">
-                        <li><strong>90% faster</strong> navigation speed</li>
-                        <li>Reduced time for repetitive problem solving</li>
-                        <li>Automation of routine tasks</li>
-                        <li>More time for creative development work</li>
-                    </ul>
-                </div>
-                <div class="benefit-category">
-                    <h3 class="benefit-title quality">
-                        <i class="fas fa-star"></i> Higher Quality
-                    </h3>
-                    <ul class="benefit-list">
-                        <li>Reduced human errors and inconsistencies</li>
-                        <li>Better code and documentation quality</li>
-                        <li>Assurance of task completion</li>
-                        <li>Standardized development practices</li>
-                    </ul>
-                </div>
-                <div class="benefit-category">
-                    <h3 class="benefit-title reliability">
-                        <i class="fas fa-shield-alt"></i> Reliability
-                    </h3>
-                    <ul class="benefit-list">
-                        <li><strong>100% prevention</strong> of incomplete tasks</li>
-                        <li>Automatic recovery systems</li>
-                        <li>24/7 support through smart documentation</li>
-                        <li>Consistent system performance</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Architecture Section -->
-    <section class="architecture-section">
-        <div class="container">
-            <h2 class="section-title">System Architecture</h2>
-            <div class="architecture-diagram">
-                <div class="arch-layer core">
-                    <h3>Core Framework</h3>
-                    <div class="arch-components">
-                        <div class="arch-component">
-                            <i class="fas fa-file-alt"></i>
-                            <span>AI_RULES.md</span>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Financial Savings</h3>
+                    <div class="benefit-metrics">
+                        <div class="metric">
+                            <span class="metric-value">60-80%</span>
+                            <span class="metric-label">Token Reduction</span>
                         </div>
-                        <div class="arch-component">
-                            <i class="fas fa-play"></i>
-                            <span>START_TASK.md</span>
-                        </div>
-                        <div class="arch-component">
-                            <i class="fas fa-check"></i>
-                            <span>COMPLETE_TASK.md</span>
+                        <div class="metric">
+                            <span class="metric-value">$150</span>
+                            <span class="metric-label">Daily Savings</span>
                         </div>
                     </div>
                 </div>
-                <div class="arch-layer documentation">
-                    <h3>Documentation System</h3>
-                    <div class="arch-components">
-                        <div class="arch-component">
-                            <i class="fas fa-compass"></i>
-                            <span>AI_APP_GUIDE.md</span>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Time Savings</h3>
+                    <div class="benefit-metrics">
+                        <div class="metric">
+                            <span class="metric-value">90%</span>
+                            <span class="metric-label">Faster Navigation</span>
                         </div>
-                        <div class="arch-component">
-                            <i class="fas fa-book"></i>
-                            <span>Component Docs</span>
-                        </div>
-                        <div class="arch-component">
-                            <i class="fas fa-code-branch"></i>
-                            <span>VERSION.md</span>
+                        <div class="metric">
+                            <span class="metric-value">Hours</span>
+                            <span class="metric-label">Saved Daily</span>
                         </div>
                     </div>
                 </div>
-                <div class="arch-layer error-management">
-                    <h3>Error Management</h3>
-                    <div class="arch-components">
-                        <div class="arch-component">
-                            <i class="fas fa-database"></i>
-                            <span>MASTER_ERROR_INDEX.md</span>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Higher Quality</h3>
+                    <div class="benefit-metrics">
+                        <div class="metric">
+                            <span class="metric-value">85%</span>
+                            <span class="metric-label">Fewer Errors</span>
                         </div>
-                        <div class="arch-component">
-                            <i class="fas fa-folder"></i>
-                            <span>Error Categories</span>
-                        </div>
-                        <div class="arch-component">
-                            <i class="fas fa-search"></i>
-                            <span>Error Search</span>
+                        <div class="metric">
+                            <span class="metric-value">95%</span>
+                            <span class="metric-label">Accuracy</span>
                         </div>
                     </div>
                 </div>
-                <div class="arch-layer issue-tracking">
-                    <h3>Issue Tracking</h3>
-                    <div class="arch-components">
-                        <div class="arch-component">
-                            <i class="fas fa-tasks"></i>
-                            <span>ISSUE_TRACKER.md</span>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Reliability</h3>
+                    <div class="benefit-metrics">
+                        <div class="metric">
+                            <span class="metric-value">100%</span>
+                            <span class="metric-label">Task Completion</span>
                         </div>
-                        <div class="arch-component">
-                            <i class="fas fa-folder-open"></i>
-                            <span>Open Issues</span>
-                        </div>
-                        <div class="arch-component">
-                            <i class="fas fa-archive"></i>
-                            <span>Closed Issues</span>
+                        <div class="metric">
+                            <span class="metric-value">24/7</span>
+                            <span class="metric-label">Support</span>
                         </div>
                     </div>
                 </div>
@@ -323,93 +485,105 @@
         </div>
     </section>
 
-    <!-- Get Started Section -->
-    <section class="get-started-section" id="get-started">
+    <!-- CTA Section -->
+    <section class="cta-section">
         <div class="container">
-            <h2 class="section-title">Get Started in Minutes</h2>
-            <div class="steps-grid">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Install Framework</h3>
-                    <code>pip install ai-doc-framework</code>
-                    <p>Or clone from GitHub and install dependencies</p>
+            <div class="cta-content">
+                <h2>Ready to Revolutionize Your AI Development?</h2>
+                <p>Join thousands of developers who have already reduced their token costs and boosted productivity</p>
+                <div class="cta-buttons">
+                    <a href="pages/getting-started.html" class="btn btn-primary btn-large">
+                        <i class="fas fa-rocket"></i>
+                        Start Your Journey
+                    </a>
+                    <a href="https://github.com/zsarir/ai-doc-framework" class="btn btn-outline btn-large" target="_blank">
+                        <i class="fab fa-github"></i>
+                        View on GitHub
+                    </a>
                 </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Run Setup Wizard</h3>
-                    <code>python tools/setup-wizard.py</code>
-                    <p>Configure for single or multi-application project</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Generate Structure</h3>
-                    <code>python tools/app-generator.py --type multi --apps web,api,admin</code>
-                    <p>Create optimized documentation structure</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Start Development</h3>
-                    <code>"Read START_TASK.md and execute task: [your task]"</code>
-                    <p>AI automatically navigates and optimizes your workflow</p>
+                <div class="cta-stats">
+                    <div class="stat">
+                        <span class="stat-number">1000+</span>
+                        <span class="stat-label">Developers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">$50K+</span>
+                        <span class="stat-label">Saved</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4.9★</span>
+                        <span class="stat-label">Rating</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer id="contact" class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>AI Documentation Framework</h3>
-                    <p>Revolutionizing AI-powered development with intelligent documentation management and cost optimization.</p>
+                    <div class="footer-logo">
+                        <i class="fas fa-robot"></i>
+                        <span>AI Doc Framework</span>
+                    </div>
+                    <p>Revolutionizing AI-assisted development with intelligent documentation systems that reduce costs and boost productivity.</p>
                     <div class="social-links">
                         <a href="https://github.com/zsarir/ai-doc-framework" target="_blank">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://twitter.com/ai-doc-framework" target="_blank">
-                            <i class="fab fa-twitter"></i>
+                        <a href="https://plusonefx.net" target="_blank">
+                            <i class="fas fa-globe"></i>
                         </a>
-                        <a href="https://discord.gg/ai-doc-framework" target="_blank">
-                            <i class="fab fa-discord"></i>
+                        <a href="mailto:z.sarir@gmail.com">
+                            <i class="fas fa-envelope"></i>
                         </a>
                     </div>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="features.html">Features</a></li>
-                        <li><a href="documentation.html">Documentation</a></li>
-                        <li><a href="examples.html">Examples</a></li>
-                        <li><a href="benefits.html">Benefits</a></li>
+                        <li><a href="pages/getting-started.html">Getting Started</a></li>
+                        <li><a href="pages/documentation.html">Documentation</a></li>
+                        <li><a href="pages/examples.html">Examples</a></li>
+                        <li><a href="pages/installation.html">Installation</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Resources</h3>
                     <ul>
-                        <li><a href="https://github.com/zsarir/ai-doc-framework/wiki" target="_blank">Wiki</a></li>
-                        <li><a href="https://github.com/zsarir/ai-doc-framework/issues" target="_blank">Issues</a></li>
-                        <li><a href="https://github.com/zsarir/ai-doc-framework/discussions" target="_blank">Discussions</a></li>
-                        <li><a href="contact.html">Support</a></li>
+                        <li><a href="pages/architecture.html">Architecture</a></li>
+                        <li><a href="pages/api-reference.html">API Reference</a></li>
+                        <li><a href="pages/troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="pages/contributing.html">Contributing</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Contact</h3>
-                    <ul>
-                        <li><strong>Author:</strong> Mobin Zarekar</li>
-                        <li><strong>Website:</strong> <a href="https://plusonefx.net" target="_blank">plusonefx.net</a></li>
-                        <li><strong>GitHub:</strong> <a href="https://github.com/zsarir" target="_blank">@zsarir</a></li>
-                        <li><strong>Email:</strong> z.sarir@gmail.com</li>
-                    </ul>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-user"></i>
+                            <span>Mobin Zarekar</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>z.sarir@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <span>plusonefx.net</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 AI Documentation Framework. Made with ❤️ for the AI-powered development community.</p>
-                <p>MIT License - Open source and free to use.</p>
+                <p>Licensed under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a></p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

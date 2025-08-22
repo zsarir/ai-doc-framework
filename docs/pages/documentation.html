@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - AI Documentation Framework</title>
+    <meta name="description" content="Complete documentation for AI Documentation Framework. Learn about features, API reference, configuration, and best practices.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-robot"></i>
+                <span>AI Doc Framework</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../index.html#features" class="nav-link">Features</a></li>
+                <li><a href="../index.html#solutions" class="nav-link">Solutions</a></li>
+                <li><a href="../index.html#architecture" class="nav-link">Architecture</a></li>
+                <li><a href="getting-started.html" class="nav-link">Get Started</a></li>
+                <li><a href="documentation.html" class="nav-link active">Docs</a></li>
+                <li><a href="examples.html" class="nav-link">Examples</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Documentation</span>
+                </div>
+                <h1>Documentation</h1>
+                <p>Complete guide to using AI Documentation Framework. Learn about features, configuration, and best practices.</p>
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="doc-search" placeholder="Search documentation..." class="search-input">
+                        <div class="search-results" id="search-results"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Layout -->
+    <section class="docs-layout">
+        <div class="container">
+            <div class="docs-sidebar">
+                <div class="sidebar-section">
+                    <h3>Getting Started</h3>
+                    <ul>
+                        <li><a href="#introduction" class="sidebar-link">Introduction</a></li>
+                        <li><a href="#installation" class="sidebar-link">Installation</a></li>
+                        <li><a href="#quick-start" class="sidebar-link">Quick Start</a></li>
+                        <li><a href="#configuration" class="sidebar-link">Configuration</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>Core Features</h3>
+                    <ul>
+                        <li><a href="#navigation" class="sidebar-link">AI Navigation</a></li>
+                        <li><a href="#error-management" class="sidebar-link">Error Management</a></li>
+                        <li><a href="#issue-tracking" class="sidebar-link">Issue Tracking</a></li>
+                        <li><a href="#auto-updates" class="sidebar-link">Auto Updates</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>Advanced Topics</h3>
+                    <ul>
+                        <li><a href="#customization" class="sidebar-link">Customization</a></li>
+                        <li><a href="#api-reference" class="sidebar-link">API Reference</a></li>
+                        <li><a href="#troubleshooting" class="sidebar-link">Troubleshooting</a></li>
+                        <li><a href="#best-practices" class="sidebar-link">Best Practices</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="docs-content">
+                <div class="content-section" id="introduction">
+                    <h2>Introduction</h2>
+                    <p>The AI Documentation Framework is designed to revolutionize how AI assistants interact with project documentation. It provides intelligent navigation, error management, and automated updates to reduce token consumption and improve productivity.</p>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Key Benefits</h4>
+                            <ul>
+                                <li>60-80% reduction in token consumption</li>
+                                <li>90% faster navigation speed</li>
+                                <li>100% task completion rate</li>
+                                <li>Automatic error prevention</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-section" id="installation">
+                    <h2>Installation</h2>
+                    <p>Install the AI Documentation Framework using one of the following methods:</p>
+                    
+                    <div class="code-tabs">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" data-tab="git">Git Clone</button>
+                            <button class="tab-btn" data-tab="download">Download</button>
+                            <button class="tab-btn" data-tab="pip">Pip Install</button>
+                        </div>
+                        
+                        <div class="tab-content active" data-tab="git">
+                            <pre><code>git clone https://github.com/zsarir/ai-doc-framework.git
+cd ai-doc-framework
+python tools/setup-wizard.py</code></pre>
+                        </div>
+                        
+                        <div class="tab-content" data-tab="download">
+                            <pre><code># Download from GitHub releases
+wget https://github.com/zsarir/ai-doc-framework/releases/latest/download/ai-doc-framework.zip
+unzip ai-doc-framework.zip
+cd ai-doc-framework
+python tools/setup-wizard.py</code></pre>
+                        </div>
+                        
+                        <div class="tab-content" data-tab="pip">
+                            <pre><code>pip install ai-doc-framework
+ai-doc-framework setup</code></pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-section" id="quick-start">
+                    <h2>Quick Start</h2>
+                    <p>Get up and running in 5 minutes with this quick start guide.</p>
+                    
+                    <div class="step-guide">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Initialize Project</h4>
+                                <pre><code>python tools/app-generator.py --type single --name my-project</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Configure Settings</h4>
+                                <pre><code># Edit config.yaml
+project_name: "my-project"
+framework: "react"
+languages: ["javascript", "typescript"]</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Start Development</h4>
+                                <pre><code>python tools/start-dev.py</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-section" id="configuration">
+                    <h2>Configuration</h2>
+                    <p>Configure the framework to match your project requirements and preferences.</p>
+                    
+                    <div class="config-example">
+                        <h4>Configuration File (config.yaml)</h4>
+                        <pre><code># Project Configuration
+project:
+  name: "my-awesome-project"
+  description: "A modern web application"
+  type: "single"  # single, multi, custom
+  
+# Framework Settings
+framework:
+  primary: "react"
+  version: "18.0.0"
+  languages: ["javascript", "typescript"]
+  
+# AI Settings
+ai:
+  model: "gpt-4"
+  max_tokens: 4000
+  temperature: 0.7
+  
+# Documentation Settings
+documentation:
+  auto_update: true
+  search_enabled: true
+  version_control: true
+  
+# Error Management
+error_management:
+  auto_categorize: true
+  pattern_recognition: true
+  solution_database: true</code></pre>
+                    </div>
+                </div>
+                
+                <div class="content-section" id="navigation">
+                    <h2>AI Navigation System</h2>
+                    <p>The AI Navigation System provides intelligent routing through your documentation, reducing token consumption by 60-80%.</p>
+                    
+                    <div class="feature-detail">
+                        <h4>How It Works</h4>
+                        <ol>
+                            <li><strong>Hierarchical Structure:</strong> Documentation is organized in a tree-like structure</li>
+                            <li><strong>Smart Routing:</strong> AI automatically finds the most relevant documentation</li>
+                            <li><strong>Relevance Detection:</strong> Only necessary information is loaded</li>
+                            <li><strong>GPS-like Navigation:</strong> Clear path to required information</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="code-example">
+                        <h4>Navigation Example</h4>
+                        <pre><code># AI automatically navigates to relevant docs
+navigator = AINavigator()
+docs = navigator.find_relevant("authentication error")
+# Returns only authentication-related documentation</code></pre>
+                    </div>
+                </div>
+                
+                <div class="content-section" id="error-management">
+                    <h2>Error Management System</h2>
+                    <p>Automatically categorize, document, and prevent recurring errors with intelligent pattern recognition.</p>
+                    
+                    <div class="error-example">
+                        <h4>Error Documentation Template</h4>
+                        <pre><code>---
+error_id: "AUTH-001"
+category: "authentication"
+severity: "high"
+status: "resolved"
+first_occurrence: "2024-01-15 10:30:00"
+resolution_date: "2024-01-15 11:00:00"
+affected_components: ["login", "api"]
+tags: ["jwt", "token", "expired"]
+---
+
+## Error Description
+JWT token expiration causing authentication failures
+
+## Root Cause
+Token refresh mechanism not implemented
+
+## Solution
+Implement automatic token refresh with 5-minute buffer
+
+## Prevention
+- Add token expiration monitoring
+- Implement refresh token rotation
+- Add client-side token validation</code></pre>
+                    </div>
+                </div>
+                
+                <div class="content-section" id="issue-tracking">
+                    <h2>Issue Tracking</h2>
+                    <p>Automatically track incomplete tasks and manage project progress with intelligent reminders.</p>
+                    
+                    <div class="issue-workflow">
+                        <h4>Issue Workflow</h4>
+                        <div class="workflow-steps">
+                            <div class="workflow-step">
+                                <div class="step-icon">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                                <span>Auto Registration</span>
+                            </div>
+                            <div class="workflow-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                            <div class="workflow-step">
+                                <div class="step-icon">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <span>Priority Assignment</span>
+                            </div>
+                            <div class="workflow-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                            <div class="workflow-step">
+                                <div class="step-icon">
+                                    <i class="fas fa-bell"></i>
+                                </div>
+                                <span>Smart Reminders</span>
+                            </div>
+                            <div class="workflow-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                            <div class="workflow-step">
+                                <div class="step-icon">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <span>Resolution</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-section" id="auto-updates">
+                    <h2>Automatic Updates</h2>
+                    <p>Keep documentation synchronized with code changes automatically.</p>
+                    
+                    <div class="update-features">
+                        <div class="feature-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-sync"></i>
+                                <h5>Real-time Sync</h5>
+                                <p>Documentation updates automatically when code changes</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-history"></i>
+                                <h5>Version Control</h5>
+                                <p>Track all documentation changes with full history</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <h5>Integrity Checks</h5>
+                                <p>Ensure documentation accuracy and consistency</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-section" id="customization">
+                    <h2>Customization</h2>
+                    <p>Customize the framework to match your specific needs and workflows.</p>
+                    
+                    <div class="customization-options">
+                        <h4>Available Customizations</h4>
+                        <ul>
+                            <li><strong>Templates:</strong> Custom documentation templates</li>
+                            <li><strong>Workflows:</strong> Define custom issue workflows</li>
+                            <li><strong>Integrations:</strong> Connect with external tools</li>
+                            <li><strong>Themes:</strong> Customize visual appearance</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="content-section" id="api-reference">
+                    <h2>API Reference</h2>
+                    <p>Complete API reference for developers integrating with the framework.</p>
+                    
+                    <div class="api-endpoints">
+                        <h4>Core API Endpoints</h4>
+                        
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method get">GET</span>
+                                <span class="path">/api/docs/search</span>
+                            </div>
+                            <p>Search documentation for relevant content</p>
+                            <pre><code>GET /api/docs/search?q=authentication&category=backend</code></pre>
+                        </div>
+                        
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method post">POST</span>
+                                <span class="path">/api/errors</span>
+                            </div>
+                            <p>Report new errors for categorization</p>
+                            <pre><code>POST /api/errors
+{
+  "message": "JWT token expired",
+  "category": "authentication",
+  "severity": "high"
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-section" id="troubleshooting">
+                    <h2>Troubleshooting</h2>
+                    <p>Common issues and their solutions.</p>
+                    
+                    <div class="troubleshooting-guide">
+                        <div class="trouble-item">
+                            <h4>Setup Wizard Not Starting</h4>
+                            <p><strong>Problem:</strong> Python setup wizard fails to start</p>
+                            <p><strong>Solution:</strong> Ensure Python 3.8+ is installed and in PATH</p>
+                            <pre><code>python --version
+# Should show Python 3.8.0 or higher</code></pre>
+                        </div>
+                        
+                        <div class="trouble-item">
+                            <h4>Documentation Not Updating</h4>
+                            <p><strong>Problem:</strong> Auto-updates not working</p>
+                            <p><strong>Solution:</strong> Check file permissions and git configuration</p>
+                            <pre><code>chmod +x tools/auto-update.py
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"</code></pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-section" id="best-practices">
+                    <h2>Best Practices</h2>
+                    <p>Follow these best practices to maximize the benefits of the AI Documentation Framework.</p>
+                    
+                    <div class="best-practices-list">
+                        <div class="practice-item">
+                            <h4>1. Regular Updates</h4>
+                            <p>Keep documentation updated with every code change to maintain accuracy.</p>
+                        </div>
+                        
+                        <div class="practice-item">
+                            <h4>2. Consistent Naming</h4>
+                            <p>Use consistent naming conventions for files, functions, and variables.</p>
+                        </div>
+                        
+                        <div class="practice-item">
+                            <h4>3. Error Documentation</h4>
+                            <p>Document every error with detailed context and resolution steps.</p>
+                        </div>
+                        
+                        <div class="practice-item">
+                            <h4>4. Version Control</h4>
+                            <p>Use git for version control and enable automatic backups.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-robot"></i>
+                        <span>AI Doc Framework</span>
+                    </div>
+                    <p>Revolutionizing AI-assisted development with intelligent documentation systems that reduce costs and boost productivity.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/zsarir/ai-doc-framework" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://plusonefx.net" target="_blank">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        <a href="mailto:z.sarir@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="getting-started.html">Getting Started</a></li>
+                        <li><a href="documentation.html">Documentation</a></li>
+                        <li><a href="examples.html">Examples</a></li>
+                        <li><a href="installation.html">Installation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="architecture.html">Architecture</a></li>
+                        <li><a href="api-reference.html">API Reference</a></li>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="contributing.html">Contributing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-user"></i>
+                            <span>Mobin Zarekar</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>z.sarir@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <span>plusonefx.net</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AI Documentation Framework. Made with ❤️ for the AI-powered development community.</p>
+                <p>Licensed under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Documentation Search
+        const searchInput = document.getElementById('doc-search');
+        const searchResults = document.getElementById('search-results');
+        
+        const docContent = [
+            { title: 'Introduction', content: 'AI Documentation Framework overview and benefits', url: '#introduction' },
+            { title: 'Installation', content: 'How to install and set up the framework', url: '#installation' },
+            { title: 'Quick Start', content: 'Get up and running in 5 minutes', url: '#quick-start' },
+            { title: 'Configuration', content: 'Configure the framework for your project', url: '#configuration' },
+            { title: 'AI Navigation', content: 'Intelligent navigation system for documentation', url: '#navigation' },
+            { title: 'Error Management', content: 'Automated error categorization and prevention', url: '#error-management' },
+            { title: 'Issue Tracking', content: 'Track incomplete tasks and manage progress', url: '#issue-tracking' },
+            { title: 'Auto Updates', content: 'Keep documentation synchronized automatically', url: '#auto-updates' },
+            { title: 'Customization', content: 'Customize the framework for your needs', url: '#customization' },
+            { title: 'API Reference', content: 'Complete API documentation for developers', url: '#api-reference' },
+            { title: 'Troubleshooting', content: 'Common issues and their solutions', url: '#troubleshooting' },
+            { title: 'Best Practices', content: 'Guidelines for optimal framework usage', url: '#best-practices' }
+        ];
+        
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            
+            if (query.length < 2) {
+                searchResults.style.display = 'none';
+                return;
+            }
+            
+            const results = docContent.filter(item => 
+                item.title.toLowerCase().includes(query) || 
+                item.content.toLowerCase().includes(query)
+            );
+            
+            if (results.length > 0) {
+                searchResults.innerHTML = results.map(result => 
+                    `<div class="search-result" onclick="scrollToSection('${result.url}')">
+                        <div class="result-title">${result.title}</div>
+                        <div class="result-content">${result.content}</div>
+                    </div>`
+                ).join('');
+                searchResults.style.display = 'block';
+            } else {
+                searchResults.style.display = 'none';
+            }
+        });
+        
+        function scrollToSection(sectionId) {
+            const element = document.querySelector(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                searchResults.style.display = 'none';
+                searchInput.value = '';
+            }
+        }
+        
+        // Code Tabs
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const tabName = this.dataset.tab;
+                
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                this.classList.add('active');
+                document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+            });
+        });
+        
+        // Sidebar Navigation
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                scrollToSection(targetId);
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                scrollToSection(targetId);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started - AI Documentation Framework</title>
+    <meta name="description" content="Get started with AI Documentation Framework. Quick installation guide, setup wizard, and first steps to optimize your AI development workflow.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-robot"></i>
+                <span>AI Doc Framework</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../index.html#features" class="nav-link">Features</a></li>
+                <li><a href="../index.html#solutions" class="nav-link">Solutions</a></li>
+                <li><a href="../index.html#architecture" class="nav-link">Architecture</a></li>
+                <li><a href="getting-started.html" class="nav-link active">Get Started</a></li>
+                <li><a href="documentation.html" class="nav-link">Docs</a></li>
+                <li><a href="examples.html" class="nav-link">Examples</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Getting Started</span>
+                </div>
+                <h1>Get Started with AI Documentation Framework</h1>
+                <p>Set up your AI-optimized documentation system in minutes and start reducing token costs by 60-80%</p>
+                <div class="header-stats">
+                    <div class="stat">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Minutes Setup</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Simple Steps</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Free</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start Section -->
+    <section class="quick-start-section">
+        <div class="container">
+            <h2 class="section-title">Quick Start Guide</h2>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Clone the Repository</h3>
+                        <p>Get the latest version of the framework from GitHub</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Terminal</span>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <pre><code>git clone https://github.com/zsarir/ai-doc-framework.git
+cd ai-doc-framework</code></pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Run the Setup Wizard</h3>
+                        <p>Use our interactive setup wizard to configure your project</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Terminal</span>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <pre><code>python tools/setup-wizard.py</code></pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Generate Your Project Structure</h3>
+                        <p>Choose your project type and let the framework create the optimal structure</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Terminal</span>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <pre><code># For single application
+python tools/app-generator.py --type single --name my-app
+
+# For multi-application
+python tools/app-generator.py --type multi --apps web,api,admin</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Options -->
+    <section class="installation-section">
+        <div class="container">
+            <h2 class="section-title">Installation Options</h2>
+            <div class="installation-grid">
+                <div class="install-card">
+                    <div class="install-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>Direct Download</h3>
+                    <p>Download the latest release and extract to your project directory</p>
+                    <div class="install-steps">
+                        <ol>
+                            <li>Download from GitHub releases</li>
+                            <li>Extract to your project root</li>
+                            <li>Run setup wizard</li>
+                        </ol>
+                    </div>
+                    <a href="https://github.com/zsarir/ai-doc-framework/releases" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-download"></i>
+                        Download Latest
+                    </a>
+                </div>
+                
+                <div class="install-card">
+                    <div class="install-icon">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <h3>Git Clone</h3>
+                    <p>Clone the repository for the most up-to-date version with full history</p>
+                    <div class="install-steps">
+                        <ol>
+                            <li>Clone the repository</li>
+                            <li>Navigate to directory</li>
+                            <li>Run setup wizard</li>
+                        </ol>
+                    </div>
+                    <a href="https://github.com/zsarir/ai-doc-framework" class="btn btn-primary" target="_blank">
+                        <i class="fab fa-github"></i>
+                        Clone Repository
+                    </a>
+                </div>
+                
+                <div class="install-card">
+                    <div class="install-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3>Setup Wizard</h3>
+                    <p>Use our interactive wizard for guided installation and configuration</p>
+                    <div class="install-steps">
+                        <ol>
+                            <li>Run setup wizard</li>
+                            <li>Answer configuration questions</li>
+                            <li>Automatic setup completion</li>
+                        </ol>
+                    </div>
+                    <a href="#setup-wizard" class="btn btn-primary">
+                        <i class="fas fa-play"></i>
+                        Start Wizard
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Setup Wizard -->
+    <section id="setup-wizard" class="setup-wizard-section">
+        <div class="container">
+            <h2 class="section-title">Interactive Setup Wizard</h2>
+            <div class="wizard-container">
+                <div class="wizard-progress">
+                    <div class="progress-step active" data-step="1">
+                        <div class="step-circle">1</div>
+                        <span>Project Type</span>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <div class="step-circle">2</div>
+                        <span>Configuration</span>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <div class="step-circle">3</div>
+                        <span>Generate</span>
+                    </div>
+                </div>
+                
+                <div class="wizard-content">
+                    <div class="wizard-step active" data-step="1">
+                        <h3>Choose Your Project Type</h3>
+                        <p>Select the type of project you're working with to get the optimal documentation structure</p>
+                        
+                        <div class="project-type-options">
+                            <div class="project-option" data-type="single">
+                                <div class="option-icon">
+                                    <i class="fas fa-cube"></i>
+                                </div>
+                                <h4>Single Application</h4>
+                                <p>Perfect for standalone applications with focused documentation needs</p>
+                                <ul>
+                                    <li>Single codebase</li>
+                                    <li>Focused documentation</li>
+                                    <li>Simple structure</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="project-option" data-type="multi">
+                                <div class="option-icon">
+                                    <i class="fas fa-sitemap"></i>
+                                </div>
+                                <h4>Multi-Application</h4>
+                                <p>Ideal for microservices, full-stack applications, or complex systems</p>
+                                <ul>
+                                    <li>Multiple applications</li>
+                                    <li>Shared documentation</li>
+                                    <li>Complex architecture</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="project-option" data-type="custom">
+                                <div class="option-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <h4>Custom Configuration</h4>
+                                <p>Tailored for specific frameworks, languages, or architectures</p>
+                                <ul>
+                                    <li>Custom structure</li>
+                                    <li>Framework-specific</li>
+                                    <li>Advanced options</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="wizard-step" data-step="2">
+                        <h3>Configure Your Project</h3>
+                        <p>Provide details about your project to customize the documentation structure</p>
+                        
+                        <div class="config-form">
+                            <div class="form-group">
+                                <label for="project-name">Project Name</label>
+                                <input type="text" id="project-name" placeholder="my-awesome-project">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="project-description">Description</label>
+                                <textarea id="project-description" placeholder="Brief description of your project"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="framework">Primary Framework</label>
+                                <select id="framework">
+                                    <option value="">Select Framework</option>
+                                    <option value="react">React</option>
+                                    <option value="vue">Vue.js</option>
+                                    <option value="angular">Angular</option>
+                                    <option value="django">Django</option>
+                                    <option value="flask">Flask</option>
+                                    <option value="fastapi">FastAPI</option>
+                                    <option value="nodejs">Node.js</option>
+                                    <option value="python">Python</option>
+                                    <option value="java">Java</option>
+                                    <option value="go">Go</option>
+                                    <option value="dotnet">.NET</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="languages">Programming Languages</label>
+                                <div class="checkbox-group">
+                                    <label><input type="checkbox" value="javascript"> JavaScript</label>
+                                    <label><input type="checkbox" value="typescript"> TypeScript</label>
+                                    <label><input type="checkbox" value="python"> Python</label>
+                                    <label><input type="checkbox" value="java"> Java</label>
+                                    <label><input type="checkbox" value="go"> Go</label>
+                                    <label><input type="checkbox" value="csharp"> C#</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="wizard-step" data-step="3">
+                        <h3>Generate Your Documentation Structure</h3>
+                        <p>Review your configuration and generate the optimized documentation structure</p>
+                        
+                        <div class="config-summary">
+                            <h4>Configuration Summary</h4>
+                            <div class="summary-item">
+                                <span class="label">Project Type:</span>
+                                <span class="value" id="summary-type">Single Application</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="label">Project Name:</span>
+                                <span class="value" id="summary-name">my-awesome-project</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="label">Framework:</span>
+                                <span class="value" id="summary-framework">React</span>
+                            </div>
+                        </div>
+                        
+                        <div class="generation-options">
+                            <h4>Generation Options</h4>
+                            <div class="option-group">
+                                <label>
+                                    <input type="checkbox" checked> Include error management system
+                                </label>
+                                <label>
+                                    <input type="checkbox" checked> Include issue tracking
+                                </label>
+                                <label>
+                                    <input type="checkbox" checked> Include search functionality
+                                </label>
+                                <label>
+                                    <input type="checkbox" checked> Include version control
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="wizard-actions">
+                    <button class="btn btn-outline" id="prev-btn" style="display: none;">
+                        <i class="fas fa-arrow-left"></i>
+                        Previous
+                    </button>
+                    <button class="btn btn-primary" id="next-btn">
+                        Next
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="btn btn-secondary" id="generate-btn" style="display: none;">
+                        <i class="fas fa-magic"></i>
+                        Generate Structure
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Requirements -->
+    <section class="requirements-section">
+        <div class="container">
+            <h2 class="section-title">System Requirements</h2>
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <div class="requirement-details">
+                        <span class="version">3.8+</span>
+                        <p>Required for running the framework tools and setup wizard</p>
+                    </div>
+                    <div class="check-command">
+                        <span>Check version:</span>
+                        <code>python --version</code>
+                    </div>
+                </div>
+                
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <h3>Git</h3>
+                    <div class="requirement-details">
+                        <span class="version">2.0+</span>
+                        <p>Required for version control and cloning the repository</p>
+                    </div>
+                    <div class="check-command">
+                        <span>Check version:</span>
+                        <code>git --version</code>
+                    </div>
+                </div>
+                
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <h3>Terminal</h3>
+                    <div class="requirement-details">
+                        <span class="version">Any</span>
+                        <p>Command line interface for running setup commands</p>
+                    </div>
+                    <div class="check-command">
+                        <span>Available on:</span>
+                        <code>Windows, macOS, Linux</code>
+                    </div>
+                </div>
+                
+                <div class="requirement-card">
+                    <div class="requirement-icon">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <h3>Text Editor</h3>
+                    <div class="requirement-details">
+                        <span class="version">Any</span>
+                        <p>Code editor for viewing and editing documentation files</p>
+                    </div>
+                    <div class="check-command">
+                        <span>Recommended:</span>
+                        <code>VS Code, Sublime, Vim</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Steps -->
+    <section class="next-steps-section">
+        <div class="container">
+            <h2 class="section-title">What's Next?</h2>
+            <div class="next-steps-grid">
+                <div class="next-step-card">
+                    <div class="step-number">1</div>
+                    <h3>Read the Documentation</h3>
+                    <p>Learn about the framework's features and how to use them effectively</p>
+                    <a href="documentation.html" class="btn btn-outline">
+                        <i class="fas fa-book"></i>
+                        View Documentation
+                    </a>
+                </div>
+                
+                <div class="next-step-card">
+                    <div class="step-number">2</div>
+                    <h3>Explore Examples</h3>
+                    <p>See real-world examples of how the framework is used in different projects</p>
+                    <a href="examples.html" class="btn btn-outline">
+                        <i class="fas fa-lightbulb"></i>
+                        Browse Examples
+                    </a>
+                </div>
+                
+                <div class="next-step-card">
+                    <div class="step-number">3</div>
+                    <h3>Join the Community</h3>
+                    <p>Connect with other developers and get help with your implementation</p>
+                    <a href="https://github.com/zsarir/ai-doc-framework/discussions" class="btn btn-outline" target="_blank">
+                        <i class="fas fa-users"></i>
+                        Join Discussions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-robot"></i>
+                        <span>AI Doc Framework</span>
+                    </div>
+                    <p>Revolutionizing AI-assisted development with intelligent documentation systems that reduce costs and boost productivity.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/zsarir/ai-doc-framework" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://plusonefx.net" target="_blank">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        <a href="mailto:z.sarir@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="getting-started.html">Getting Started</a></li>
+                        <li><a href="documentation.html">Documentation</a></li>
+                        <li><a href="examples.html">Examples</a></li>
+                        <li><a href="installation.html">Installation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="architecture.html">Architecture</a></li>
+                        <li><a href="api-reference.html">API Reference</a></li>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="contributing.html">Contributing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-user"></i>
+                            <span>Mobin Zarekar</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>z.sarir@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <span>plusonefx.net</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AI Documentation Framework. Made with ❤️ for the AI-powered development community.</p>
+                <p>Licensed under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Setup Wizard Functionality
+        let currentStep = 1;
+        const totalSteps = 3;
+        
+        function updateWizard() {
+            // Update progress steps
+            document.querySelectorAll('.progress-step').forEach((step, index) => {
+                if (index + 1 <= currentStep) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+            
+            // Update wizard steps
+            document.querySelectorAll('.wizard-step').forEach((step, index) => {
+                if (index + 1 === currentStep) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+            
+            // Update buttons
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const generateBtn = document.getElementById('generate-btn');
+            
+            if (currentStep === 1) {
+                prevBtn.style.display = 'none';
+                nextBtn.style.display = 'inline-flex';
+                generateBtn.style.display = 'none';
+            } else if (currentStep === totalSteps) {
+                prevBtn.style.display = 'inline-flex';
+                nextBtn.style.display = 'none';
+                generateBtn.style.display = 'inline-flex';
+            } else {
+                prevBtn.style.display = 'inline-flex';
+                nextBtn.style.display = 'inline-flex';
+                generateBtn.style.display = 'none';
+            }
+        }
+        
+        // Project type selection
+        document.querySelectorAll('.project-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.project-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                document.getElementById('summary-type').textContent = this.querySelector('h4').textContent;
+            });
+        });
+        
+        // Form inputs
+        document.getElementById('project-name').addEventListener('input', function() {
+            document.getElementById('summary-name').textContent = this.value || 'my-awesome-project';
+        });
+        
+        document.getElementById('framework').addEventListener('change', function() {
+            document.getElementById('summary-framework').textContent = this.value || 'Not specified';
+        });
+        
+        // Navigation buttons
+        document.getElementById('next-btn').addEventListener('click', function() {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                updateWizard();
+            }
+        });
+        
+        document.getElementById('prev-btn').addEventListener('click', function() {
+            if (currentStep > 1) {
+                currentStep--;
+                updateWizard();
+            }
+        });
+        
+        document.getElementById('generate-btn').addEventListener('click', function() {
+            // Simulate generation process
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...';
+            this.disabled = true;
+            
+            setTimeout(() => {
+                alert('Documentation structure generated successfully! Check your project directory.');
+                this.innerHTML = '<i class="fas fa-check"></i> Generated!';
+            }, 2000);
+        });
+        
+        // Copy code functionality
+        function copyCode(button) {
+            const codeBlock = button.closest('.code-block');
+            const code = codeBlock.querySelector('code').textContent;
+            
+            navigator.clipboard.writeText(code).then(() => {
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i>';
+                button.style.background = '#10b981';
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.style.background = '';
+                }, 2000);
+            });
+        }
+        
+        // Initialize wizard
+        updateWizard();
+    </script>
+</body>
+</html>
