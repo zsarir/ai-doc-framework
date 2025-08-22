@@ -27,7 +27,7 @@ colorama >= 0.4.4
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/ai-doc-framework.git
+git clone https://github.com/zsarir/ai-doc-framework.git
 cd ai-doc-framework
 
 # Install Python dependencies
@@ -41,7 +41,7 @@ python tools/setup-wizard.py
 
 ```bash
 # Download the latest release
-wget https://github.com/your-username/ai-doc-framework/archive/refs/tags/v1.0.0.zip
+wget https://github.com/zsarir/ai-doc-framework/archive/refs/tags/v1.0.0.zip
 unzip v1.0.0.zip
 cd ai-doc-framework-1.0.0
 
@@ -299,9 +299,9 @@ python tools/migrate-config.py
 ## 📞 Support
 
 ### Getting Help
-- **Documentation**: [Full Documentation](https://github.com/your-username/ai-doc-framework/wiki)
-- **Issues**: [GitHub Issues](https://github.com/your-username/ai-doc-framework/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/your-username/ai-doc-framework/discussions)
+- **Documentation**: [Full Documentation](https://github.com/zsarir/ai-doc-framework/wiki)
+- **Issues**: [GitHub Issues](https://github.com/zsarir/ai-doc-framework/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/zsarir/ai-doc-framework/discussions)
 
 ### Installation Support
 ```bash

@@ -3,11 +3,18 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Documentation](https://img.shields.io/badge/docs-complete-brightgreen.svg)](https://github.com/your-username/ai-doc-framework)
+[![Documentation](https://img.shields.io/badge/docs-complete-brightgreen.svg)](https://github.com/zsarir/ai-doc-framework)
 
 ## 🎯 Overview
 
 The **AI Documentation Framework** is a comprehensive, AI-optimized documentation system designed for multi-application projects. It provides a structured approach to documentation that minimizes AI token consumption while maximizing efficiency and maintainability.
+
+### 👤 Author
+
+**Mobin Zarekar** - Creator and Lead Developer  
+🌐 [Website](https://plusonefx.net)  
+💻 [GitHub](https://github.com/zsarir)  
+📧 Contact: z.sarir@gmail.com
 
 ### ✨ Key Features
 
@@ -49,7 +56,7 @@ ai-doc-framework/
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/ai-doc-framework.git
+git clone https://github.com/zsarir/ai-doc-framework.git
 cd ai-doc-framework
 
 # Run the setup wizard
@@ -211,7 +218,7 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 ### Development Setup
 ```bash
 # Clone and setup development environment
-git clone https://github.com/your-username/ai-doc-framework.git
+git clone https://github.com/zsarir/ai-doc-framework.git
 cd ai-doc-framework
 pip install -r requirements-dev.txt
 python -m pytest tests/
@@ -229,15 +236,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Documentation**: [Full Documentation](https://github.com/your-username/ai-doc-framework/wiki)
-- **Issues**: [GitHub Issues](https://github.com/your-username/ai-doc-framework/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/your-username/ai-doc-framework/discussions)
+- **Documentation**: [Full Documentation](https://github.com/zsarir/ai-doc-framework/wiki)
+- **Issues**: [GitHub Issues](https://github.com/zsarir/ai-doc-framework/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/zsarir/ai-doc-framework/discussions)
 - **Email**: support@ai-doc-framework.com
 
 ---
 
 **Made with ❤️ for the AI-powered development community**
 
-[![GitHub stars](https://img.shields.io/github/stars/your-username/ai-doc-framework.svg?style=social&label=Star)](https://github.com/your-username/ai-doc-framework)
-[![GitHub forks](https://img.shields.io/github/forks/your-username/ai-doc-framework.svg?style=social&label=Fork)](https://github.com/your-username/ai-doc-framework/fork)
-[![GitHub issues](https://img.shields.io/github/issues/your-username/ai-doc-framework.svg)](https://github.com/your-username/ai-doc-framework/issues)
+[![GitHub stars](https://img.shields.io/github/stars/zsarir/ai-doc-framework.svg?style=social&label=Star)](https://github.com/zsarir/ai-doc-framework)
+[![GitHub forks](https://img.shields.io/github/forks/zsarir/ai-doc-framework.svg?style=social&label=Fork)](https://github.com/zsarir/ai-doc-framework/fork)
+[![GitHub issues](https://img.shields.io/github/issues/zsarir/ai-doc-framework.svg)](https://github.com/zsarir/ai-doc-framework/issues)

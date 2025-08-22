@@ -52,7 +52,7 @@ my-single-app/
 ### 1. Setup the Framework
 ```bash
 # Clone the framework
-git clone https://github.com/your-org/ai-doc-framework.git
+git clone https://github.com/zsarir/ai-doc-framework.git
 
 # Run the setup wizard
 cd ai-doc-framework
