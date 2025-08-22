@@ -1,0 +1,48 @@
+<nav class="navbar">
+  <div class="nav-container">
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="nav-brand">
+      <i class="fas fa-robot"></i>
+      <a href="{{ '/' | absolute_url }}">AI Doc Framework</a>
+    </div>
+
+    <div class="nav-menu" id="navMenu">
+      <a href="{{ '/' | absolute_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">Home</a>
+      <a href="{{ '/' | absolute_url }}#quickstart" class="nav-link">Quick Start</a>
+
+      <div class="nav-dropdown">
+        <a href="#" class="nav-link dropdown-toggle">Documentation</a>
+        <div class="dropdown-menu">
+          <a href="{{ '/guides/installation/' | absolute_url }}">Installation</a>
+          <a href="{{ '/guides/usage/' | absolute_url }}">Usage Guide</a>
+          <a href="{{ '/guides/configuration/' | absolute_url }}">Configuration</a>
+          <a href="{{ '/core/architecture/' | absolute_url }}">Architecture</a>
+          <a href="{{ '/core/features/' | absolute_url }}">Core Features</a>
+          <a href="{{ '/troubleshooting/' | absolute_url }}">Troubleshooting</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <a href="#" class="nav-link dropdown-toggle">Examples</a>
+        <div class="dropdown-menu">
+          <a href="{{ '/examples/single-app/' | absolute_url }}">Single Application</a>
+          <a href="{{ '/examples/multi-app/' | absolute_url }}">Multi-Application</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <a href="#" class="nav-link dropdown-toggle">Advanced</a>
+        <div class="dropdown-menu">
+          <a href="{{ '/advanced/features/' | absolute_url }}">API Reference</a>
+        </div>
+      </div>
+
+      <a href="{{ '/search/' | absolute_url }}" class="nav-link">
+        <i class="fas fa-search"></i> Search
+      </a>
+    </div>
+  </div>
+</nav>

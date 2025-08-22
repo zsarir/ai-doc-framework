@@ -1,4 +1,4 @@
-# Jekyll Configuration for AI Documentation Framework Wiki
+# Jekyll Configuration for AI Documentation Framework
 title: "AI Documentation Framework"
 description: "Comprehensive AI-Optimized Documentation System for Multi-Application Projects"
 baseurl: "/ai-doc-framework"
@@ -7,6 +7,9 @@ url: "https://zsarir.github.io"
 # Build settings
 markdown: kramdown
 theme: jekyll-theme-minimal
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Sass/SCSS settings
 sass:
@@ -18,3 +21,42 @@ github: [metadata]
 
 # Permalinks
 permalink: pretty
+
+# Navigation
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "Quick Start"
+    url: "#quickstart"
+  - title: "Documentation"
+    submenu:
+      - title: "Installation"
+        url: "/guides/installation/"
+      - title: "Usage Guide"
+        url: "/guides/usage/"
+      - title: "Configuration"
+        url: "/guides/configuration/"
+      - title: "Architecture"
+        url: "/core/architecture/"
+      - title: "Core Features"
+        url: "/core/features/"
+      - title: "Troubleshooting"
+        url: "/troubleshooting/"
+  - title: "Examples"
+    submenu:
+      - title: "Single Application"
+        url: "/examples/single-app/"
+      - title: "Multi-Application"
+        url: "/examples/multi-app/"
+  - title: "Advanced"
+    submenu:
+      - title: "API Reference"
+        url: "/advanced/features/"
+      - title: "Search"
+        url: "/search/"
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
