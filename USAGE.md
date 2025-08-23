@@ -2,6 +2,26 @@
 
 ## 🎯 Getting Started
 
+### 🔄 Version Management
+
+#### Check Current Version
+```bash
+# Check your current version
+python tools/version-manager.py check
+
+# Detailed version report
+python tools/version-manager.py history
+```
+
+#### Update Framework
+```bash
+# For v1.x users (major migration)
+python tools/migrate-from-v1.py --interactive
+
+# For v2.x users (minor updates)
+python tools/update-framework.py --auto
+```
+
 ### 🚨 Critical: Understanding the Architecture
 
 Before using the framework, you **MUST** understand the file placement:

@@ -416,6 +416,28 @@ python tools/setup-wizard.py
 python tools/test-conflict-detection.py
 ```
 
+### 🔄 Updating from Previous Versions
+
+#### For v1.x Users (Major Update)
+```bash
+# Automatic migration (recommended)
+python tools/migrate-from-v1.py --interactive
+
+# Or download migration tool directly
+curl -O https://raw.githubusercontent.com/zsarir/ai-doc-framework/main/tools/migrate-from-v1.py
+python migrate-from-v1.py --interactive
+```
+
+#### For v2.x Users (Minor Updates)
+```bash
+# Automatic update
+python tools/update-framework.py --auto
+
+# Or manual update check
+python tools/version-manager.py check
+python tools/update-framework.py
+```
+
 ### 2. Basic Setup
 
 ```bash

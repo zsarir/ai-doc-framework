@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rule Management - AI Documentation Framework v2.0</title>
+    <meta name="description" content="Intelligent rule management system for AI documentation. Natural language commands, conflict prevention, and multi-app synchronization.">
+    <meta name="keywords" content="rule management, AI rules, documentation rules, multi-app rules, conflict prevention">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-robot"></i>
+                <span>AI Doc Framework</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#commands" class="nav-link">Commands</a></li>
+                <li><a href="#examples" class="nav-link">Examples</a></li>
+                <li><a href="#integration" class="nav-link">Integration</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-cogs"></i>
+                    <span>v2.0 Feature</span>
+                </div>
+                <h1 class="hero-title">
+                    Intelligent <span class="gradient-text">Rule Management</span>
+                </h1>
+                <p class="hero-description">
+                    Direct AI-powered rule management system with natural language commands, conflict prevention, version control, and cross-application synchronization. Manage rules across your entire multi-application project with ease.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Automation</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Rule Categories</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">Multi-App</div>
+                        <div class="stat-label">Sync</div>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#commands" class="btn btn-primary">
+                        <i class="fas fa-terminal"></i>
+                        Try Commands
+                    </a>
+                    <a href="#examples" class="btn btn-secondary">
+                        <i class="fas fa-lightbulb"></i>
+                        View Examples
+                    </a>
+                    <a href="https://github.com/zsarir/ai-doc-framework" class="btn btn-outline" target="_blank">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="rule-demo">
+                    <div class="demo-screen">
+                        <div class="demo-header">
+                            <span>🎯 Rule Management Demo</span>
+                            <span class="demo-status">MANAGE_RULES.md Active</span>
+                        </div>
+                        <div class="demo-content">
+                            <div class="rule-command">
+                                <span class="command-prompt">AI:</span>
+                                <span class="command-text">"Add security rule to website-api: JWT tokens expire after 1 hour"</span>
+                            </div>
+                            <div class="rule-response success">
+                                <i class="fas fa-check-circle"></i>
+                                <span>✅ Rule added successfully to website-api/AI_RULES.md</span>
+                            </div>
+                            <div class="rule-command">
+                                <span class="command-prompt">AI:</span>
+                                <span class="command-text">"Update root performance rule: API response time under 200ms"</span>
+                            </div>
+                            <div class="rule-response warning">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span>⚠️ Conflict detected - updating across all applications</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title">Rule Management Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Natural Language Commands</h3>
+                    <p>Communicate with the rule management system using natural language. No complex syntax required - just describe what you want to do.</p>
+                    <ul class="feature-list">
+                        <li>Human-friendly commands</li>
+                        <li>AI interpretation</li>
+                        <li>Context-aware suggestions</li>
+                        <li>Multiple language support</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Conflict Prevention</h3>
+                    <p>Automatically detects and prevents rule conflicts before they cause problems. Intelligent conflict resolution with suggestions.</p>
+                    <ul class="feature-list">
+                        <li>Real-time conflict detection</li>
+                        <li>Automatic resolution suggestions</li>
+                        <li>Cross-application validation</li>
+                        <li>Conflict history tracking</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3>Version Control</h3>
+                    <p>Complete version control for all rule changes with audit trails, rollback capabilities, and change history tracking.</p>
+                    <ul class="feature-list">
+                        <li>Automatic versioning</li>
+                        <li>Change history</li>
+                        <li>Rollback support</li>
+                        <li>Audit trails</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Multi-Application Sync</h3>
+                    <p>Synchronize rules across multiple applications automatically. Ensure consistency while respecting application-specific requirements.</p>
+                    <ul class="feature-list">
+                        <li>Cross-application sync</li>
+                        <li>Application-specific rules</li>
+                        <li>Dependency management</li>
+                        <li>Consistency validation</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI-Powered Intelligence</h3>
+                    <p>Leverages AI to understand context, suggest improvements, and automatically categorize and organize rules intelligently.</p>
+                    <ul class="feature-list">
+                        <li>Context understanding</li>
+                        <li>Smart categorization</li>
+                        <li>Improvement suggestions</li>
+                        <li>Pattern recognition</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Analytics & Reporting</h3>
+                    <p>Comprehensive analytics on rule usage, compliance, conflicts, and trends with detailed reporting and insights.</p>
+                    <ul class="feature-list">
+                        <li>Rule usage analytics</li>
+                        <li>Compliance reporting</li>
+                        <li>Conflict trends</li>
+                        <li>Performance insights</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commands Section -->
+    <section id="commands" class="commands-section">
+        <div class="container">
+            <h2 class="section-title">Rule Management Commands</h2>
+            <div class="commands-grid">
+                <div class="command-category">
+                    <h3>Add Rules</h3>
+                    <div class="command-examples">
+                        <div class="command-example">
+                            <code>"Add security rule to website: All passwords must be hashed with bcrypt"</code>
+                            <span class="command-result success">✅ Rule added to website/AI_RULES.md</span>
+                        </div>
+                        <div class="command-example">
+                            <code>"Add performance rule to api: API response time under 200ms"</code>
+                            <span class="command-result success">✅ Rule added to website-api/AI_RULES.md</span>
+                        </div>
+                        <div class="command-example">
+                            <code>"Add architecture rule to root: Use PostgreSQL for all databases"</code>
+                            <span class="command-result warning">⚠️ Rule will be applied to all applications</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="command-category">
+                    <h3>Update Rules</h3>
+                    <div class="command-examples">
+                        <div class="command-example">
+                            <code>"Update website security rule: Change bcrypt rounds from 10 to 12"</code>
+                            <span class="command-result success">✅ Rule updated successfully</span>
+                        </div>
+                        <div class="command-example">
+                            <code>"Update api performance rule: Change timeout from 30s to 60s"</code>
+                            <span class="command-result success">✅ Rule updated with conflict check</span>
+                        </div>
+                        <div class="command-example">
+                            <code>"Update root architecture rule: PostgreSQL → MySQL migration"</code>
+                            <span class="command-result warning">⚠️ Major change - review across all apps</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="command-category">
+                    <h3>Remove Rules</h3>
+                    <div class="command-examples">
+                        <div class="command-example">
+                            <code>"Remove deprecated authentication rule from email-server"</code>
+                            <span class="command-result success">✅ Rule removed and documented</span>
+                        </div>
+                        <div class="command-example">
+                            <code>"Remove outdated logging rule from robot-control"</code>
+                            <span class="command-result warning">⚠️ Safety rule - requires approval</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="command-category">
+                    <h3>Reorganize Rules</h3>
+                    <div class="command-examples">
+                        <div class="command-example">
+                            <code>"Reorganize security rules: Group by severity level"</code>
+                            <span class="command-result success">✅ Rules reorganized by severity</span>
+                        </div>
+                        <div class="command-example">
+                            <code>"Reorganize performance rules: Sort by application"</code>
+                            <span class="command-result success">✅ Rules reorganized by application</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Examples Section -->
+    <section id="examples" class="examples-section">
+        <div class="container">
+            <h2 class="section-title">Rule Management Examples</h2>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <h3>Security Rules</h3>
+                    <div class="example-content">
+                        <div class="example-command">
+                            <strong>Command:</strong> "Add security rule to website: All user passwords must be hashed with bcrypt and salt"
+                        </div>
+                        <div class="example-result">
+                            <strong>Result:</strong> Security rule added to website/AI_RULES.md with compliance tracking
+                        </div>
+                        <div class="example-benefit">
+                            <strong>Benefit:</strong> Ensures consistent password security across the application
+                        </div>
+                    </div>
+                </div>
+                <div class="example-card">
+                    <h3>Performance Rules</h3>
+                    <div class="example-content">
+                        <div class="example-command">
+                            <strong>Command:</strong> "Add performance rule to api: All API endpoints must respond within 200ms"
+                        </div>
+                        <div class="example-result">
+                            <strong>Result:</strong> Performance monitoring rule implemented with automatic validation
+                        </div>
+                        <div class="example-benefit">
+                            <strong>Benefit:</strong> Maintains consistent API performance standards
+                        </div>
+                    </div>
+                </div>
+                <div class="example-card">
+                    <h3>Architecture Rules</h3>
+                    <div class="example-content">
+                        <div class="example-command">
+                            <strong>Command:</strong> "Update root architecture rule: Use PostgreSQL for all new database implementations"
+                        </div>
+                        <div class="example-result">
+                            <strong>Result:</strong> Architecture rule updated across all applications with migration guidance
+                        </div>
+                        <div class="example-benefit">
+                            <strong>Benefit:</strong> Ensures database consistency across the entire project
+                        </div>
+                    </div>
+                </div>
+                <div class="example-card">
+                    <h3>Implementation Rules</h3>
+                    <div class="example-content">
+                        <div class="example-command">
+                            <strong>Command:</strong> "Add implementation rule to email-server: Use async/await for all email operations"
+                        </div>
+                        <div class="example-result">
+                            <strong>Result:</strong> Implementation pattern enforced with code review integration
+                        </div>
+                        <div class="example-benefit">
+                            <strong>Benefit:</strong> Ensures consistent asynchronous programming patterns
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section id="integration" class="integration-section">
+        <div class="container">
+            <h2 class="section-title">Integration with Development Workflow</h2>
+            <div class="integration-workflow">
+                <div class="workflow-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Pre-Task Rule Check</h3>
+                        <p>Before starting any task, check relevant rules using natural language queries.</p>
+                        <div class="step-example">
+                            <code>"What are the security rules for user authentication?"</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>During Development</h3>
+                        <p>Use rule management commands to add, update, or modify rules as needed.</p>
+                        <div class="step-example">
+                            <code>"Add new API endpoint rule: Include rate limiting for all public endpoints"</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Post-Task Validation</h3>
+                        <p>After completing work, validate that all relevant rules are still being followed.</p>
+                        <div class="step-example">
+                            <code>"Validate compliance with security rules for the authentication module"</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Continuous Monitoring</h3>
+                        <p>Regularly review rule compliance and update rules based on project evolution.</p>
+                        <div class="step-example">
+                            <code>"Show me all rules that haven't been validated in the last 30 days"</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">Benefits of Rule Management</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Time Efficiency</h3>
+                    <div class="benefit-metrics">
+                        <div class="metric">
+                            <span class="metric-value">90%</span>
+                            <span class="metric-label">Faster Rule Updates</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">Hours</span>
+                            <span class="metric-label">Daily Saved</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Consistency</h3>
+                    <div class="benefit-metrics">
+                        <div class="metric">
+                            <span class="metric-value">100%</span>
+                            <span class="metric-label">Rule Compliance</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">Zero</span>
+                            <span class="metric-label">Conflicts</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Team Collaboration</h3>
+                    <div class="benefit-metrics">
+                        <div class="metric">
+                            <span class="metric-value">Multi-App</span>
+                            <span class="metric-label">Rule Sync</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">Real-time</span>
+                            <span class="metric-label">Updates</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Manage Rules Intelligently?</h2>
+                <p>Start using the intelligent rule management system to maintain consistency, prevent conflicts, and streamline your development process across all applications.</p>
+                <div class="cta-buttons">
+                    <a href="getting-started.html" class="btn btn-primary btn-large">
+                        <i class="fas fa-rocket"></i>
+                        Get Started with Rule Management
+                    </a>
+                    <a href="https://github.com/zsarir/ai-doc-framework" class="btn btn-outline btn-large" target="_blank">
+                        <i class="fab fa-github"></i>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-robot"></i>
+                    <span>AI Documentation Framework v2.0</span>
+                </div>
+                <div class="footer-links">
+                    <a href="../index.html">Home</a>
+                    <a href="architecture.html">Architecture</a>
+                    <a href="getting-started.html">Get Started</a>
+                    <a href="documentation.html">Documentation</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/zsarir/ai-doc-framework" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AI Documentation Framework. Licensed under MIT. Built with ❤️ for developers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

@@ -10,6 +10,217 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <style>
+        /* v2.0 Highlighting Styles */
+        .v2-new {
+            position: relative;
+        }
+
+        .v2-new::after {
+            content: "NEW";
+            position: absolute;
+            top: -5px;
+            right: -20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 8px;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .v2-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 12px;
+            letter-spacing: 0.5px;
+            margin-left: 8px;
+            display: inline-block;
+        }
+
+        .v2-highlight {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 8px;
+        }
+
+        .v2-nav {
+            position: relative;
+        }
+
+        .v2-nav::before {
+            content: "✨";
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12px;
+        }
+
+        .hero-subtitle {
+            display: block;
+            font-size: 16px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 8px;
+            letter-spacing: 1px;
+        }
+
+        /* Enhanced conflict detection demo styles */
+        .conflict-demo {
+            background: #1a1a2e;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .demo-screen {
+            background: #16213e;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .demo-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .demo-count {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+
+        .demo-content {
+            padding: 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .conflict-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            color: white;
+        }
+
+        .conflict-item.critical {
+            background: rgba(239, 68, 68, 0.2);
+            border-left: 3px solid #ef4444;
+        }
+
+        .conflict-item.high {
+            background: rgba(245, 101, 101, 0.2);
+            border-left: 3px solid #f56565;
+        }
+
+        .conflict-item.medium {
+            background: rgba(251, 146, 60, 0.2);
+            border-left: 3px solid #fb923c;
+        }
+
+        .conflict-item.low {
+            background: rgba(34, 197, 94, 0.2);
+            border-left: 3px solid #22c55e;
+        }
+
+        /* Rule management demo styles */
+        .rule-demo {
+            background: #1a1a2e;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .demo-status {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .rule-command {
+            margin-bottom: 12px;
+        }
+
+        .command-prompt {
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .command-text {
+            color: #e2e8f0;
+            font-style: italic;
+        }
+
+        .rule-response {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            font-size: 12px;
+        }
+
+        .rule-response.success {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+        }
+
+        .rule-response.warning {
+            background: rgba(251, 146, 60, 0.2);
+            color: #fb923c;
+        }
+
+        .rule-response.error {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+
+        /* Enhanced floating cards for v2.0 */
+        .floating-card:nth-child(4), .floating-card:nth-child(5) {
+            animation-delay: 0.6s;
+        }
+
+        /* Responsive improvements */
+        @media (max-width: 768px) {
+            .v2-new::after {
+                right: -15px;
+                font-size: 6px;
+                padding: 1px 4px;
+            }
+
+            .v2-badge {
+                font-size: 8px;
+                padding: 2px 6px;
+                margin-left: 4px;
+            }
+
+            .hero-subtitle {
+                font-size: 14px;
+                letter-spacing: 0.5px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -24,7 +235,9 @@
                 <li><a href="#features" class="nav-link">Features</a></li>
                 <li><a href="#solutions" class="nav-link">Solutions</a></li>
                 <li><a href="pages/architecture.html" class="nav-link">Architecture</a></li>
-                <li><a href="pages/getting-started.html" class="nav-link">Get Started</a></li>
+                <li><a href="pages/conflict-detection.html" class="nav-link v2-nav">Conflict Detection</a></li>
+                <li><a href="pages/rule-management.html" class="nav-link v2-nav">Rule Management</a></li>
+                <li><a href="pages/getting-started.html" class="nav-link">Get Started v2.0</a></li>
                 <li><a href="pages/documentation.html" class="nav-link">Docs</a></li>
                 <li><a href="pages/examples.html" class="nav-link">Examples</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -47,10 +260,11 @@
                 </div>
                 <h1 class="hero-title">
                     Stop Wasting <span class="gradient-text">$200 Daily</span> on AI Tokens
+                    <span class="hero-subtitle">Now with Conflict Detection & Rule Management</span>
                 </h1>
                 <p class="hero-description">
-                    The AI Documentation Framework reduces token consumption by 60-80% while boosting productivity and eliminating repetitive errors. 
-                    Designed for modern development teams working with AI assistants.
+                    AI Documentation Framework v2.0 reduces token consumption by 60-80% while providing automated conflict detection,
+                    intelligent rule management, and comprehensive version control. Designed for modern development teams working with AI assistants.
                 </p>
                 <div class="hero-stats">
                     <div class="stat-item">
@@ -65,13 +279,29 @@
                         <div class="stat-number">100%</div>
                         <div class="stat-label">Task Completion</div>
                     </div>
+                    <div class="stat-item v2-highlight">
+                        <div class="stat-number">44</div>
+                        <div class="stat-label">Conflicts Detected</div>
+                    </div>
+                    <div class="stat-item v2-highlight">
+                        <div class="stat-number">10</div>
+                        <div class="stat-label">New Features v2.0</div>
+                    </div>
                 </div>
                 <div class="hero-buttons">
                     <a href="pages/getting-started.html" class="btn btn-primary">
                         <i class="fas fa-play"></i>
-                        Get Started
+                        Get Started v2.0
                     </a>
-                    <a href="pages/architecture.html" class="btn btn-secondary">
+                    <a href="pages/conflict-detection.html" class="btn btn-secondary v2-new">
+                        <i class="fas fa-search"></i>
+                        Conflict Detection
+                    </a>
+                    <a href="pages/rule-management.html" class="btn btn-secondary v2-new">
+                        <i class="fas fa-cogs"></i>
+                        Rule Management
+                    </a>
+                    <a href="pages/architecture.html" class="btn btn-outline">
                         <i class="fas fa-sitemap"></i>
                         View Architecture
                     </a>
@@ -91,8 +321,16 @@
                     <span>Error Prevention</span>
                 </div>
                 <div class="floating-card card-3">
-                    <i class="fas fa-sync-alt"></i>
-                    <span>Auto Updates</span>
+                    <i class="fas fa-search"></i>
+                    <span>Conflict Detection</span>
+                </div>
+                <div class="floating-card card-4 v2-new">
+                    <i class="fas fa-cogs"></i>
+                    <span>Rule Management</span>
+                </div>
+                <div class="floating-card card-5 v2-new">
+                    <i class="fas fa-code-branch"></i>
+                    <span>Version Control</span>
                 </div>
                 <div class="hero-image">
                     <div class="code-window">
@@ -106,15 +344,16 @@
                         </div>
                         <div class="window-content">
                             <div class="code-line"><span class="keyword">import</span> ai_doc_framework</div>
-                            <div class="code-line"><span class="keyword">from</span> framework <span class="keyword">import</span> Navigator</div>
+                            <div class="code-line"><span class="keyword">from</span> framework <span class="keyword">import</span> ConflictDetector, RuleManager</div>
                             <div class="code-line"></div>
-                            <div class="code-line"><span class="comment"># Reduce token usage by 60-80%</span></div>
-                            <div class="code-line">navigator = Navigator()</div>
-                            <div class="code-line">navigator.optimize_docs()</div>
+                            <div class="code-line"><span class="comment"># v2.0: Advanced conflict detection</span></div>
+                            <div class="code-line">detector = ConflictDetector()</div>
+                            <div class="code-line">conflicts = detector.scan_project()</div>
+                            <div class="code-line">detector.generate_report()</div>
                             <div class="code-line"></div>
-                            <div class="code-line"><span class="comment"># Automatic error management</span></div>
-                            <div class="code-line">error_manager = ErrorManager()</div>
-                            <div class="code-line">error_manager.prevent_recurrence()</div>
+                            <div class="code-line"><span class="comment"># v2.0: Intelligent rule management</span></div>
+                            <div class="code-line">rules = RuleManager()</div>
+                            <div class="code-line">rules.manage_rules()</div>
                         </div>
                     </div>
                 </div>
@@ -258,6 +497,73 @@
                         <li>Keyboard shortcuts</li>
                     </ul>
                 </div>
+
+                <!-- v2.0 New Features -->
+                <div class="feature-card v2-new">
+                    <div class="feature-icon">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                    <h3>Automated Conflict Detection <span class="v2-badge">v2.0</span></h3>
+                    <p>Intelligent detection of documentation conflicts across multi-application projects with severity-based prioritization and automatic resolution suggestions.</p>
+                    <ul class="feature-list">
+                        <li>44+ conflict types detected</li>
+                        <li>Severity-based filtering</li>
+                        <li>HTML/JSON reports</li>
+                        <li>Auto-resolution commands</li>
+                    </ul>
+                </div>
+                <div class="feature-card v2-new">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Intelligent Rule Management <span class="v2-badge">v2.0</span></h3>
+                    <p>Direct AI-powered rule management system with conflict prevention, version control, and cross-application rule synchronization.</p>
+                    <ul class="feature-list">
+                        <li>Natural language commands</li>
+                        <li>Conflict prevention</li>
+                        <li>Version tracking</li>
+                        <li>Multi-app sync</li>
+                    </ul>
+                </div>
+                <div class="feature-card v2-new">
+                    <div class="feature-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3>Version Management <span class="v2-badge">v2.0</span></h3>
+                    <p>Comprehensive semantic versioning system with automatic updates, compatibility checking, and migration support.</p>
+                    <ul class="feature-list">
+                        <li>Semantic versioning</li>
+                        <li>Auto-update system</li>
+                        <li>Compatibility checking</li>
+                        <li>Migration tools</li>
+                    </ul>
+                </div>
+                <div class="feature-card v2-new">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Enhanced Analytics <span class="v2-badge">v2.0</span></h3>
+                    <p>Advanced reporting and analytics with interactive HTML reports, trend analysis, and performance metrics.</p>
+                    <ul class="feature-list">
+                        <li>Interactive HTML reports</li>
+                        <li>Trend analysis</li>
+                        <li>Performance metrics</li>
+                        <li>Conflict statistics</li>
+                    </ul>
+                </div>
+                <div class="feature-card v2-new">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Command Line Tools <span class="v2-badge">v2.0</span></h3>
+                    <p>6 powerful command-line tools for version management, conflict detection, and system administration.</p>
+                    <ul class="feature-list">
+                        <li>Version management</li>
+                        <li>Conflict detection</li>
+                        <li>System updates</li>
+                        <li>Migration tools</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -327,6 +633,68 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- v2.0 New Solutions -->
+                <div class="solution-item v2-new">
+                    <div class="solution-number">06</div>
+                    <div class="solution-content">
+                        <h3>Automated Conflict Detection <span class="v2-badge">v2.0</span></h3>
+                        <p>Intelligent detection of documentation conflicts with severity-based prioritization and automatic resolution suggestions.</p>
+                        <div class="solution-benefits">
+                            <span class="benefit">44+ Conflict Types</span>
+                            <span class="benefit">Severity Filtering</span>
+                            <span class="benefit">Auto Resolution</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="solution-item v2-new">
+                    <div class="solution-number">07</div>
+                    <div class="solution-content">
+                        <h3>Intelligent Rule Management <span class="v2-badge">v2.0</span></h3>
+                        <p>Direct AI-powered rule management with natural language commands and cross-application synchronization.</p>
+                        <div class="solution-benefits">
+                            <span class="benefit">Natural Language</span>
+                            <span class="benefit">Conflict Prevention</span>
+                            <span class="benefit">Multi-App Sync</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="solution-item v2-new">
+                    <div class="solution-number">08</div>
+                    <div class="solution-content">
+                        <h3>Version Control & Updates <span class="v2-badge">v2.0</span></h3>
+                        <p>Comprehensive semantic versioning with automatic updates, compatibility checking, and migration tools.</p>
+                        <div class="solution-benefits">
+                            <span class="benefit">Semantic Versioning</span>
+                            <span class="benefit">Auto Updates</span>
+                            <span class="benefit">Migration Support</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="solution-item v2-new">
+                    <div class="solution-number">09</div>
+                    <div class="solution-content">
+                        <h3>Enhanced Analytics & Reporting <span class="v2-badge">v2.0</span></h3>
+                        <p>Advanced reporting system with interactive HTML reports, trend analysis, and performance metrics.</p>
+                        <div class="solution-benefits">
+                            <span class="benefit">HTML Reports</span>
+                            <span class="benefit">Trend Analysis</span>
+                            <span class="benefit">Performance Metrics</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="solution-item v2-new">
+                    <div class="solution-number">10</div>
+                    <div class="solution-content">
+                        <h3>Command Line Tools Suite <span class="v2-badge">v2.0</span></h3>
+                        <p>6 powerful CLI tools for system administration, conflict detection, and version management.</p>
+                        <div class="solution-benefits">
+                            <span class="benefit">6 CLI Tools</span>
+                            <span class="benefit">System Admin</span>
+                            <span class="benefit">Auto Operations</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -350,6 +718,18 @@
                         <div class="arch-component">
                             <i class="fas fa-check-circle"></i>
                             <span>Validator</span>
+                        </div>
+                        <div class="arch-component v2-new">
+                            <i class="fas fa-tools"></i>
+                            <span>CLI Tools (6)</span>
+                        </div>
+                        <div class="arch-component v2-new">
+                            <i class="fas fa-search-plus"></i>
+                            <span>Conflict Detector</span>
+                        </div>
+                        <div class="arch-component v2-new">
+                            <i class="fas fa-cogs"></i>
+                            <span>Rule Manager</span>
                         </div>
                     </div>
                 </div>
@@ -406,6 +786,18 @@
                             <i class="fas fa-history"></i>
                             <span>Version Control</span>
                         </div>
+                        <div class="arch-component v2-new">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Conflict Reports</span>
+                        </div>
+                        <div class="arch-component v2-new">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Rule Templates</span>
+                        </div>
+                        <div class="arch-component v2-new">
+                            <i class="fas fa-code-branch"></i>
+                            <span>Version History</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -430,6 +822,10 @@
                         <div class="metric">
                             <span class="metric-value">$150</span>
                             <span class="metric-label">Daily Savings</span>
+                        </div>
+                        <div class="metric v2-new">
+                            <span class="metric-value">44</span>
+                            <span class="metric-label">Conflicts Resolved</span>
                         </div>
                     </div>
                 </div>
@@ -478,6 +874,26 @@
                         <div class="metric">
                             <span class="metric-value">24/7</span>
                             <span class="metric-label">Support</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="benefit-card v2-new">
+                    <div class="benefit-icon">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                    <h3>v2.0 Enhanced Quality <span class="v2-badge">NEW</span></h3>
+                    <div class="benefit-metrics">
+                        <div class="metric">
+                            <span class="metric-value">44</span>
+                            <span class="metric-label">Conflicts Detected</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">6</span>
+                            <span class="metric-label">CLI Tools</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">10</span>
+                            <span class="metric-label">New Features</span>
                         </div>
                     </div>
                 </div>
